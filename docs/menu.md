@@ -1,0 +1,44 @@
+
+- [Overview](readme.md)
+    - [Structure](structure.md)
+- [Guides](guides.md)
+    - [Writing CSS](writing_css.md)
+    - [Writing Javascript](writing_js.md)
+    - [Making It Slick](slickness.md)
+    - [Multi Step Form Flows](server_for_state.md)
+    - [File Uploads with Dropzone](dropzone.md)
+- [Cheat Sheets](icons.md)
+    - [Icons](icons.md)
+    - [Modals](modals.md)
+    - [Toasts](toasts.md)
+    - [*Tooltips](tooltips.md)
+    - [Dropdowns](dropdowns.md)
+    - [Selects](selects.md)
+        - [Tom Select](tomselect.md)
+    - [Datetime Picker](datetime.md)
+    - [*Sortable List](sortable.md)
+    - [*Rich Text Fields](rich_text.md)
+    - [*Code Highlighting](code_highlighting.md)
+    - <hr class="my-2"/>
+    - [Default Form Styling](css_default_form_styling.md)
+    - [Default Prose Styling](css_default_prose_styling.md)
+    - <hr class="my-2"/>
+    - [Active Storage](active_storage.md)
+    - [*Paper Trail](paper_trail.md)
+    - <hr class="my-2"/>
+    - [Active Admin](active_admin.md)
+    - [Helpers & Utilities](layout_basics.md)
+    - <hr class="my-2"/>
+
+- [Other Stuff](modals.md)
+    - [A Simple CSS Color Naming Convention](https://www.tonyennis.com/dev/ZSGXDX30B-a-simple-css-color-naming-convention)
+    - [A pattern for Multi Step Forms in Rails](https://www.tonyennis.com/dev/iJwC-S_BZ-multi-step-forms-in-rails)
+    - [A pattern for storing and sending emails]()
+    - [A pattern for Rails Utilities]()
+    - [How We Do Delayed Jobs]()
+    - [Scheduling using Delayed Jobs]()
+
+
+- [Technical](code_examples.md)  
+    - [Setup](setup.md)
+    - [How We Use HTMX](htmx.md)

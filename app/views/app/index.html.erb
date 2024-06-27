@@ -1,0 +1,14 @@
+
+<div class="flex h-full items-center justify-center">
+  <div class="bg-white shadow-lg w-96 max-w-96 rounded p-5">
+    <div class="flex flex-col space-y-3">
+      <a class="w-full block bg-alpha py-3 rounded text-white text-center" href="<%= new_user_session_path %>">User Sign In</a>
+      
+      <% if Rails.env.development? %>
+        <a hx-boost="false" class="w-full block bg-alpha py-3 rounded text-white text-center" href="<%= new_admin_user_session_path %>">Admin User Sign In</a>
+        <a class="w-full block bg-alpha py-3 rounded text-white text-center" href="<%= docs_path %>">Docs</a>
+      
+      <% end %>
+    </div>
+  </div>
+</div>

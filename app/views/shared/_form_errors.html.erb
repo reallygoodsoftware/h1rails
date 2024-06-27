@@ -1,0 +1,9 @@
+<% if local_assigns[:record].errors.any? %>
+  <div class="bg-red-600 p-5 text-white rounded">
+    <ul class="list-disc ml-3">
+      <% local_assigns[:record].errors.full_messages.each do |error| %>
+        <li><%= error %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>

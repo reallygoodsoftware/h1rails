@@ -1,0 +1,117 @@
+
+<% @options = options %>
+
+<div class="p-8 relative" 
+     :scope="showOptions=false;
+             selectedOption=[];
+		          selectedOptions=[];
+             filteredOptions=[]; 
+             unselectedOptions=<%= @options %>
+             "> 
+  
+  <div style="max-width:300px">
+  		
+  <!-- Multiselect Menu Input -->
+    <div class="space-y-2" :clickout="scope.showOptions = false">
+      <div
+        class="relative w-full cursor-default rounded-lg"
+      >
+          <input
+            id="multiselect-menu"
+            type="text"
+            autocomplete="off"
+            class="group flex w-full items-center justify-between gap-2 rounded-lg border border-gray-200 bg-white px-3 py-2 text-left leading-6 hover:border-gray-300 shadow-sm"
+            placeholder="Ingredient search..."
+            :change="
+                scope.typedSearch = this.value;
+                if (scope.typedSearch) {
+                    scope.showOptions = true;
+                    scope.filteredOptions = scope.unselectedOptions.search(scope.typedSearch)
+                } else {
+                    scope.filteredOptions = scope.unselectedOptions;
+                }
+                scope.selectedOption = scope.filteredOptions.first;
+            "
+            :keyup.enter="
+                if (scope.selectedOption.length) {
+            	    scope.selectedOptions.add(scope.selectedOption);
+                    scope.unselectedOptions.remove(scope.selectedOption);
+                }
+                scope.showOptions = false;
+                this.value='';
+                "
+            :keyup.up="
+                scope.selectedOption = scope.filteredOptions.previousItem(scope.selectedOption)"
+            :keyup.down="
+                scope.selectedOption = scope.filteredOptions.nextItem(scope.selectedOption)"
+            :focus="
+                if (this.value == '' ) { scope.filteredOptions = scope.unselectedOptions };
+                scope.showOptions=true"
+          />
+      </div>
+      
+      <div :each="option, index in scope.selectedOptions" class="hidden flex-wrap gap-2" :class="scope.selectedOptions.length == 0 ? 'hidden' : 'flex' ">
+          <div class="inline-flex items-center justify-between gap-x-1 rounded-md bg-gray-50 pl-2 pr-1.5 py-1 text-xs font-medium text-gray-600 ring-1 ring-inset ring-gray-200">
+            <span :text="option[1]"></span>
+            <button
+              type="button"
+              class="relative h-3 w-3 rounded-sm hover:bg-gray-200"
+              role="option"
+              :click="
+                scope.unselectedOptions.add(option); // Current Way
+                scope.selectedOptions.remove(option);
+                ">
+              <span class="sr-only">Remove</span>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="text-gray-600" class="w-3 h-3">
+                <path d="M5.28 4.22a.75.75 0 0 0-1.06 1.06L6.94 8l-2.72 2.72a.75.75 0 1 0 1.06 1.06L8 9.06l2.72 2.72a.75.75 0 1 0 1.06-1.06L9.06 8l2.72-2.72a.75.75 0 0 0-1.06-1.06L8 6.94 5.28 4.22Z" />
+              </svg>
+
+              <span class="absolute -inset-1"></span>
+            </button>
+          </div>
+        </div>
+      
+      
+        <div
+            class="absolute opacity-0 w-64 transition origin-top ease-out duration-100 inset-x-0 z-10 mt-2 max-h-60 overflow-y-auto rounded-lg bg-white py-2.5 shadow-xl border border-gray-200"
+            aria-labelledby="multiselect-menu"
+            aria-orientation="vertical"
+            role="combobox"
+            tabindex="0"
+            :class="scope.showOptions ? 'transform opacity-100 scale-100' : 'transform scale-95 opacity-0 pointer-events-none' "
+            :class="scope.filteredOptions.length ? '' : 'hidden' "
+        >
+            <div
+                :each="option in scope.filteredOptions"
+                class="group items-center justify-between gap-2 border-y border-transparent text-sm text-gray-900"
+                :class="scope.filteredOptions.length ? '' : 'hidden' "
+            >
+                <button
+                  type="button"
+                  :click="
+                      scope.selectedOptions.add(scope.selectedOption);
+                      scope.unselectedOptions.remove(scope.selectedOption);
+                      scope.showOptions = false;
+                      this.value=''
+                      "
+                  :mouseover="scope.selectedOption = option"
+                  :class="scope.selectedOption.sameAs(option) ? 'bg-gray-100 text-gray-700' : 'text-gray-700'"
+                  class="grow truncate py-1.5 px-2 cursor-pointer w-full text-left"
+                  role="option"
+                  >
+                  <span :text="option[1]" class="select-none"></span>
+                </button>
+            </div>
+            <span
+                :class="scope.filteredOptions == 0 ? '' : 'hidden' "
+                class="px-3 text-sm text-gray-500"
+                :text="scope.filteredOptions.length ? '' : 'No options' "
+            >
+            </span>
+        </div>
+
+      
+    </div>
+  </div>
+
+</div>            

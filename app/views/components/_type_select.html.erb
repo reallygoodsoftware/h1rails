@@ -1,0 +1,61 @@
+
+<% @options     = options %>
+<% placeholder ||= "Search Options" %>
+<% @random_id = SecureRandom.hex(4) %>
+
+<div class="relative" 
+    :scope="showOptions=false;
+      selectedOption=['','Select Country'];
+      allOptions=<%= @options %>;
+      highlightedOption=['IE','Ireland'];
+      filteredOptions=<%= @options %>" >
+  <button 
+      type="button"
+      class="gap-x-1 border bg-white border-gray-100 shadow w-full rounded px-4 py-2 hover:bg-gray-100 cursor-pointer flex justify-between items-center" 
+      :click="scope.showOptions = !scope.showOptions; document.getElementById('<%= @random_id %>').focus();" >
+    <div>
+      <span :text="scope.selectedOption[1]">
+      </span>
+    </div>
+    <div class="transition duration-100 ease-out" :class="scope.showOptions ? 'rotate-180' : ''">
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+      </svg>
+    </div>
+  </button>
+  <div class="relative">
+    <div class="transition ease-out duration-100 shadow opacity-0 absolute top-0 right-0 left-0 " :class="scope.showOptions ? 'transform opacity-100 scale-100' : 'transform opacity-0 scale-95 pointer-events-none' " >
+      <div class="bg-white rounded p-2" style="max-height:300px;overflow-y:scroll">
+        <input  type="text" 
+                id="<%= @random_id %>" 
+                :change="
+                  scope.filteredOptions = scope.allOptions.search(this.value);
+                  scope.highlightedOption = scope.filteredOptions.first;
+                "
+                :keypress.enter="
+                  event.preventDefault();
+                  if (scope.highlightedOption.length) {
+                    scope.selectedOption = scope.highlightedOption
+                  }
+                  scope.showOptions = false;
+                  this.value='';
+                  "
+                :keyup.up="
+                    scope.highlightedOption = scope.filteredOptions.previousItem(scope.highlightedOption)"
+                :keyup.down="
+                    scope.highlightedOption = scope.filteredOptions.nextItem(scope.highlightedOption)"
+                placeholder="<%= placeholder %>" 
+                class="mb-2" >
+        <div :each="option, index in scope.filteredOptions" >
+          <button :class="scope.highlightedOption.sameAs(option) ? 'bg-gray-100 text-gray-700' : 'text-gray-700'" class="flex w-full text-left rounded px-2 py-2 hover:bg-gray-100 cursor-pointer block items-center" type="button" :click="scope.selectedOption=option;scope.showOptions=false" >
+            <img :src="`/icons/flags/${option[0].toLowerCase()}.svg`" class="w-5 h-5 mr-2" />
+            <div :text="option[1]"></div>
+          </button>
+        </div>
+      </div>
+    </div>  
+  </div>
+</div>
+
+
+

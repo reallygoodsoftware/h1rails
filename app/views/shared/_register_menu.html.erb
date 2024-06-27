@@ -1,0 +1,8 @@
+<div class="flex text-lg">
+  <a class="<%= current_page?(new_user_session_path) ? 'font-semibold' : 'text-gray-500 hover:text-black' %> px-3 py-2" href="<%= new_user_session_path %>">
+    Sign In 
+  </a>
+  <a class="<%= current_page?(new_user_registration_path) ? 'font-semibold' : 'text-gray-500 hover:text-black' %> px-3 py-2" href="<%= new_user_registration_path %>">
+    Sign Up
+  </a>
+</div>

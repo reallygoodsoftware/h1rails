@@ -1,0 +1,38 @@
+<div id="toasts" hx-swap-oob="<%= 'true' if flash[:toasts] %>" class="toasts-container fixed top-0 z-20">
+
+  <% if flash[:toasts].present? %>
+    <script>
+      toasts = <%= flash[:toasts].to_json.html_safe %>
+      frontendToasts = []
+    </script>
+
+    <div :each="toast, index in toasts" >
+      <div 
+        :load="
+            initialdelay = index * 500
+            await wait(initialdelay);
+            el.toastClass='toast-animate-in';
+            if (toast.disappearing) {
+              await wait(2000);
+              el.toastClass='toast-animate-out'
+            }
+        "
+        :scope 
+        :class="el.toastClass"
+        class="toast"
+        role="alert">
+        <div class="overflow-hidden" >
+          <div class="relative inner p-4 pr-6 mt-3 rounded-md shadow mx-2 text-sm ">
+            <div class="cursor-pointer absolute top-0 right-0" :click="scope.toastClass='toast-animate-out'" >
+              <%= inline_svg_tag("heroicons/x-mark.svg",class:"w-5 h-5 mt-4 mr-3") %>
+            </div>
+            <span class="block font-bold mb-2" :text="toast.title">
+            </span> 
+            <span :text="toast.message">
+            </span> 
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>

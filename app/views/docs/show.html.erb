@@ -1,0 +1,20 @@
+<% if params[:file] == "toasts.md" %>
+<% end %>
+<div id="con" class="grid grid-cols-1 md:grid-cols-9 gap-x-4 px-6 md:p-0">
+  <div class="col-span-2 text-center order-2 md:order-1">
+    <img src="/images/tonic-rails.png" class="inline my-10" style="width: 170px">
+    <h1 class="text-left pl-4 pb-4 font-bold text-2xl">
+      Tonic Rails
+    </h1>
+    <div class="group-odin text-left" :load="applyOptimisticNavigationToChildrenOf(this)">
+      <%= Utilities.markdown_menu(params[:file]).html_safe %>
+    </div>
+  </div>
+  <div class="col-span-7 order-1 md:order-2">
+    <div class="styled-text py-6" style="max-width:1000px">
+      <% if @filename %>
+        <%= Utilities.markdown_to_html(@filename).html_safe %>
+      <% end %>
+    </div>
+  </div>
+</div>
