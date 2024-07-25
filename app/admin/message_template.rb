@@ -1,7 +1,7 @@
 ActiveAdmin.register MessageTemplate do
   scope :all, default: true
 
-  menu label: -> { inline_svg_tag('heroicons/document-text.svg',class:"w-4 h-4 mr-1") + 'Message Templates' }
+  menu parent: "Settings", label: -> { inline_svg_tag('heroicons/document-text.svg',class:"w-4 h-4 mr-1") + 'Message Templates' }
 
   permit_params :identifier, :subject, :body  # Permitting attributes for mass assignment
 

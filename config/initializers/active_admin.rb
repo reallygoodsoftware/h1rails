@@ -20,10 +20,14 @@ ActiveAdmin.setup do |config|
   config.root_to = 'users#index'
 
   config.register_stylesheet '/stylesheets/styles.css'
-  config.register_stylesheet '/vendor/statictailwind/1.0.2.css'
+  config.register_stylesheet 'https://cdn.hypergist.io/tony/styled-active-admin/latest.css'
+  config.register_stylesheet '/vendor/tailwind-lite/1.0.2.css'
 
   config.namespace :admin do |admin|
     admin.download_links = false
+    admin.build_menu do |menu|
+      menu.add id: 'settings', label: proc{ inline_svg_tag('heroicons/cog-outline.svg',class:"w-4 h-4 mr-1") + 'Settings' }, priority: 100
+    end
   end
 
 end

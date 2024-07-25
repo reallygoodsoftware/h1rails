@@ -18,7 +18,7 @@ gem 'puma', '~> 5.0'
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'inherited_resources'
-gem 'activeadmin'
+gem 'activeadmin', '~> 3.2', '>= 3.2.2'
 gem 'arctic_admin'
 gem 'activeadmin_addons'
 gem 'sassc-rails', '~> 2.1', '>= 2.1.1' # Needed by arctic admin
