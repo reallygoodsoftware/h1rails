@@ -30,11 +30,11 @@ Hypertext Rails is a Ruby on Rails Boilerplate that follows [HTML First](https:/
 
 ### Utilities
 - [Icons](#icons)
-- Modals
-- Toasts
-- File Uploads
-- Form Styling
-- Article Styling
+- [Modals](#modals)
+- [Toasts](#toasts)
+- [File Uploads](#file-uploads)
+- [Form Styling](#form-styling)
+- [Article Styling](#article-styling)
 
 ## Cheat Sheet
 
@@ -54,13 +54,14 @@ To render an icon, use the following snippet and swap out the name of the file a
 
 - The modal container is located in the `shared/_partial_containers` file. It uses Mini and makes use of the native html dialog element augmented with a nicer background overlay and animation. 
 
-To trigger a remote modal, create a normal `<a>` tag with `?modal=true`, and add `htmx_support_modal` as the last line on your controller method.
+To trigger a remote modal, create a normal `<a>` tag with `?modal=true` in your view.
 
 ```
 <a href="<%= general_path(modal:true) >" class="shadow bg-white rounded px-3 py-2 text-gray-900">Open Modal</a>
 ```
 
-In your controller
+Then add `htmx_support_modal` as the last line on your controller method.
+
 ```ruby
 class DocsController < ApplicationController
 
@@ -137,7 +138,7 @@ end
 
 # Further Reading 
 
-Required
+#### Required
 - Hypertext Rails: Working with HTMX
 - Hypertext Rails: Working with CSS
 - Hypertext Rails: Multi Step Form Flows
@@ -145,7 +146,18 @@ Required
 - Hypertext Rails: Making It Slick
 - Learn Mini JS in 5 minutes
 
-Optional
+#### Optional
 - HTMX Loading Patterns
 - Rails Basics
 - HTMX.org
+
+
+# TODO
+
+- [x] Icons
+- [x] Toasts
+- [x] Modals
+- [x] File Uploads
+- [x] CSS Guidelines
+- [ ] Tooltips
+- [ ] JS Guidelines
