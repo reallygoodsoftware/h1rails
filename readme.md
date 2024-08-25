@@ -75,6 +75,36 @@ end
 
 <a href="/docs?file=readme.md&modal=true" class="no-style shadow bg-alpha text-white rounded px-3 py-2" >Open Modal</a>
 
+### Toasts
+
+- Toasts are based on [this hypergist](https://hypergist.io/tony/louder-torso) which is part of rgs.css
+- The html responsible for toasts lives in `/views/shared/_partial_containers.html.erb` and `/views/shared/_toast.html.erb`.
+- To send a toast from the backend to the frontend we use Rails` Flash message functionality. 
+
+**Trigger a toast on the currently loaded page from a controller**
+
+```
+flash.now[:toasts] = [
+  { title: 'Post Created', message: 'Your post has been successfully created.', style: "success" }
+]
+```
+
+### Form Styling
+
+- Form styling comes from lean-soil, which is part of rgs.css.
+- By default all `<form>`s will have styling applied. 
+- Further Reading: [Lean Soil on Hypergist](https://hypergist.io/tony/lean-soil)
+
+### Multi Step Form Flows
+
+In the spirit of "Minimize unnecessary client side state", we recommend that you create a new temporary record at the beginning of a form flow and use conditional validations at each step. We've tested several patterns and landed on this as the simplest to implement and manage
+
+- Article: [Hypertext Rails: Multi Step Form Flows](https://hypergist.io/tony/fine-flock)
+
+
+# Keeping Things Organized
+
+
 ### Building Hyperlinks
 
 Link to a new page but make sure the current query parameters get passed through.
@@ -98,34 +128,6 @@ Link to a new page, include all the current query parameters, and add more.
 ---
 
 For the source of these methods, see `/helpers/application_helper.rb`. For more info, see [Building URLs in Rails](https://hypergist.io/tony/building-urls-in-rails?collection=html-first-rails)
-
-### Form Styling
-
-### Toasts
-
-### Modals
-
-### Icons
-
-
-### Multi Step Form Flows
-
-Pleas see the full tutorial here. Snippet shows the key idea - creating a draft database object to carry the user through the flow.
-
-```erb
-<a href="<%= start_order_path %>">Start</a>
-```
-
-```ruby
-# app/controllers/orders_controller.rb
-def create
-  @order = current_user.orders.new(state:"draft")
-  redirect_to order_step_1_path(@order.shortcode) if @order.save 
-end
-```
-
-
-# Keeping Things Organized
 
 ### Guidelines for Managing CSS
 
