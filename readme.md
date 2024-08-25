@@ -6,10 +6,10 @@ Hypertext Rails is a Ruby on Rails Boilerplate that follows [HTML First](https:/
 
 ## How to build Hypertext Rails apps
 
-2. Use htmx's `hx-boost` tag on your `<body>` to make forms and links load asynchronously, and the `hx-indicator` pattern to show loading spinners.
+1. Use htmx's `hx-boost` tag on your `<body>` to make forms and links load asynchronously, and the `hx-indicator` pattern to show loading spinners.
     - Related: HTMX & Hypertext Rails - [link](https://hypergist.io/tony/malign-down)
     - Related: HTMX Loading Patterns
-4. Use plain old links and forms to manage state (avoid heavy frontend state)
+2. Use plain old links and forms to manage state (avoid heavy frontend state)
     - Building Hyperlinks
     - Using the Database for state: [Article: Multi Step Form Flows with Rails](https://tonic-rails.toniclabs.ltd/docs?file=server_for_state.md)
 3. Use a js "sprinkles" library for lightweight frontend interactivity
