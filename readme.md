@@ -29,7 +29,7 @@ Hypertext Rails is a Ruby on Rails Boilerplate that follows [HTML First](https:/
 
 
 ### Utilities
-- Icons
+- [Icons](#icons)
 - Modals
 - Toasts
 - File Uploads
