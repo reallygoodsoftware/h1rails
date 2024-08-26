@@ -7,28 +7,28 @@ Hypertext Rails is a Ruby on Rails Boilerplate that follows [HTML First](https:/
 ## How to build Hypertext Rails apps
 
 1. Use htmx's `hx-boost` tag on your `<body>` to make forms and links load asynchronously, and the `hx-indicator` pattern to show loading spinners.
-    - Related: HTMX & Hypertext Rails - [link](https://hypergist.io/tony/malign-down)
-    - Related: HTMX Loading Patterns
-2. Use plain old links and forms to manage state (avoid heavy frontend state)
-    - Building Hyperlinks
-    - Using the Database for state: [Article: Multi Step Form Flows with Rails](https://tonic-rails.toniclabs.ltd/docs?file=server_for_state.md)
+    - Related: [Hypertext Rails: Working With HTMX](https://hypergist.io/tony/working-with-htmx)
+    - Related: [Hypertext Rails: HTMX Loading Indicators](https://hypergist.io/tony/malign-down)
+2. Use plain old links and forms to manage state (avoid heavy frontend state).
+    - Jump To: [Building URLs](#building-urls)
+    - Related: [Hypertext Rails: Using the database for state](https://hypergist.io/tony/multi-step-form-flows)
 3. Use a js "sprinkles" library for lightweight frontend interactivity
     - We've included Mini but you can use whichever you'd like. 
-    - [Learn Mini Js in 5 minutes](https://mini-js.com/)
+    - Related: [Learn Mini Js in 5 minutes](https://mini-js.com/)
 
 
 ## What's Included
 
-### Libraries
+#### Libraries
 
 
 - [HTMX](https://htmx.org/) makes html handle links and forms better. (This replaces the Rails default [Turbo](https://turbo.hotwired.dev/)).
 - [Mini](https://mini-js.com/) makes html handle interactivity better. (This replaces the Rails default [Stimulus](https://stimulus.hotwired.dev/)).
 - [Tailwind Lite](https://tailwind-lite.com/) makes CSS easier to manage.
-- [RGS.css](https://hypergist.io/b/tony/rgs) a small set of css utilities for common use cases.
+- [RGS.css](https://hypergist.io/b/tony/rgs) is a small set of css utilities for common use cases.
 
 
-### Utilities
+#### Utilities
 - [Icons](#icons)
 - [Modals](#modals)
 - [Toasts](#toasts)
@@ -36,10 +36,9 @@ Hypertext Rails is a Ruby on Rails Boilerplate that follows [HTML First](https:/
 - [Form Styling](#form-styling)
 - [Article Styling](#article-styling)
 
-## Cheat Sheet
+# Cheat Sheet
 
 ### Icons
-
 
 - Icons are stored in the `/app/assets/icons` directory. This repo comes pre-loaded with both [heroicons](https://heroicons.com/) and [tabler](https://tablericons.com/) icons, which are free to use, look great, and cover most use cases.
 - Icons can be styled with CSS. Use the color attribute to set their color, and width/height attributes (E.g. Tailwind's "w-4 h-4") to style their size.
@@ -51,8 +50,6 @@ To render an icon, use the following snippet and swap out the name of the file a
 ```
 
 ### Modals
-
-- The modal container is located in the `shared/_partial_containers` file. It uses Mini and makes use of the native html dialog element augmented with a nicer background overlay and animation. 
 
 To trigger a remote modal, create a normal `<a>` tag with `?modal=true` in your view.
 
@@ -73,11 +70,11 @@ class DocsController < ApplicationController
 end
 ```
 
-<a href="/docs?file=readme.md&modal=true" class="no-style shadow bg-alpha text-white rounded px-3 py-2" >Open Modal</a>
+- The modal container is located in the `shared/_partial_containers` file. It uses Mini and makes use of the native html dialog element augmented with a background overlay and animation. 
 
 ### Toasts
 
-- Toasts are based on [this hypergist](https://hypergist.io/tony/louder-torso) which is part of rgs.css
+- Toasts are based on [this CSS snack](https://hypergist.io/tony/louder-torso) which is part of rgs.css
 - The html responsible for toasts lives in `/views/shared/_partial_containers.html.erb` and `/views/shared/_toast.html.erb`.
 - To send a toast from the backend to the frontend we use Rails` Flash message functionality. 
 
@@ -95,17 +92,12 @@ flash.now[:toasts] = [
 - By default all `<form>`s will have styling applied. 
 - Further Reading: [Lean Soil on Hypergist](https://hypergist.io/tony/lean-soil)
 
-### Multi Step Form Flows
 
-In the spirit of "Minimize unnecessary client side state", we recommend that you create a new temporary record at the beginning of a form flow and use conditional validations at each step. We've tested several patterns and landed on this as the simplest to implement and manage
+#### Hypermedia Patterns
 
-- Article: [Hypertext Rails: Multi Step Form Flows](https://hypergist.io/tony/fine-flock)
+We found that coming from writing non Hypertext Rails apps, it's not always intuitive to figure out how exactly to handle working with urls (building links) and working with forms.
 
-
-# Keeping Things Organized
-
-
-### Building Hyperlinks
+### Building URLs
 
 Link to a new page but make sure the current query parameters get passed through.
 
@@ -124,10 +116,20 @@ Link to a new page, include all the current query parameters, and add more.
 ```html
 <a href="<%= projects_path(current_params_with(scope:'draft')) %>">Draft Projects</a>
 ```
+ 
+- **Related**: [Hypertext Rails: Working With URLs](https://hypergist.io/tony/building-urls-in-rails?collection=html-first-rails)
+- **View Source**: `/helpers/application_helper.rb`.
 
----
+### Working With Forms
 
-For the source of these methods, see `/helpers/application_helper.rb`. For more info, see [Building URLs in Rails](https://hypergist.io/tony/building-urls-in-rails?collection=html-first-rails)
+Our recommended pattern is to create a new temporary record at the beginning of a form flow and use conditional validations at each step. We've tested several patterns and landed on this as the simplest to implement and reason about.
+
+- **Related:** [Hypertext Rails: Using the database for state](https://hypergist.io/tony/multi-step-form-flows)
+
+
+# Keeping Things Organized
+
+
 
 ### Guidelines for Managing CSS
 
