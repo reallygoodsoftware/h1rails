@@ -40,14 +40,17 @@ Hypertext Rails is a Ruby on Rails Boilerplate that follows [HTML First](https:/
 
 ### Icons
 
-- Icons are stored in the `/app/assets/icons` directory. This repo comes pre-loaded with both [heroicons](https://heroicons.com/) and [tabler](https://tablericons.com/) icons, which are free to use, look great, and cover most use cases.
-- Icons can be styled with CSS. Use the color attribute to set their color, and width/height attributes (E.g. Tailwind's "w-4 h-4") to style their size.
+This repo comes pre-loaded with both [heroicons](https://heroicons.com/) and [tabler](https://tablericons.com/) icons, which are free to use, look great, and cover most use cases. We use the [inline_svg](https://github.com/jamesmartin/inline_svg) gem to render them.
+
+Icons can be styled with CSS. Use text color to set their color, and width/height attributes (E.g. Tailwind's "w-4 h-4") to style their size.
 
 To render an icon, use the following snippet and swap out the name of the file and the classes as necessary.
 
 ```
 <%= inline_svg_tag("/heroicons/icon-chevron-right.svg", class: "w-5 text-indigo-500" ) %>
 ```
+
+- Icons are stored in the `/app/assets/icons` directory. 
 
 ### Modals
 
@@ -74,9 +77,7 @@ end
 
 ### Toasts
 
-- Toasts are based on [this CSS snack](https://hypergist.io/tony/louder-torso) which is part of rgs.css
-- The html responsible for toasts lives in `/views/shared/_partial_containers.html.erb` and `/views/shared/_toast.html.erb`.
-- To send a toast from the backend to the frontend we use Rails` Flash message functionality. 
+To send a toast from the backend to the frontend we use Rails` Flash message functionality. 
 
 **Trigger a toast on the currently loaded page from a controller**
 
@@ -85,6 +86,8 @@ flash.now[:toasts] = [
   { title: 'Post Created', message: 'Your post has been successfully created.', style: "success" }
 ]
 ```
+
+- The html responsible for toasts lives in `/views/shared/_partial_containers.html.erb` and `/views/shared/_toast.html.erb`. Styling comes from rgs.css
 
 ### Form Styling
 
