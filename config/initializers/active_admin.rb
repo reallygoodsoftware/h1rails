@@ -7,6 +7,10 @@ ActiveAdmin.setup do |config|
   # config.head = ''.html_safe
   # config.footer = 'my custom footer text'
 
+  meta_tags_options = { viewport: 'width=device-width, initial-scale=1' }
+  config.meta_tags = meta_tags_options
+  config.meta_tags_for_logged_out_pages = meta_tags_options
+
   config.authentication_method = :authenticate_admin_user!
   config.current_user_method = :current_admin_user
   config.logout_link_path = :destroy_admin_user_session_path
@@ -16,7 +20,7 @@ ActiveAdmin.setup do |config|
   config.localize_format = :long
   config.include_default_association_filters = false
 
-  config.site_title = "Tonic Rails"
+  config.site_title = "Admin Portal"
   config.root_to = 'users#index'
 
   config.register_stylesheet '/stylesheets/styles.css'

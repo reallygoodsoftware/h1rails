@@ -2,7 +2,13 @@ class DocsController < ApplicationController
 
   before_action :use_bare_layout, only: [:show]
 
+  def basestyles 
+    @body_layout = "docs"
+  end
+
   def show 
+
+    @body_layout = "docs"
     @filename = params[:file] 
     if params[:file].blank?
       redirect_to docs_path(file: "readme.md") and return
@@ -11,6 +17,8 @@ class DocsController < ApplicationController
     full_path = Rails.root.join('docs', "#{params[:file]}")
     if !@filename.end_with?(".md") || !File.exist?(full_path) 
       @filename = nil
+    elsif @filename == "readme.md"
+      @filename = "#{params[:file]}"
     else 
       @filename = "docs/#{params[:file]}"
     end

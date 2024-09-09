@@ -1,7 +1,5 @@
 # Layout Basics
 
----
-<br/>
 
 ### **Include content in the `<head>`, but only on certain pages**
 

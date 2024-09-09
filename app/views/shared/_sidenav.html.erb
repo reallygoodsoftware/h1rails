@@ -1,0 +1,7 @@
+<img src="/images/tonic-rails.png" class="inline my-10" style="width: 170px">
+<h1 class="text-left pl-4 pb-4 font-bold text-2xl">
+  Hypertext Rails
+</h1>
+<div class="group-odin text-left" :load="applyOptimisticNavigationToChildrenOf(this)">
+  <%= Utilities.markdown_menu(params[:file]).html_safe %>
+</div>

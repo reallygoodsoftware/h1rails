@@ -1,0 +1,47 @@
+:root {
+
+  --font-family: 'Outfit', sans-serif;
+  --color-1: #F2EDDA;
+  --color-2: #E4E7E0;
+  --color-3: #DCFF54;
+  --color-4: #1D2A3A;
+  --color-5: #EDF8FD;
+  --color-6: #1A1F2A;
+
+  --bg-primary: 26,31,42;
+  --bg-primary-text: #fff;
+
+  --link-color: #2688ff;
+
+  --gray-1: #F2F2F2;
+  --gray-2: #E6E6E6;
+
+  --border-radius-1: 5px;
+  --border-radius-2: 10px;
+  --border-radius-3: 15px;
+
+  --border-width-default: 1px;
+  --border-color-default: #E6E6E6;
+
+  --bold-font-weight: 600;
+
+  --form-input-border-color: #e5e7eb;
+  --form-input-border-color-focus: #191919;
+  --form-input-border-color-invalid: rgba(239, 68, 68);
+
+  --form-input-border-width: 2px;
+  --form-input-border-width-small-screens: 0 0 1px 0 ;
+
+  --form-input-border-radius: 0.25rem;
+  --form-input-border-radius-small-screens: 0;
+
+  --form-input-padding-small-screens: 0.5rem 0rem;
+  --form-input-padding: 0.75rem;
+
+  --form-input-height: 50px;
+  --form-input-width: 100%;
+
+  --form-label-font-size: 1.25rem;
+  --form-bold-font-weight: 600; 
+
+}

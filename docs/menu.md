@@ -1,12 +1,17 @@
 
-- [Overview](readme.md)
+- [Getting Started](readme.md)
+    - [Intro](readme.md)
+    - [Overview](overview.md)
     - [Structure](structure.md)
+    - [How We Use HTMX](htmx.md)
+    - [Helpers & Utilities](layout_basics.md)
 - [Guides](guides.md)
     - [Writing CSS](writing_css.md)
     - [Writing Javascript](writing_js.md)
     - [Making It Slick](slickness.md)
     - [Multi Step Form Flows](server_for_state.md)
     - [File Uploads with Dropzone](dropzone.md)
+- [Base Styles.css](base-styles)
 - [Cheat Sheets](icons.md)
     - [Icons](icons.md)
     - [Modals](modals.md)
@@ -27,12 +32,10 @@
     - [*Paper Trail](paper_trail.md)
     - <hr class="my-2"/>
     - [Active Admin](active_admin.md)
-    - [Helpers & Utilities](layout_basics.md)
     - <hr class="my-2"/>
 
 - [Other Stuff](modals.md)
     - [A Simple CSS Color Naming Convention](https://www.tonyennis.com/dev/ZSGXDX30B-a-simple-css-color-naming-convention)
-    - [A pattern for Multi Step Forms in Rails](https://www.tonyennis.com/dev/iJwC-S_BZ-multi-step-forms-in-rails)
     - [A pattern for storing and sending emails]()
     - [A pattern for Rails Utilities]()
     - [How We Do Delayed Jobs]()
@@ -41,4 +44,3 @@
 
 - [Technical](code_examples.md)  
     - [Setup](setup.md)
-    - [How We Use HTMX](htmx.md)

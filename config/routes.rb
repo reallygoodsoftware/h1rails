@@ -10,7 +10,11 @@ Rails.application.routes.draw do
     passwords:      'users/passwords',
   }
 
-  get "/docs"             => "docs#show", :as => "docs"
-  get "/toast-demo"       => "docs#toast_demo", :as => "toast_demo"
+  get "/docs"                 => "docs#show", :as => "docs"
+  get "/base-styles"          => "docs#basestyles", :as => "uikit"
+  get "/toast-demo"           => "docs#toast_demo", :as => "toast_demo"
+
+
+  get "/docs/enhanced-select"   => "docs#enhanced_select", :as => "enhanced_select"
 
 end
