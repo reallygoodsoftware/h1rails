@@ -1,11 +1,11 @@
 module ApplicationHelper
 
   def page_title
-    @page_title ||= "Tonic Rails"
+    @page_title ||= "Diet Rails"
   end
 
   def page_description
-    "App description"
+    "The greatest app on the internet"
   end
 
   def cache_buster 

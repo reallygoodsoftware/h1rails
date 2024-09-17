@@ -1,0 +1,5 @@
+<svg viewBox="0 0 50 50" class=" htmx-indicator">
+  <path fill="currentColor" d="M43.935,25.146c0-10.355-8.396-18.75-18.75-18.75c-10.355,0-18.75,8.396-18.75,18.75h4.068     c0-8.115,6.567-14.682,14.682-14.682s14.682,6.567,14.682,14.682H43.935z">
+    <animateTransform attributeType="xml" attributeName="transform" type="rotate" from="0 25 25" to="360 25 25" dur="1s" repeatCount="indefinite"></animateTransform>
+  </path>
+</svg>

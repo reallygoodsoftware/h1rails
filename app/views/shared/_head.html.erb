@@ -3,14 +3,9 @@
 <%= csp_meta_tag %>
 <!-- Base CSS & JS -->
 <link href="/vendor/tailwind-lite/1.0.2.css" rel="stylesheet">
-<% if @disable_rgs_bundle %>
-<% else %>
-  <link href="/stylesheets/styles.css<%= cache_buster %>" rel="stylesheet" >
-<% end %>
-
-<link href="<%= tonic_rails_url %>/base-styles/0.0.1.css<%= cache_buster %>" rel="stylesheet">
+<link href="/stylesheets/styles.css<%= cache_buster %>" rel="stylesheet" >
+<link href="/base-styles/0.0.1.css<%= cache_buster %>" rel="stylesheet">
 <link href="/stylesheets/base-styles-overrides.css<%= cache_buster %>" rel="stylesheet">
-
 <script src="/js/custom.js<%= cache_buster %>" defer></script>
 <script src="/vendor/htmx/1.9.9.js" defer></script>
 <script src="/vendor/mini/1.0.15.js" ></script>

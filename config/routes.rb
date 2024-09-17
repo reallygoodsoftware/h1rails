@@ -14,7 +14,6 @@ Rails.application.routes.draw do
   get "/base-styles"          => "docs#basestyles", :as => "uikit"
   get "/toast-demo"           => "docs#toast_demo", :as => "toast_demo"
 
-
   get "/docs/enhanced-select"   => "docs#enhanced_select", :as => "enhanced_select"
 
 end
