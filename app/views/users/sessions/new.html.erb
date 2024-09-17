@@ -1,34 +1,26 @@
 <div class="items-center justify-center h-full flex py-12 overflow-x-scroll">
-
   <div class="m-auto" style="width: 700px;max-width: 500px">
-    
     <%= render :partial => "shared/register_menu" %>
     <div class=" shadow p-6 rounded bg-white">
-
-      <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+      <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: "ui-form" }) do |f| %>
         <div class="field mb-3">
           <%= f.label :email, class: "no-style font-semibold  text-xl py-2" %>
           <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
         </div>
-
         <div class="field  mb-3">
           <%= f.label :password, class: "no-style font-semibold text-xl" %>
           <%= f.password_field :password, autocomplete: "current-password" %>
         </div>
-
         <% if devise_mapping.rememberable? %>
           <div class="field flex space-x-2 my-3">
             <%= f.check_box :remember_me, class: "no-style" %>
             <%= f.label :remember_me, class: "no-style font-semibold" %>
           </div>
         <% end %>
-
         <div class="actions">
-          <%= f.submit "Log in" %>
+          <%= f.submit "Log in", class: "ui-button w-full --solid" %>
         </div>
       <% end %>
-
     </div>
-
   </div>
 </div>

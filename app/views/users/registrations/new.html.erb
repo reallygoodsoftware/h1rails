@@ -1,20 +1,17 @@
 <div class="items-center justify-center h-full flex py-12 overflow-x-scroll">
-
   <div class="m-auto" style="width: 700px;max-width: 500px">
-    
-    <div class=" shadow-xl p-6 rounded bg-white">
-      <div class="flex flex-col text-center mb-4 space-y-2">
-        <h2 class="text-2xl font-bold">
+    <div class="ui-box p-6 rounded bg-white">
+      <div class="ui-titlepair --center flex flex-col text-center mb-4 space-y-2">
+        <h2 class="--title">
           Create An Account
         </h2>
-        <span>
+        <span class="description">
           Or 
           <a href="<%= new_user_session_path %>">Sign in to your account</a>
         </span>
       </div>
-      <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { class: "ui-form" }) do |f| %>
         <%= render "users/shared/error_messages", resource: resource %>
-
         <div class="grid grid-cols-2 space-x-4">
           <div>
             <%= f.label :first_name, class: "py-2" %>
@@ -25,25 +22,18 @@
             <%= f.text_field :last_name %>
           </div>
         </div>
-
         <div class="field mb-3">
           <%= f.label :email, class: "py-2" %>
           <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
         </div>
-
         <div class="field mb-3">
           <%= f.label :password, class: "py-2" %>
           <%= f.password_field :password, autocomplete: "new-password" %>
         </div>
-
-
         <div class="actions">
-          <%= f.submit "Sign up" %>
+          <%= f.submit "Sign up", class: "ui-button w-full --solid" %>
         </div>
       <% end %>
-    
     </div>
-  
   </div>
-
 </div>

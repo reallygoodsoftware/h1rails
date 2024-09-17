@@ -1,58 +1,12 @@
-
 :root {
 
-  --font-family: "Plus Jakarta Sans", sans-serif; 
+  --font-family: "Plus Jakarta Sans", sans-serif;
 
-  --color-alpha: #5046e5 ; /* Purple */
-  --color-alpha-dark: #281eba;
-  --color-alpha-text: #c7d2fe;
-  --color-alpha-text-highlight: #fff;
-
-  --link-color: var(--color-alpha);
-
-  --gray-1: #f8fafc;
-  --gray-2: #e6e6e6;
-  --gray-3: #f9fafb;
-
-  --border-radius-1: 5px;
-  --border-radius-2: 10px;
-  --border-radius-3: 15px;
-
-  --border-width-default: 1px;
-  --border-color-default: --var(color-alpha);
-  --bold-font-weight: 600;
-
-  /* These are for code highlighting and come from Tailwind */
-  --color-gamma: #1e293b; /* Dark Navy Purple */
-  --color-gamma-text: #fff; 
-  --color-zeta: #cbd5e1; /* Light Gray */
-  --color-delta: #f471b5; /* Pink */
-  --color-epsilon: #7dd3fc; /* Baby Blue */
-
-  /* For form styling */
-
-  --bg-primary: var(--color-alpha);
-  --bg-primary-dark: var(--color-alpha-dark);
-  --form-input-border-color-focus: var(--color-alpha);
-
-  --form-input-border-color: #e5e7eb;
-  --form-input-border-color-invalid: rgba(239, 68, 68);
-
-  --form-input-border-width: 2px;
-  --form-input-border-width-small-screens: 0 0 1px 0;
-
-  --form-input-border-radius: .3rem;
-  --form-input-border-radius-small-screens: 0;
-
-  --form-input-padding-small-screens: 0.5rem 0rem;
-  --form-input-padding: 0.7rem;
-
-  --form-input-height: 3rem;
-  --form-select-line-height: 1.2rem; 
-  --form-input-width: 100%;
-
-  --form-label-font-size: 1rem;
-  --form-bold-font-weight: 600;
+  --color-1: #5046e5;
+  --color-1-text: #fff;
+  --color-1-hover: #281eba;
+  --color-1-hover-text: #281eba;
+  --color-1-light: #c7d2fe;
 
 }
 
@@ -62,95 +16,4 @@ body {
 
 a {
   color: var(--link-color);
-}
-
-/* Color Classes */
-.bg-alpha {
-  background-color: var(--color-alpha);
-}
-a.bg-alpha:hover {
-  background-color: var(--color-alpha-dark);
-}
-
-.bg-gray-1 {
-  background-color: var(--gray-1);
-}
-
-/* Color Groups */
-
-.color-group-zeus > .active,
-.color-group-zeus > *:hover {
-  background: var(--color-gamma);
-  color: var(--color-gamma-text);
-  transition: background-color 0.3s ease;
-}
-
-.color-group-odin {
-  & > * {
-    color: rgba(0, 0, 0, 0.4);
-  }
-  & > *:hover,
-  & > *.active {
-    color: var(--color-gamma);
-  }
-}
-
-.group-odin {
-  ul {
-    padding-left: 20px;
-  }
-  a {
-    color: rgba(0, 0, 0, 0.5);
-  }
-  a:hover,
-  a.active {
-    color: rgba(0, 0, 0, 0.9);
-  }
-  a.active {
-    font-weight: bold;
-  }
-}
-
-/* UTILITIES */
-
-
-/* Shimmer */
-
-shimmer,
-.shimmer {
-  min-height: 20px;
-  background: #f6f7f8;
-  background-image: linear-gradient(to right, #f6f7f8 0%, #edeef1 20%, #f6f7f8 40%, #f6f7f8 100%);
-  background-repeat: repeat-y;
-  background-size: 100% 50px; 
-  position: relative; 
-  
-  -webkit-animation-duration: 1s;
-  -webkit-animation-fill-mode: forwards; 
-  -webkit-animation-iteration-count: infinite;
-  -webkit-animation-name: placeholderShimmer;
-  -webkit-animation-timing-function: linear;
-}
-
-@-webkit-keyframes placeholderShimmer {
- 0% {
-   background-position: -468px 0;
- }
- 
- 100% {
-   background-position: 468px 0; 
- }
-}
-
-.htmx-indicator{
-  display: none;
-}
-.htmx-request .htmx-indicator,
-.htmx-request.htmx-indicator {
-  margin-left: 4px;
-  width: 17px;
-  animation: expandWidth 0.3s forwards;
-}
-.htmx-request .htmx-collapse {
-  display: none;
 }
