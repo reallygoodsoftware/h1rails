@@ -1,13 +1,10 @@
 :root {
-
   --font-family: "Plus Jakarta Sans", sans-serif;
-
   --color-1: #5046e5;
   --color-1-text: #fff;
   --color-1-hover: #281eba;
   --color-1-hover-text: #281eba;
   --color-1-light: #c7d2fe;
-
 }
 
 body {

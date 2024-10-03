@@ -6,5 +6,3 @@ The modal container is loaded in the `shared/_partial_containers` file. It's bas
 <a href="<%= general_path(modal:true) >" class="shadow bg-white rounded px-3 py-2 text-gray-900">Open Modal</a>
 ```
 
-
-<a href="/docs?file=readme.md&modal=true" class="no-style shadow bg-alpha text-white rounded px-3 py-2" >Open Modal</a>

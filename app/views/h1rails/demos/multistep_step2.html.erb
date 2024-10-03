@@ -1,0 +1,38 @@
+
+<div class="--modal-top-section">
+  <div class="flex justify-between w-full">
+    <div class="ui-titlepair">
+      <div class="--title">
+        Step Two
+      </div>
+    </div>
+    <div class="ui-button --rounded --minimal" :click="modalOpen=false">
+      <%= inline_svg_tag('heroicons/x-mark.svg') %>
+    </div>
+  </div>
+</div>
+
+<%= form_for @user, url: demo_multistep_step2_path(@user) do |f| %>
+  <div class="ui-form">
+    <div class="ui-floating-input">
+      <%= f.text_field :last_name %>
+      <%= f.label :last_name, class:"--label" %>
+    </div>
+  </div>
+  <div class="--modal-bottom-section">
+    <div class="flex w-full justify-between">
+      <div>
+        <a class="ui-button --minimal --motion-backward" href="<%= demo_multistep_start_path(modal:true) %>">
+          <%= inline_svg_tag('heroicons/arrow-left.svg') %>
+          Go Back
+        </a>
+      </div>
+      <div>    
+        <%= f.button class: "ui-button --solid" do |button| %>
+          Save  
+          <%= inline_svg_tag("misc/spinner.svg",class:"shown-while-loading") %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+<% end %>

@@ -1,12 +1,3 @@
-<div class="m-auto rounded shadow w-full p-10" style="max-width:1000px">
-  <div class="grid grid-cols-1 md:grid-cols-3 md:space-x-5">
-    <div class="col-span-3 order-1 md:order-2">
-      <div id="main-content" class="h-full">
-        <% if user_signed_in? %>
-          <a href="<%= destroy_user_session_path %>">Sign Out</a>
-        <% end %>
-        <%= yield %>
-      </div>
-    </div>
-  </div>
+<div class="ui-container --sm h-full">
+  <%= yield %>
 </div>

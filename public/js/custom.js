@@ -1,7 +1,9 @@
+
 Dropzone.autoDiscover = false;
 
 function reinitializeJs() { 
   Dropzone.discover();
+  
 }
 
 document.addEventListener("DOMContentLoaded", function(event){

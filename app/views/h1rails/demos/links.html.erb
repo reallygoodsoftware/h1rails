@@ -1,0 +1,21 @@
+
+<div class="--top">
+  <div class="flex justify-between w-full">
+    <div class="ui-titlepair">
+      <div class="--title">
+        List of links
+      </div>
+    </div>
+    <div class="ui-button --rounded --minimal" :click="modalOpen=false">
+      <%= inline_svg_tag('heroicons/x-mark.svg') %>
+    </div>
+  </div>
+</div>
+
+<div class="ui-styled-text">
+  <ul class="disc">
+    <li>
+      <a href="/demos/coffee?modal=true" class="ui-link" hx-target="#modal-dialog">Coffee</a>
+    </li>
+  </ul>
+</div>

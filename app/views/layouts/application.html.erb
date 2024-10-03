@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html class="h-full" lang="en">
   <head>
-    <%= render :partial=> "shared/head" %>
+    <%= render :partial=> "h1rails/partials/head" %>
   </head>
-  <body class="relative h-full <%= body_background_class %>" <%= htmx_body_attributes.html_safe %> >
-    <%= render :partial => "shared/partial_containers" %>
+  <body class="ui-body" <%= htmx_body_attributes.html_safe %> >
+    <%= render :partial => "h1rails/partials/partial_containers" %>
     <div id="main-content" class="h-full">
-      <% if use_bare_layout? %>
+      <% if renders_in_modal? %>
+        <%# Sometimes people open modal links in a new tab. 
+            In this scenario the modal will open anyway, so we shouldn't render the main content #%>
+      <% elsif use_bare_layout? %>
         <%= yield %>
       <% elsif @body_layout %> 
         <%= render "layouts/body/#{@body_layout}" %>

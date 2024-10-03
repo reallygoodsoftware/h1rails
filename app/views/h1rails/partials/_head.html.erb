@@ -1,0 +1,26 @@
+<title><%= page_title %></title>
+<%= csrf_meta_tags %>
+<%= csp_meta_tag %>
+<!-- Vendor Additions -->
+<%= render "h1rails/vendor/tailwind_lite" %>
+<%= render "h1rails/vendor/base_styles" %>
+<%= render "h1rails/vendor/htmx" %>
+<%= render "h1rails/vendor/mini" %>
+<%= render "h1rails/vendor/rhino" %>
+<%= render "h1rails/vendor/highlight" %> 
+<%= render "h1rails/vendor/dropzone" %>  
+<%= render "h1rails/vendor/google_fonts" %> 
+<!-- CSS -->
+<link href="/stylesheets/styles.css<%= cache_buster %>" rel="stylesheet">
+<link href="/stylesheets/base-styles-custom.css<%= cache_buster %>" rel="stylesheet">
+<!-- Javascript -->
+<script src="/js/custom.js<%= cache_buster %>" defer></script>
+<!-- Icons -->
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="<%= page_description %>">

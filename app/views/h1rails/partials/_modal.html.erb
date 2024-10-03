@@ -1,0 +1,56 @@
+<script>
+  function previewModal() {
+    MiniJS.window.modalLoading=true;
+    MiniJS.window.modalOpen=true;
+  }
+</script>
+
+<div class="ui-modal <%= modal_visible_class %>"  
+    id="modal-container" 
+    role="dialog" 
+    aria-modal="true" 
+    :click="if (event.target.className == '--wrapper-inner') {modalOpen=false}"
+    :class="modalOpen ? '--visible' : '' " >
+  <div class="--overlay" ></div>
+  <div class="--wrapper-outer" > 
+    <div class="--wrapper-inner">
+      <div id="modal-dialog" class="--dialog <%= view_transition_class %> <%= modal_size_class %>" >
+        <div :class="modalLoading ? 'hidden' : 'block'" >
+          <% if content_for?(:modal_content) %>
+            <%= yield :modal_content %>
+            <script>
+              modalOpen = true;
+              modalLoading = false;
+            </script>
+          <% elsif renders_in_modal? %>
+            <%= yield %>
+            <script>
+              modalOpen = true;
+              modalLoading = false;
+            </script>
+          <% end %>
+        </div>
+        <div class="hidden" :class="modalLoading ? 'block' : 'hidden'" >
+          <div class="--top">
+            <div class="flex justify-between w-full">
+              <div class="ui-titlepair">
+                <div class="--title">
+                  Loading...
+                </div>
+              </div>
+              <div class="ui-button --rounded" :click="modalOpen=false">
+                <%= inline_svg_tag('heroicons/x-mark.svg') %>
+              </div>
+            </div>
+          </div>
+          <div class="ui-shimmer">
+            <div class="--rect"></div>
+            <div class="--rect --width-.75"></div>
+            <div class="--rect --width-.5"></div>
+            <div class="--rect --width-.25"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

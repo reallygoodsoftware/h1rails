@@ -6,9 +6,12 @@ test:
   service: Disk
   root: <%= Rails.root.join("tmp/storage") %>
 
-digitalocean:
+r2:
   service: S3
-  access_key_id: <%= Rails.application.credentials.dig(:aws, :access_key_id) %>
-  secret_access_key: <%= Rails.application.credentials.dig(:aws, :secret_access_key) %>
-  region: us-east-1
-  bucket: your-bucket-name
+  endpoint: <%= ENV['R2_ENDPOINT'] %>
+  access_key_id: <%= ENV['R2_ACCESS_KEY_ID'] %>
+  secret_access_key: <%= ENV['R2_SECRET_ACCESS_KEY'] %>
+  bucket: <%= ENV['R2_BUCKET'] %>
+  region: auto
+  use_accelerate_endpoint: false
+  force_path_style: true

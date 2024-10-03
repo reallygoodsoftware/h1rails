@@ -1,0 +1,23 @@
+:root {
+  --ui-font-family-base: 'Inter', sans-serif;
+  --ui-font-family-headers: 'Plus Jakarta Sans', sans-serif;
+  --ui-button-border-width: 2px;
+  --ui-button-border-color: var(--ui-color-grey-200);
+  --ui-shared-border-radius: 10px;
+  --ui-shared-border-width: 2px;
+  --ui-shared-box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.1);
+  --ui-shared-padding-base: 1.25rem;
+  --ui-shared-padding-md: 0.75rem;
+  --ui-shared-link-color: #191919;
+  --ui-border-radius-buttons: var(--ui-shared-border-radius);
+}
+
+body {
+  background-color: #f8f8f8;
+}
+
+#main-content {
+  z-index: 1;
+  position: relative;
+}
+

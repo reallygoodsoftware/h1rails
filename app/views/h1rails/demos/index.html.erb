@@ -1,0 +1,76 @@
+<% @user = User.first %>
+<% if params[:close_modal] %>
+  <script>
+    MiniJS.window.modalOpen = false;
+  </script>
+<% end %>
+<div class="h-full flex flex-col items-center gap-y-8 py-8">
+  <div class="ui-titlepair">
+    <div class="--title">
+      Demos
+    </div>
+    <div class="--description">
+      These demos only cover functionality that relies on the backend. For more frontend utilities and patterns, visit the Docs.
+    </div>
+  </div>
+  <div class="ui-box w-full">
+    <div class="--top">
+      <div class="ui-titlepair">
+        <div class="--title">
+          Modals
+        </div>
+      </div>
+    </div>
+    <div class="ui-styled-text">
+      <%= Utilities.markdown_file_to_html("app/views/h1rails/demos/modal.md").html_safe %> 
+    </div>   
+    <a href="https://dietrails.com" class="ui-button --solid --motion-forward">
+      Read The Docs 
+      <%= inline_svg_tag("heroicons/arrow-right.svg") %>
+    </a>
+  </div>
+  <div class="ui-box w-full">
+    <div class="--top">
+      <div class="ui-titlepair">
+      <div class="--title">
+          Sidecar
+        </div>
+      </div>
+    </div>
+    <a class="ui-button" href="<%= demo_coffee_path(modal:true) %>">
+      Open a Sidecar
+    </a>
+  </div>
+  <div class="ui-box w-full">
+    <div class="--top">
+      <div class="ui-titlepair">
+        <div class="--title">
+          Toasts
+        </div>
+      </div>
+    </div>
+    <a class="ui-button" href="<%= demo_toast_path() %>">
+      Trigger a toast
+    </a>
+  </div>
+  <%= form_for @user, url: demo_user_form_path(@user), html: {class:"ui-box w-full"} do |f| %>
+    <div class="--top">
+      <div class="ui-titlepair">
+        <div class="--title">
+          Forms
+        </div>
+      </div>
+    </div>
+    <div class="ui-form">
+      <%= f.label :first_name %>
+      <%= f.text_field :first_name %>
+      <%= f.label :last_name %>
+      <%= f.text_field :last_name %>
+    </div>
+    <div class="--bottom">
+      <div class="flex w-full justify-end">
+        <%= f.submit "Sign Up", class: "ui-button --solid" %>
+      </div>
+    </div>
+  <% end %>
+</div>

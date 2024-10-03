@@ -1,0 +1,12 @@
+<%= render partial: "h1rails/partials/modal" %>
+<%= render partial: "h1rails/partials/toasts" %>
+
+<div id="right-sidebar" class="hidden bg-gray-700 bg-opacity-50 fixed top-0 bottom-0 right-0 left-0 flex justify-center items-center z-20" >
+  <div id="right-sidebar-inner" class="shadow bg-white fixed right-0 bottom-0 top-0 flex z-20" style="width:500px">
+    <div style="left:-40px" class="cursor-pointer absolute" _= "on click add .hidden to #right-sidebar">
+      <%= inline_svg_tag("heroicons/icon-x.svg",class:"w-10 h-10 text-white") %>
+    </div>
+    <div id="right-sidebar-content">
+    </div>
+  </div>
+</div>

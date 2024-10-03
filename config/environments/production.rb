@@ -101,10 +101,11 @@ Rails.application.configure do
 
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.perform_deliveries = true
+  
   config.action_mailer.delivery_method = :postmark
   config.action_mailer.postmark_settings = { :api_token => ENV.fetch('POSTMARK_API_PRODUCTION_KEY') }
   config.action_mailer.default_url_options = { host: ENV.fetch('BASE_HOST_URL') }
 
-  config.active_storage.service = :digitalocean
+  config.active_storage.service = :r2
 
 end
