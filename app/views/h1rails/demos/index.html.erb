@@ -32,18 +32,6 @@
   <div class="ui-box w-full">
     <div class="--top">
       <div class="ui-titlepair">
-      <div class="--title">
-          Sidecar
-        </div>
-      </div>
-    </div>
-    <a class="ui-button" href="<%= demo_coffee_path(modal:true) %>">
-      Open a Sidecar
-    </a>
-  </div>
-  <div class="ui-box w-full">
-    <div class="--top">
-      <div class="ui-titlepair">
         <div class="--title">
           Toasts
         </div>
@@ -52,6 +40,20 @@
     <a class="ui-button" href="<%= demo_toast_path() %>">
       Trigger a toast
     </a>
+  </div>
+
+  <div class="ui-box w-full text-left">
+    <div class="--top">
+      <div class="ui-titlepair">
+        <div class="--title">
+          Selects
+        </div>
+      </div>
+    </div>
+    <%= render "h1rails/elements/selects/with_search", 
+              options: User.all.map{|c| {value: c.id, label: c.first_name}}, 
+                value: 1,
+           field_name: "name" %>
   </div>
   <%= form_for @user, url: demo_user_form_path(@user), html: {class:"ui-box w-full"} do |f| %>
     <div class="--top">

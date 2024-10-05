@@ -4,6 +4,7 @@ H1 Rails is a Rails Boilerplate that follows [HTML First](https://html-first.com
 
 - It uses [htmx](https://htmx.org) for partial page updates instead of the Rails default — Turbo. [Why?](https://www.notion.so/H1-Rails-11445b4d9f42805c84fcced5a716043d?pvs=21)
 - It uses [Mini js](https://mini-js.com) for frontend sprinkles instead of the Rails default — Stimulus. [Why?](https://www.notion.so/H1-Rails-11445b4d9f42805c84fcced5a716043d?pvs=21)
+- It uses [Base Styles](https://base-styles.com) for UI components.
 
 ## Goal
 
@@ -11,7 +12,7 @@ The primary goal of H1 Rails, and the reason we put so much emphasis on reducing
 
 ## Batteries Included
 
-- As well as simpler defaults, H1 Rails also includes a comprehensive set of UI patterns that cover frontend-only things like icons and tooltips, but also integrated (frontend + backend) patterns like modals and toasts. For example:
+- H1 Rails also includes a comprehensive set of UI patterns that cover frontend-only things like icons and tooltips, but also integrated (frontend + backend) patterns like modals and toasts. For example:
     - Show a toast message by setting `flash[:toasts]` in your controller.
     - Load a view inside a modal by simply adding `before_action :renders_in_modal` to your controller.
     - Connect Dropzone on the frontend to ActiveStorage on the backend for beautiful, parallel file uploads.
@@ -22,21 +23,8 @@ The primary goal of H1 Rails, and the reason we put so much emphasis on reducing
 
 ## Documentation & Demos
 
-[H1 Rails Docs & Demos](https://www.notion.so/H1-Rails-Docs-Demos-11445b4d9f4280909a6cce799c3626c0?pvs=21)
-
-## Articles
-
-[“Thinking In Hypertext” - some tips for making the switch](https://www.notion.so/Thinking-In-Hypertext-some-tips-for-making-the-switch-11445b4d9f4280a48aa1c0fb1b51fb19?pvs=21)
-
-[How H1 Rails uses HTMX](https://www.notion.so/How-H1-Rails-uses-HTMX-11445b4d9f4280c88ca8f83ae4c35a2d?pvs=21)
-
-[H1 Rails Form Patterns](https://www.notion.so/H1-Rails-Form-Patterns-11445b4d9f4280ccbd51f8d7d32439f3?pvs=21)
-
-[Managing CSS in H1 Rails](https://www.notion.so/Managing-CSS-in-H1-Rails-11445b4d9f428043836dd59471392469?pvs=21)
-
-[A quick guide to state](https://www.notion.so/A-quick-guide-to-state-11445b4d9f42806caf05f9bd4bdcc438?pvs=21)
-
-[New To Rails? Start Here](https://www.notion.so/New-To-Rails-Start-Here-11445b4d9f4280fabb63cb7db66b863e?pvs=21)
+- Documentation is available at [h1rails.com](https://h1rails.com).
+- Demos are available at `/demos` in the app.
 
 ---
 

@@ -14,19 +14,20 @@
   New Category
   <%= inline_svg_tag("misc/spinner.svg",class:"shown-while-loading") %>
 </a>
-<%= form_for @user, url: demo_has_many_form_path(@user.id), html: {class:"ui-form"} do |form| %>
-  <%= form.fields_for :categories, @editable_categories do |item_form| %>
-    <div class="grid grid-cols-5 gap-4 mb-5" id="<%= dom_id(item_form.object) %>" hx-preserve="true">
+<%= form_for @user, url: demo_has_many_form_path(@user.id), html: {class:"ui-form"} do |user_form| %>
+  <%= user_form.fields_for :categories, @editable_categories do |nested_form| %>
+    <% category = nested_form.object %>
+    <div class="grid grid-cols-5 gap-4 mb-5" id="<%= dom_id(category) %>" hx-preserve="true">
       <div class="col-span-2">
-        <%= item_form.hidden_field :id %>
-        <%= item_form.text_field :title, placeholder: "Title" %>
+        <%= nested_form.hidden_field :id %>
+        <%= nested_form.text_field :title, placeholder: "Title" %>
       </div>
       <div class="col-span-2">
-        <%= item_form.text_field :description, placeholder: "Description" %>
+        <%= nested_form.text_field :description, placeholder: "Description" %>
       </div>
       <div class="col-span-1">
         <a class="ui-button" 
-          hx-delete="<%= demo_delete_category_path(item_form.object) %>" 
+          hx-delete="<%= demo_delete_category_path(category) %>" 
           hx-indicator="this">
           <%= inline_svg_tag("heroicons/trash-outline.svg") %>
           Delete
@@ -35,7 +36,7 @@
       </div>
     </div>
   <% end %>
-  <%= form.button class: "ui-button mt-3 --solid" do |button| %>
+  <%= user_form.button class: "ui-button mt-3 --solid" do |button| %>
     Save  
     <%= inline_svg_tag("misc/spinner.svg",class:"shown-while-loading") %>
   <% end %>

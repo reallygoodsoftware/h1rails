@@ -1,0 +1,36 @@
+<% input_placeholder ||= "Search..." %>
+
+<div :scope='
+    inputId=new Date().getTime()
+    options=<%= options.to_json(quirks_mode: true).html_safe %>;
+    filteredOptions = options;
+    selectedOption={}
+    highlightedOption=[];
+  '>
+  <input type="hidden" :name="<%= field_name %>" :value="scope.selectedOption?.value" />
+  <div class="ui-select" :class="scope.open ? '--open' : '' " >
+    <button :text="scope.selectedOption?.label" type="button" class="--trigger" 
+      :click="scope.open = !scope.open; 
+            document.getElementById(scope.inputId).focus(); ">
+      Select An Option
+    </button>
+    <div class="--drawer">
+      <input class="--searchbox" 
+            type="text" 
+            placeholder="<%= input_placeholder %>"
+            :id="scope.inputId" 
+            :change="
+              scope.filteredOptions = scope.options.filter(option =>
+                option.label.toLowerCase().includes(this.value.toLowerCase()) ||
+                option.value.toString().toLowerCase().includes(this.value.toLowerCase())
+              );
+            "
+        />
+      <div class="--options" :each="option, index in scope.filteredOptions" >
+        <button type="button" 
+          :press="scope.selectedOption = option; scope.open=false" 
+          :text="option.label" ></button>
+      </div>
+    </div>
+  </div>
+</div>
