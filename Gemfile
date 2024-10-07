@@ -20,6 +20,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'inherited_resources'
 gem 'activeadmin', '~> 3.2', '>= 3.2.2'
 gem 'arctic_admin'
+gem "aws-sdk-s3", require: false
 gem 'activeadmin_addons'
 gem 'sassc-rails', '~> 2.1', '>= 2.1.1' # Needed by arctic admin
 gem 'httparty'
