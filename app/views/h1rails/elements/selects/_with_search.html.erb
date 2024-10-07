@@ -7,7 +7,7 @@
     selectedOption={}
     highlightedOption=[];
   '>
-  <input type="hidden" :name="<%= field_name %>" :value="scope.selectedOption?.value" />
+  <input type="hidden" name="<%= field_name %>" :value="scope.selectedOption?.value" />
   <div class="ui-select" :class="scope.open ? '--open' : '' " >
     <button :text="scope.selectedOption?.label" type="button" class="--trigger" 
       :click="scope.open = !scope.open; 

@@ -1,0 +1,48 @@
+
+<div :scope="
+  addresses=[];
+  selectedLocation={};
+  showResults=false;
+  searchQuery=''
+">
+
+  <input type="hidden" :value="JSON.stringify(scope.selectedLocation)" name="<%= field_name %>" />
+  <input type="text" 
+        placeholder="Search for a location..." 
+        class="w-full ui-search-input"
+        :value="scope.searchQuery"
+        :change="
+              scope.searchQuery = this.value;
+              if (scope.searchQuery == '' ) {
+                scope.showResults = false;
+              } else {
+                fetch(`https://api.radar.io/v1/search/autocomplete?query=${encodeURIComponent(this.value)}`, {
+                  method: 'GET',
+                  headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': '<%= ENV['RADAR_PUBLISHABLE_KEY'] %>'
+                  }
+                })
+                .then(response => response.json())
+                .then(data => {
+                  console.log(data.addresses);
+                  scope.addresses = data.addresses;
+                  scope.showResults = true;
+                })
+                .catch(error => console.error('Error:', error));
+              }
+            ">
+  <div :class="scope.showResults ? '' : 'hidden' " class="hidden ui-box mt-4" style="max-height:200px;overflow-y:scroll">
+    <div :each="address, index in scope.addresses" >
+      <button type="button" 
+        class="block py-2 hover:bg-gray-100 w-full rounded px-2"
+        :press="scope.selectedLocation = address;
+                scope.showResults=false;
+                scope.searchQuery=''
+                " 
+        :text="address.formattedAddress" >
+      </button>
+    </div>
+  </div>
+
+</div>
