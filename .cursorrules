@@ -1,39 +1,141 @@
 # Cursor Rules for Code Writing
 
-## General Guidelines
+# General
 
-1. Always check existing files before suggesting new code or modifications.
-2. Ensure all suggested routes exist in the `routes.rb` file.
-3. When suggesting icons, only suggest icons that exist in `/app/assets/icons/heroicons` and `/app/assets/icons/misc`.
-3. When working with HTML and ERB files, only use tailwind classes or classes that are defined in `vendor/base-styles/0.0.4.css`.
-4. Include loading spinner icons with the class "shown-while-loading" for all buttons.
-5. Use icons from the Heroicons set for all buttons.
+## ALWAYS be aware of the exact database structure and data attributes from db/schema.rb. When generating controllers and views, NEVER include attributes that don't exist in /db/schema.rb.
 
-## Modals
+For example if the schema.rb shows this
+
+```
+  create_table "users", force: :cascade do |t|
+    t.string "first_name", default: "", null: false
+  end
+```
+
+Never try to output `@user.last_name` in a view, because `last_name` doesn't exist in the schema.
+
+# Routes
+
+- Neve use the `resources :myresource` pattern in routes. Always use the explicit patterns shown below. 
+
+Add new get routes like this (swap "events" for the relevant model)
+
+```
+get '/events', 
+  to: 'events#index', 
+  as: 'events'
+```
+
+Add new start routes like this (swap "events" for the relevant model)
+
+```
+get '/events/start', 
+  to: 'events#start', 
+  as: 'start_event'
+```
+
+Add new combined get/post routes like this (swap "events" for the relevant model)
+
+```
+match '/events/:shortcode/edit', 
+  to: 'events#edit', 
+  as: 'edit_event', 
+  via: [:get,:post]
+```
+
+# Controllers
+
+A start controller action should look like this
+
+```
+def start 
+  @event = Event.new
+  if @event.save(validate:false)
+    redirect_to edit_event_path(@event.shortcode)
+  end
+end
+```
+
+An edit controller action should look like this.
+
+```
+def edit
+  @event = Event.find_by(shortcode:params[:shortcode])
+  if request.post?
+    @event.update(event_params)
+    if @event.save
+      flash.now[:toasts] = [
+        { title: "Event Saved", message: "We've saved your event"}
+      ]
+    end
+  end
+end
+```
+
+If a controller action should respond as a modal, add a before action like so:
+
+```
+before_action :renders_in_modal
+```
+
+# Commands
+
+On hearing "make this a modal" or "This should be a modal" make sure the following structure is added
+
+At the top:
+
+```
+<div class="--modal-top-section">
+  <div class="flex justify-between w-full">
+    <div class="ui-titlepair">
+      <div class="--title">
+        The History of Coffee
+      </div>
+    </div>
+    <div class="ui-button --rounded --minimal" :click="modalOpen=false;modalLoading=true">
+      <%= inline_svg_tag('heroicons/x-mark.svg') %>
+    </div>
+  </div>
+</div>
+```
+
+Inside the form at the bottom:
+
+```
+<div class="--modal-bottom-section">
+  <div class="flex w-full justify-end">
+    <%= f.button class: "ui-button --solid" do |button| %>
+      Continue  
+      <%= inline_svg_tag("misc/spinner.svg", class:"shown-while-loading") %>
+    <% end %>
+  </div>
+</div>
+```
+
+# Views
+
+### The only css classes that should exist in html.erb files should be either A) Tailwind classes, or B) Classes that appear in base-styles.html.erb
+
+### The only paths that should exist in html. erb files should exist in config/routes.rb. Before writing views, check the file at config/routes.rb - only write paths that exist in this file into the view. 
 
 - A view that loads in a modal should have a title and a close modal button. See the first 13 or so lines of `app/views/h1rails/demos/coffee.html.erb` for an example.
 
-## Form Controllers
 
-- When generating controllers that serve forms, do the follwoing
-  - One action for both get and post/patch requests.
+## Icons
+
+1. When suggesting icons, only suggest icons that exist in `/app/assets/icons/heroicons` and `/app/assets/icons/misc`.
+3. Include loading spinner icons with the class "shown-while-loading" for all buttons.
+4. Use icons from the Heroicons set for all buttons.
+
+
+
+## Form Controllers
+- When generating controllers that serve forms, do the following:
+  - Create a controller action at `/start` which creates the initial object.
+  - Creat a controller action for edit which responds to both get and post methods.
   - On successful save, redirect to the most relevant path and include `close_modal:true` in the params.
   - On successful save, create a toast notification. See the `demos_controller.rb` file for an example.
 
-```
-  def form_action
-    @user = User.first
-    if request.patch?
-      @user.validation_set = "step1"
-      if @user.update(user_params)
-        flash[:toasts] = [
-          { title: "Changes Saved", message: "You saved the changes", type: "success" },
-        ]
-        redirect_to demos_path(close_modal:true)
-      end
-    end
-  end
-```
 
 ## Form Views
 
@@ -42,7 +144,7 @@
 - Basically, use the following structure to start forms.
 
 ```
-<%= form_for @pet, url: edit_pet_path(@pet), html: { class: "ui-form" } do |form| %>
+<%= form_for @pet, url: edit_pet_path(@pet), method: "{method}", html: { class: "ui-form" } do |form| %>
 ```
 
 ## CSS Classes from base-styles/0.0.4.css
