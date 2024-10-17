@@ -1,7 +1,9 @@
 <% @user = User.first %>
 <% if params[:close_modal] %>
   <script>
-    MiniJS.window.modalOpen = false;
+    if (MiniJS?.window) {
+      MiniJS.window.modalOpen = false;
+    }
   </script>
 <% end %>
 <div class="h-full flex flex-col items-center gap-y-8 py-8">
@@ -86,6 +88,45 @@
     <% end %>
   </div>
 
+  <div class="ui-box w-full">
+    <div class="--top">
+      <div class="ui-titlepair">
+        <div class="--title">
+          Charts
+        </div>
+      </div>
+    </div>
+    <canvas id="myChart"></canvas>
+    <script>
+    
+      ctx = document.getElementById('myChart');
+      
+      if (ctx.chart) { // If chart is reloaded with htmx, destroy it
+        ctx.chart.destroy();
+      }
+
+      new Chart(ctx, {
+        type: 'bar',
+        data: {
+          labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+          datasets: [{
+            label: '# of Votes',
+            data: [12, 19, 3, 5, 2, 3],
+            borderWidth: 1
+          }]
+        },
+        options: {
+          scales: {
+            y: {
+              beginAtZero: true
+            }
+          }
+        }
+      });
+    </script>
+  
+  </div>
+
   <%= form_for @user, url: demo_user_form_path(@user), html: {class:"ui-box w-full"} do |f| %>
     <div class="--top">
       <div class="ui-titlepair">
@@ -106,4 +147,5 @@
       </div>
     </div>
   <% end %>
+
 </div>
