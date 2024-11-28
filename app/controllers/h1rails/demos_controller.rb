@@ -6,6 +6,15 @@ class H1rails::DemosController < ApplicationController
   before_action -> { set_view_transition_style("slide-from-right") }, only: [:multistep_step2]
 
   skip_before_action :verify_authenticity_token, :only => [:delete_category]
+
+  # fix cors issues
+  after_action :set_access_control_headers, only: [:search]
+
+  def set_access_control_headers
+    headers['Access-Control-Allow-Origin'] = '*'
+    headers['Access-Control-Allow-Methods'] = 'GET'
+    headers['Access-Control-Allow-Headers'] = 'Content-Type'
+  end
   
   def index
   end
@@ -26,6 +35,13 @@ class H1rails::DemosController < ApplicationController
         redirect_to demos_path(close_modal:true)
       end
     end 
+  end
+
+  def search 
+    fruits = ["Apple", "Banana", "Cherry", "Grape", "Orange", "Pear", "Blueberry", "Kiwi"]
+    results = fruits.select { |fruit| fruit.downcase.include?(params[:query].downcase) }
+    sleep 0.5
+    render json: results.map{ |result| { value: result.downcase, name: result } }
   end
 
   def new_category
@@ -70,6 +86,9 @@ class H1rails::DemosController < ApplicationController
         redirect_to demos_path(close_modal:true)
       end
     end
+  end
+
+  def render_partial
   end
 
   def links 

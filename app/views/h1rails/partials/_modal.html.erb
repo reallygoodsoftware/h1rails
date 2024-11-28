@@ -4,7 +4,13 @@
     MiniJS.window.modalOpen=true;
   }
 </script>
-
+<% if params[:close_modal] %>
+  <script>
+    if (MiniJS?.window) {
+      MiniJS.window.modalOpen = false;
+    }
+  </script>
+<% end %>
 <div class="ui-modal <%= modal_visible_class %>"  
     id="modal-container" 
     role="dialog" 
@@ -12,7 +18,7 @@
     :click="if (event.target.className == '--wrapper-inner') {modalOpen=false}"
     :class="modalOpen ? '--visible' : '' " >
   <div class="--overlay" ></div>
-  <div class="--wrapper-outer" > 
+  <div class="--wrapper-outer" >
     <div class="--wrapper-inner">
       <div id="modal-dialog" class="--dialog <%= view_transition_class %> <%= modal_size_class %>" >
         <div :class="modalLoading ? 'hidden' : 'block'" >

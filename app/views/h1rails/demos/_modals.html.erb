@@ -1,0 +1,26 @@
+<div class="ui-box w-full">
+  <div class="--top">
+    <div class="ui-titlepair">
+      <div class="--title">
+        Modals
+      </div>
+    </div>
+  </div>
+  <div>
+    <a class="ui-button" href="<%= demo_coffee_path %>" :click="previewModal()"> Open Modal</a>
+    <a class="ui-button" href="<%= demo_coffee_path %>?modal_size=xs" :click="previewModal()">Open Modal (xs)</a>
+    <a class="ui-button" href="<%= demo_coffee_path %>?modal_size=sm" :click="previewModal()">Open Modal (sm)</a>
+    <a class="ui-button" href="<%= demo_coffee_path %>?modal_size=lg" :click="previewModal()">Open Modal (lg)</a>
+  </div>
+  <div class="mt-4">
+    <a class="ui-button no-style" href="<%= demo_multistep_start_path %>" :click="previewModal()">Open Form Flow In Modal</a>
+    <a class="ui-button no-style" href="<%= demo_has_many_form_path %>" :click="previewModal()">Open Has Many Form Flow In Modal</a>
+  </div>
+  <div class="--bottom flex">
+    <div></div>
+    <a target="_blank" href="https://docs.h1rails.com/h1rails/modals" class="ui-button --solid --motion-upward">
+      Read The Docs 
+      <%= inline_svg_tag("heroicons/arrow-top-right-on-square.svg") %>
+    </a>
+  </div>
+</div>

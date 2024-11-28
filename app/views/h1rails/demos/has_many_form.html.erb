@@ -12,9 +12,10 @@
 </div>
 <a href="<%= demo_new_category_path %>" class="ui-button --solid mb-3" hx-indicator="this">
   New Category
+  <%= inline_svg_tag("heroicons/plus.svg") %>
   <%= inline_svg_tag("misc/spinner.svg",class:"shown-while-loading") %>
 </a>
-<%= form_for @user, url: demo_has_many_form_path(@user.id), html: {class:"ui-form"} do |user_form| %>
+<%= form_with model: @user, url: demo_has_many_form_path(@user.id), html: {class:"ui-form"} do |user_form| %>
   <%= user_form.fields_for :categories, @editable_categories do |nested_form| %>
     <% category = nested_form.object %>
     <div class="grid grid-cols-5 gap-4 mb-5" id="<%= dom_id(category) %>" hx-preserve="true">
@@ -23,7 +24,10 @@
         <%= nested_form.text_field :title, placeholder: "Title" %>
       </div>
       <div class="col-span-2">
-        <%= nested_form.text_field :description, placeholder: "Description" %>
+        <better-select>
+          <%= nested_form.select :description, options_for_select([["Dollar", "$"], ["Kroner", "DKK"]]) %>
+        </better-select>
+        <%- nested_form.text_field :description, placeholder: "Description" %>
       </div>
       <div class="col-span-1">
         <a class="ui-button" 
@@ -38,6 +42,7 @@
   <% end %>
   <%= user_form.button class: "ui-button mt-3 --solid" do |button| %>
     Save  
+    <%= inline_svg_tag("heroicons/check.svg") %>
     <%= inline_svg_tag("misc/spinner.svg",class:"shown-while-loading") %>
   <% end %>
 <% end %>

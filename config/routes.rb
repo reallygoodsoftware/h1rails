@@ -5,6 +5,8 @@ Rails.application.routes.draw do
 
   root to: "app#index"
 
+  get "/search", to: "h1rails/demos#search"
+
   draw :h1_demo_routes
 
   devise_for :users, controllers: {

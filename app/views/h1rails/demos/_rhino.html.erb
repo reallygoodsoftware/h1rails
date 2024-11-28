@@ -1,0 +1,17 @@
+<div class="ui-box w-full">
+  <div class="--top">
+    <div class="ui-titlepair">
+      <div class="--title">
+        Rich Text Editor
+      </div>
+    </div>
+  </div>
+  <%= form_for @user, url: demo_user_form_path(@user), html: { class: "ui-form" } do |f| %>
+    <%= f.hidden_field :first_name, 
+            value: f.object.first_name.try(:to_trix_html) || f.object.first_name %>
+    <rhino-editor input="<%= f.field_id(:first_name) %>"></rhino-editor>
+    <div class="mt-4">
+      <%= f.submit "Save Biography", class: "ui-button --solid" %>
+    </div>
+  <% end %>
+</div>

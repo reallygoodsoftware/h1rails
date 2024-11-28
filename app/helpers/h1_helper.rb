@@ -1,7 +1,7 @@
 module H1Helper
 
   def page_title
-    @page_title ||= "Diet Rails"
+    @page_title ||= "H1 Rails"
   end
 
   def page_description
