@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   get "/search", to: "h1rails/demos#search"
 
   draw :h1_demo_routes
+  draw :h1_expo_routes 
 
   devise_for :users, controllers: {
     sessions:       'users/sessions',
