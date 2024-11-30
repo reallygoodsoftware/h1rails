@@ -37,6 +37,21 @@ module H1Rails
     def use_bare_layout
       @use_bare_layout = true
     end
+
+    def authenticate_user!
+
+      # Clear any session based auth if there's an auth header present
+      if request.headers["Authorization"].present?
+        session.clear
+      end
+    
+      current_user = warden.authenticate(scope: :user, strategy: :auth_token)
+
+      # If neither authentication method succeeds, force the user to log in
+      unless current_user
+        redirect_to new_user_session_path, alert: 'Please log in to continue', status: :unauthorized
+      end
+    end
   end
 
 end

@@ -118,6 +118,9 @@ GEM
     concurrent-ruby (1.1.10)
     crass (1.0.6)
     csv (3.3.0)
+    delayed (0.5.5)
+      activerecord (>= 5.2)
+      concurrent-ruby
     devise (4.9.2)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
@@ -137,10 +140,6 @@ GEM
     front_matter_parser (1.0.1)
     globalid (1.0.0)
       activesupport (>= 5.0)
-    hamlit (3.0.1)
-      temple (>= 0.8.2)
-      thor
-      tilt
     has_scope (0.8.0)
       actionpack (>= 5.2)
       activesupport (>= 5.2)
@@ -288,7 +287,6 @@ GEM
     sqlite3 (1.6.9-x86_64-darwin)
     sqlite3 (1.6.9-x86_64-linux)
     strscan (3.0.4)
-    temple (0.8.2)
     thor (1.2.1)
     tilt (2.0.11)
     timeout (0.3.0)
@@ -321,10 +319,10 @@ DEPENDENCIES
   aws-sdk-s3
   bootsnap
   bullet
+  delayed
   devise
   figaro
   front_matter_parser
-  hamlit
   httparty
   inherited_resources
   inline_svg

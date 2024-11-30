@@ -64,7 +64,12 @@ module H1Helper
 
   def htmx_body_attributes
     disable = request.headers["Disable-Body-Htmx"]
+    return "" if from_h1_expo?
     return "" if disable == "true"
     return "hx-boost='true' hx-target='#main-content' hx-select='#main-content'".html_safe
+  end
+
+  def from_h1_expo?
+    true if request.headers['X-Source'] == "h1expo"
   end
 end
