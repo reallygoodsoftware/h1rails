@@ -21,7 +21,11 @@ scope "/demos" do
     as: "demo_user_form", 
     via: [:get, :patch]
 
+  get "/stream_chat" => "streaming#stream_chat",
+    as: "demo_stream_chat", defaults: { format: :json }
+
   get "/:partial_name" => "h1rails/demos#render_partial",
     as: "demo_partial"
+
     
 end

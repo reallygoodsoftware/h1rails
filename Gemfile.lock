@@ -129,6 +129,7 @@ GEM
       warden (~> 1.2.3)
     digest (3.1.0)
     erubi (1.11.0)
+    event_stream_parser (1.0.0)
     ffi (1.15.5)
     figaro (1.2.0)
       thor (>= 0.14.0, < 2)
@@ -321,6 +322,7 @@ DEPENDENCIES
   bullet
   delayed
   devise
+  event_stream_parser
   figaro
   front_matter_parser
   httparty

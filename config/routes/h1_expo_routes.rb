@@ -7,3 +7,8 @@ namespace :api do
     post '/users/logout' => 'users#logout'
   end
 end
+
+scope "/app" do 
+  get "/" => "h1rails/demos#app", as: "app"
+  get "/inner" => "h1rails/demos#app_inner", as: "app_inner"
+end

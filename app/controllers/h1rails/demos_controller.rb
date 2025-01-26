@@ -7,6 +7,7 @@ class H1rails::DemosController < ApplicationController
 
   skip_before_action :verify_authenticity_token, :only => [:delete_category]
 
+
   # fix cors issues
   after_action :set_access_control_headers, only: [:search]
 
@@ -89,6 +90,7 @@ class H1rails::DemosController < ApplicationController
   end
 
   def render_partial
+    render params[:partial_name]
   end
 
   def links 

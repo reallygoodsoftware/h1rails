@@ -1,0 +1,13 @@
+<div hx-disinherit="*">
+
+  <div 
+        hx-ext="sse" 
+        sse-connect="<%= demo_stream_chat_path %>" 
+        sse-swap="message"
+        sse-swap-style="append"
+        hx-swap="beforeend"
+        sse-close="complete">
+      The response is: 
+  </div>
+
+</div>
