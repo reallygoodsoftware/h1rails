@@ -1,6 +1,6 @@
 const { useState, useEffect } = React;
 
-function Button({ label }) {
+function Time({ label }) {
   const [time, setTime] = useState(new Date());
   
   useEffect(() => {
@@ -12,8 +12,13 @@ function Button({ label }) {
   }, []);
   
   return (
-    <button>
-      {label} (Current time: {time.toLocaleTimeString()})
-    </button>
+    <div className="ui-box my-3">
+      <div className="ui-titlepair">
+        <div className="--title">Time</div>
+      </div>
+      <button>
+        {label} (Current time: {time.toLocaleTimeString()})
+      </button>
+    </div>
   );
 }
