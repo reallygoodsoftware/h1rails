@@ -4,10 +4,10 @@ scope "/demos" do
   get "/coffee"  => "h1rails/demos#coffee", as: "demo_coffee"
   match "/multistep"  => "h1rails/demos#multistep_start", 
     as: "demo_multistep_start", 
-    via: [:get,:patch]
+    via: [:get,:patch, :post]
   match "/multistep_step2"  => "h1rails/demos#multistep_step2", 
     as: "demo_multistep_step2", 
-    via: [:get,:patch]
+    via: [:get,:patch, :post]
   match "/has_many_form" => "h1rails/demos#has_many_form", 
     as: "demo_has_many_form", 
     via: [:get,:patch]

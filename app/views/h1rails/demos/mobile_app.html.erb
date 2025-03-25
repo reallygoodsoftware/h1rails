@@ -1,0 +1,45 @@
+<div class="flex h-full items-center justify-center">
+  <div class="ui-box w-96 max-w-96 rounded p-5">
+    <div class="flex flex-col space-y-3">
+      <div class="ui-button flex justify-between --motion-forward"
+        data-native-function='{"name": "requestPushPermission", "data": {"source": "settings-page", "tab": "webviewOne"}}'>
+        Trigger Push Notification
+        <%= inline_svg_tag("heroicons/arrow-right.svg", class: "w-4 h-4 ml-2") %>
+      </div>
+      <div class="ui-button flex justify-between --motion-forward"
+        data-native-function='{"name": "switchTab", "data": {"path": "/webviewTwo", "reload": true}}'>
+        Switch Tab to explore
+        <%= inline_svg_tag("heroicons/arrow-right.svg", class: "w-4 h-4 ml-2") %>
+      </div>
+      <a class="ui-button flex justify-between --motion-forward" href="<%= new_user_session_path(presentation: "modal") %>" >
+        User Sign In
+        <%= inline_svg_tag("heroicons/arrow-right.svg", class: "w-4 h-4 ml-2") %>
+      </a>
+      <input type="date" class="ui-input" />
+      <% if Rails.env.development? %>
+        <a hx-boost="false" class="ui-button flex justify-between --motion-forward" href="<%= new_admin_user_session_path %>">
+          Admin User Sign In
+          <%= inline_svg_tag("heroicons/arrow-right.svg", class: "w-4 h-4 ml-2") %>
+        </a>
+        <a class="ui-button flex justify-between --motion-forward" href="https://dietrails.com" target="_blank" data-stacker>
+          Docs
+          <%= inline_svg_tag("heroicons/arrow-right.svg", class: "w-4 h-4 ml-2") %>
+        </a>
+        <a class="ui-button flex justify-between --motion-forward" href="<%= demos_path %>" >
+          Examples
+          <%= inline_svg_tag("heroicons/arrow-right.svg", class: "w-4 h-4 ml-2") %>
+        </a>
+      <% end %>
+      <%= form_for User.new, url: demo_multistep_start_path, html: {class: "ui-form"} do |f| %>
+          <div class="ui-floating-input mt-4">
+            <%= f.text_field :first_name %>
+            <%= f.label :first_name, class:"--label" %>
+          </div>
+        <button class="ui-button flex justify-between --motion-forward mt-4">
+          Go
+          <%= inline_svg_tag("heroicons/arrow-right.svg", class: "w-4 h-4 ml-2") %>
+        </button>
+      <% end %>
+    </div>
+  </div>
+</div>

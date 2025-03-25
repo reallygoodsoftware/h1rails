@@ -100,8 +100,6 @@ class BetterSelect extends HTMLElement {
     const dropdownContainer = this.querySelector('.--dropdown');
     const searchInput = this.querySelector('.--input');
     const dropdownList = this.querySelector('.--option-list');
-  
-    console.log('dfjhk', select)
 
     // Copy select properties to hidden input
     hiddenSelect.name = select.name;

@@ -8,7 +8,7 @@ namespace :api do
   end
 end
 
-scope "/app" do 
-  get "/" => "h1rails/demos#app", as: "app"
+scope "/mobile-app" do 
+  get "/" => "h1rails/demos#mobile_app", as: "app"
   get "/inner" => "h1rails/demos#app_inner", as: "app_inner"
 end

@@ -776,6 +776,16 @@
       width: 200px;
     }
   }
+
+  .ui-tabnav {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    & > .--active {
+      border-bottom-width: var(--ui-shared-border-width);
+      border-color: var(--ui-color-primary);
+    }
+  }
   
   
   .ui-toasts {
