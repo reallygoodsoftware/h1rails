@@ -1,9 +1,9 @@
 # H1 Rails
 
-H1 Rails (HTML First Rails) is a boilerplate for building beautiful polished web apps with: 
+H1 Rails (HTML First Rails) is a boilerplate for building slick, polished web apps.
 
-- **Components Included**: For the most common UI & UX patterns & challenges (modals, tabs, toasts, tooltips etc.).
-- **Lower Complexity**: We've amended some of the parts of Rails that tend to have a higher learning curve (without degrading experience). 
+- **Low Floor, High Ceiling**:  Extremely easy for beginners to get started with minimal setup and simple patterns based on the languages you already know (html, css, js).
+- **Batteries Included**: For the most common UI & UX patterns & challenges (modals, tabs, toasts, tooltips etc.).
  
 ### Who It's For
 - **Existing Rails Developers** who want *even more* simplicity, and/or more batteries included (solutions to common UI & UX challenges).
@@ -11,9 +11,9 @@ H1 Rails (HTML First Rails) is a boilerplate for building beautiful polished web
  
 
 ### Enhancements & Simplifications
-- H1 Rails has out-of-the-box support for common UI patterns like modals, toasts, tooltips, forms and other UI patterns, powered primarily by [Base Styles](https://github.com/reallygoodsoftware/base-styles). 
+- Out-of-the-box support for common UI patterns like modals, toasts, tooltips, forms and other UI patterns, powered primarily by [Base Styles](https://github.com/reallygoodsoftware/base-styles). 
 - **No Build**: By default, we store CSS and javascript libraries in the `/public` folder. This removes an entire category of debugging & deployment complexity. 
-- **HTMX instead of Hotwire**: We have found the abstractions in HTMX to be a better fit than Hotwire for many use cases. We also have several best practices docs for how to achieve common UX patterns using HTMX (multi step forms, type to search, etc.)
+- **HTMX instead of Hotwire/Turbo**: We also have several best practices docs for how to achieve common UX patterns using HTMX (multi step forms, type to search, etc.)
 
 
 
