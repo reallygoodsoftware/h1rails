@@ -2,8 +2,10 @@
 
 H1 Rails (HTML First Rails) is a boilerplate for building polished web apps with minimal complexity. It's built for:
  
-- **Developers who are new to Rails** as the most approachable way to explore Ruby & Rails ideas without getting bogged down in some of the areas with a high learning curve (Import maps, Hotwire, Stimulus).
-- **Existing Rails Developers** who want *even more* simplicity, or who aren't fully sold on some of Rails abstractions like Hotwire, Turbo, or Stimulus. 
+### Who It's For
+- **Existing Rails Developers** who want *even more* simplicity, and more batteries included (solutions to common UI & UX challenges).
+- **Developers new to Rails** as the most approachable way to explore Ruby & Rails ideas without getting bogged down in some of the areas with a high learning curve (Import maps, Hotwire, Stimulus).
+ 
 
 ### Enhancements
 - H1 Rails has out-of-the-box support for common UI patterns like modals, toasts, tooltips, forms and other UI patterns, powered primarily by [Base Styles](https://github.com/reallygoodsoftware/base-styles). 
