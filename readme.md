@@ -1,9 +1,9 @@
 # H1 Rails
 
-H1 Rails (HTML First Rails) is a boilerplate for building beautiful polished web apps which has:
+H1 Rails (HTML First Rails) is a boilerplate for building beautiful polished web apps with: 
 
+- **Components Included**: For the most common UI & UX patterns & challenges (modals, tabs, toasts, tooltips etc.).
 - **Lower Complexity**: We've amended some of the parts of Rails that tend to have a higher learning curve (without degrading experience). 
-- **More Power**: We've included patterns for many common UI & UX patterns (read on for more).
  
 ### Who It's For
 - **Existing Rails Developers** who want *even more* simplicity, and/or more batteries included (solutions to common UI & UX challenges).
