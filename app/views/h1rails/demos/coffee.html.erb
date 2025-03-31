@@ -1,12 +1,12 @@
 
 <div class="--modal-top-section">
   <div class="flex justify-between w-full">
-    <div class="ui-titlepair">
+    <div class="ui-titlepair --xl">
       <div class="--title">
         The History of Coffee
       </div>
     </div>
-    <div class="ui-button --rounded --minimal" :click="modalOpen=false;modalLoading=true">
+    <div class="ui-button --rounded --minimal" onclick="closeModal('coffee_from_url')">
       <%= inline_svg_tag('heroicons/x-mark.svg') %>
     </div>
   </div>
@@ -32,10 +32,12 @@ Today, coffee is one of the world's most popular beverages, with millions of peo
 
 </div>
 
+<a href="<%= demo_tea_path %>" hx-get="<%= demo_tea_path %>" hx-target=".--modal-content">Tea Stuff </a>
+
 <div class="--modal-bottom-section">
   <div class="flex justify-between w-full">
     <span></span>
-    <div class="ui-button --rounded" :click="modalOpen=false">
+    <div class="ui-button --rounded" onclick="closeModal('urlcontent')">
       Close
     </div>
   </div>

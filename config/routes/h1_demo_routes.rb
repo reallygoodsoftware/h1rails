@@ -1,7 +1,15 @@
 scope "/demos" do
 
+  get "/demos/stimulus", to: "h1rails/demos/stimulus#index"
+  get "/demos/stimulus/coffee", to: "h1rails/demos/stimulus#coffee"
+  post "/demos/stimulus/trigger_toast", to: "h1rails/demos/stimulus#trigger_toast"
+  get '/demos/stimulus/tab/:tab',
+    to: 'h1rails/demos/stimulus#tab_content',
+    as: 'stimulus_demo_tab'
+
   get "/"          => "h1rails/demos#index", as: "demos"
   get "/coffee"  => "h1rails/demos#coffee", as: "demo_coffee"
+  get "/tea"  => "h1rails/demos#tea", as: "demo_tea"
   match "/multistep"  => "h1rails/demos#multistep_start", 
     as: "demo_multistep_start", 
     via: [:get,:patch, :post]
@@ -27,5 +35,4 @@ scope "/demos" do
   get "/:partial_name" => "h1rails/demos#render_partial",
     as: "demo_partial"
 
-    
 end

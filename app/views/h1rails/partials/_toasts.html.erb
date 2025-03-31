@@ -1,4 +1,4 @@
-<div id="toasts" hx-swap="outerHTML" hx-swap-oob="<%= 'true' if flash[:toasts] %>">
+<div id="toasts" hx-swap-oob="<%= 'true' if flash[:toasts] %>">
   
   <script>
     toasts = <%= flash[:toasts] ? flash[:toasts].to_json.html_safe : [] %> 

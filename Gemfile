@@ -35,3 +35,6 @@ gem 'liquid'
 gem 'postmark-rails'
 gem 'delayed'
 gem 'event_stream_parser'
+gem "importmap-rails", "~> 2.1"
+
+gem "stimulus-rails", "~> 1.3"

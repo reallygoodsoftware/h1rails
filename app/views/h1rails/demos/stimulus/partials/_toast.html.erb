@@ -1,0 +1,23 @@
+<div id="toast_container" data-controller="toast">
+   <div class="ui-toasts">
+    <% flash.each do |key, value| %>
+      <div class="--toast" role="alert">
+        <div class="--wrapper">
+          <div class="--content">
+            <div class="--dismiss">
+              <%= inline_svg_tag("heroicons/x-mark.svg") %>
+            </div>
+            <span class="--title">
+              <%= key %>
+            </span>
+            <span class="--message">
+              <%= value %>
+            </span>
+          </div>
+        </div>
+      </div>
+    <% end %>
+
+    <% flash.clear %>
+  </div>
+</div>

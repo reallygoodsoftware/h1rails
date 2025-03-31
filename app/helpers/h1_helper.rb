@@ -70,6 +70,7 @@ module H1Helper
   end
 
   def from_h1_expo?
-    true if request.headers['X-Source'] == "h1expo"
+    # disable if user agent is fam-ai-mobile-app
+    true if request.user_agent.include?("h1expo")
   end
 end

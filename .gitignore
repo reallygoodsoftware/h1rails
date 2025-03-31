@@ -17,6 +17,7 @@
 /tmp/pids/*
 !/tmp/pids/
 !/tmp/pids/.keep
+.keep
 
 
 /public/assets
@@ -30,3 +31,6 @@
 /node_modules
 
 /storage/*
+
+.DS_Store
+db/development.sqlite3

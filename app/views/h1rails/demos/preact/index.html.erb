@@ -1,0 +1,47 @@
+<% @user = User.first %>
+<div class="ui-container --sm">
+  <div class="h-full flex flex-col items-center gap-y-8  --sm py-8">
+    <div class="ui-titlepair">
+      <div class="--title">
+        Demos
+      </div>
+      <div class="--description">
+        These demos only cover functionality that relies on the backend. For more frontend utilities and patterns, visit the 
+        <a href="https://docs.h1rails.com/h1rails">Docs</a>.
+      </div>
+    </div>
+
+
+    <div style="max-width: 300px;margin: 0 auto" class="p-5">
+      
+      <div id="coffee" class="hidden">
+        About Coffee
+        <button onclick="closeModal('cof')">Close cof</button>
+        <button onclick="launchModal({
+                      selector: '#coffee', 
+                      size: 'md'})" 
+              class="ui-button --solid --motion-forward mr-4 mb-4">
+        URL Content (Medium)
+      </button>
+      </div>
+      
+      <button onclick="launchModal({
+                      selector: '#coffee', 
+                      id: 'cof',
+                      size: 'md'})" 
+              class="ui-button --solid --motion-forward mr-4 mb-4">
+        Hidden Content 
+      </button>
+
+      <button onclick="launchModal({
+                      url: '<%= demo_coffee_path %>', 
+                      id: 'urlcontent',
+                      size: 'md'})" 
+              class="ui-button --solid --motion-forward mr-4 mb-4">
+        URL Content 
+      </button>
+
+    </div>
+
+  </div>
+</div>

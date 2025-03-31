@@ -1,0 +1,30 @@
+  <div class="ui-box w-full">
+    <div class="ui-titlepair">
+      <div class="--title">Toasts</div>
+      <div class="--description">
+        Click the buttons below to trigger different toast notifications
+      </div>
+    </div>
+    
+    <div class="flex gap-4">
+      <%= link_to demos_stimulus_trigger_toast_path(success: true), 
+            class: "ui-button --solid", 
+            data: { 
+              turbo_method: :post
+            } do %>
+        Show Success Toast
+        <%= inline_svg_tag("heroicons/check-circle.svg", class: "w-5 h-5 ml-2 hidden-while-loading") %>
+        <%= inline_svg_tag("misc/spinner.svg", class:"shown-while-loading") %>
+      <% end %>
+
+      <%= link_to demos_stimulus_trigger_toast_path(error: true), 
+            class: "ui-button --solid --error", 
+            data: { 
+              turbo_method: :post
+            } do %>
+        Show Error Toast
+        <%= inline_svg_tag("heroicons/exclamation-circle.svg", class: "w-5 h-5 ml-2 hidden-while-loading") %>
+        <%= inline_svg_tag("misc/spinner.svg", class:"shown-while-loading") %>
+      <% end %>
+    </div>
+  </div>

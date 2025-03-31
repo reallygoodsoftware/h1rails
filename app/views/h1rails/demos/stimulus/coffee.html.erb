@@ -1,0 +1,43 @@
+<%= turbo_frame_tag "modal-content-container" do %>
+  <div class="--modal-top-section">
+    <div class="flex justify-between w-full">
+      <div class="ui-titlepair">
+        <div class="--title">
+          The History of Coffee
+        </div>
+      </div>
+      <div class="ui-button --rounded --minimal" data-action="click->modal#close">
+        <%= inline_svg_tag('heroicons/x-mark.svg') %>
+      </div>
+    </div>
+  </div>
+
+  <div class="ui-styled-text px-3">
+    <%= Utilities.markdown_to_html("
+  ### Ancient Origins
+  The story of coffee begins in the ancient coffee forests of Ethiopia. According to legend, a goat herder named Kaldi first discovered the potential of coffee beans when he noticed his goats became unusually energetic after eating berries from a certain tree. Kaldi reported his findings to the local monastery, and the monks made a drink with the berries. They found that it kept them alert through long hours of evening prayer.
+
+  ### Spread to the Arabian Peninsula
+  From Ethiopia, coffee spread to the Arabian Peninsula in the 15th century. It was first cultivated in Yemen, where Sufi mystics drank it to stay awake during long nights of devotion. Coffee soon became popular throughout the region, and the port of Mocha in Yemen became a major center for coffee trade. By the 16th century, coffee was known in Persia, Egypt, Syria, and Turkey.
+
+  ### Introduction to Europe
+  Coffee arrived in Europe in the 17th century, where it was initially met with suspicion and even hostility. Some called it the 'bitter invention of Satan.' However, with the support of Pope Clement VIII, who declared it a Christian beverage, coffee soon gained popularity. Coffee houses sprang up across Europe, becoming centers of social interaction and communication.
+
+  ### Colonial Expansion and Global Cultivation
+  As European nations established colonies, they introduced coffee cultivation to new regions. The Dutch first planted coffee in their colonies in Indonesia. The French introduced coffee to the Caribbean, while the Spanish brought it to Central and South America. By the 18th century, coffee had become one of the world's most profitable export crops.
+
+  ### Modern Coffee Culture
+  Today, coffee is one of the world's most popular beverages, with millions of people drinking it daily. The rise of specialty coffee in the late 20th century has led to a renewed focus on quality, sustainability, and fair trade practices. From the simple cup of drip coffee to elaborate espresso-based drinks, coffee continues to evolve, reflecting changing tastes and cultural preferences around the globe.
+  ").html_safe %>
+
+  </div>
+
+  <div class="--modal-bottom-section">
+    <div class="flex justify-between w-full">
+      <span></span>
+      <div class="ui-button --rounded" data-action="click->modal#close">
+        Close
+      </div>
+    </div>
+  </div>
+<% end %>

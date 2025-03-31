@@ -1,0 +1,57 @@
+<div class="ui-box">
+  <div class="ui-titlepair">
+    <div class="--title">
+      TabNav
+    </div>
+    <div class="--description">
+      A standard tabnav component with Stimulus integration and Turbo Frame content loading.
+    </div>
+  </div>
+
+  <div data-controller="tabnav">
+    <div class="ui-tabnav border-b border-gray-200">
+      <%= link_to stimulus_demo_tab_path(tab: 1), 
+          class: "--tab --active flex items-center gap-2 px-4 py-2 text-sm font-medium border-b-2 border-transparent hover:border-gray-300", 
+          data: {
+            turbo_frame: "tab-content",
+            action: "click->tabnav#activateTab"
+          },
+          "aria-selected": "true" do %>
+        <%= inline_svg_tag("heroicons/document-text.svg", class: "w-5 h-5") %>
+        <span>Documentation</span>
+      <% end %>
+      
+      <%= link_to stimulus_demo_tab_path(tab: 2), 
+          class: "--tab flex items-center gap-2 px-4 py-2 text-sm font-medium border-b-2 border-transparent hover:border-gray-300", 
+          data: {
+            turbo_frame: "tab-content",
+            action: "click->tabnav#activateTab"
+          },
+          "aria-selected": "false" do %>
+        <%= inline_svg_tag("heroicons/photo.svg", class: "w-5 h-5") %>
+        <span>Media</span>
+      <% end %>
+      
+      <%= link_to stimulus_demo_tab_path(tab: 3), 
+          class: "--tab flex items-center gap-2 px-4 py-2 text-sm font-medium border-b-2 border-transparent hover:border-gray-300", 
+          data: {
+            turbo_frame: "tab-content",
+            action: "click->tabnav#activateTab"
+          },
+          "aria-selected": "false" do %>
+        <%= inline_svg_tag("heroicons/cog.svg", class: "w-5 h-5") %>
+        <span>Settings</span>
+      <% end %>
+    </div>
+
+    <div class="mt-6">
+      <%= turbo_frame_tag "tab-content" do %>
+        <div class="--panel" role="tabpanel">
+          <div class="prose prose-gray max-w-none">
+            <p>This is the content for the first tab. The tabnav component uses Stimulus to handle tab switching and Turbo Frames for content loading.</p>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div> 

@@ -2,8 +2,18 @@
 <html class="h-full" lang="en">
   <head>
     <%= render :partial=> "h1rails/partials/head" %>
+    <script type="module">
+      import { html, render, useState, useEffect } from 'https://esm.sh/htm/preact/standalone';
+      import {Modals} from '/preact/components/Modals.js';
+      // Inilize the modal system once in your application
+      document.addEventListener('DOMContentLoaded', () => {
+        // Render the modal system
+        render(html`<${Modals} />`, document.getElementById('modals'));
+      });
+    </script>
   </head>
   <body class="ui-body" <%= htmx_body_attributes.html_safe %> >
+    <div id="modals"></div>
     <%= render :partial => "h1rails/partials/partial_containers" %>
     <div id="main-content" class="h-full">
       <% if renders_in_modal? %>

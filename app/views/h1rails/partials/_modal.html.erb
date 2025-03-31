@@ -23,6 +23,7 @@
       <div id="modal-dialog" class="--dialog <%= view_transition_class %> <%= modal_size_class %>" >
         <div :class="modalLoading ? 'hidden' : 'block'" >
           <% if content_for?(:modal_content) %>
+            Here 1
             <%= yield :modal_content %>
             <script>
               modalOpen = true;

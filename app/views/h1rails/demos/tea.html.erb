@@ -1,0 +1,33 @@
+
+<div class="--modal-top-section">
+  <div class="flex justify-between w-full">
+    <div class="ui-titlepair --xl">
+      <div class="--title">
+        The History of Tea
+      </div>
+    </div>
+    <a class="ui-button --rounded --minimal" onclick="closeModal('tea')">
+      <%= inline_svg_tag('heroicons/x-mark.svg') %>
+    </a>
+  </div>
+</div>
+
+<div class="ui-styled-text">
+  <%= Utilities.markdown_to_html("
+### Tea Origins
+
+This is the story of tea.
+").html_safe %>
+
+</div>
+
+<a href="<%= demo_tea_path %>" hx-get="<%= demo_tea_path %>" hx-target=".--modal-content">Tea Stuff </a>
+
+<div class="--modal-bottom-section">
+  <div class="flex justify-between w-full">
+    <span></span>
+    <div class="ui-button --rounded" onclick="closeModal('tea')">
+      Close
+    </div>
+  </div>
+</div>

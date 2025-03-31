@@ -1,0 +1,68 @@
+<div class="ui-box w-full">
+  <div class="ui-titlepair">
+    <div class="--title">
+      Accordion
+    </div>
+    <div class="--description">
+      A standard accordion component with Stimulus integration.
+    </div>
+  </div>
+
+  <div data-controller="accordion">
+    <div class="ui-accordion">
+      <div class="--item border my-1 rounded">
+        <button 
+          class="--header w-full p-2 flex items-center justify-between gap-2" 
+          data-action="click->accordion#toggle"
+          aria-expanded="false">
+          <div class="flex items-center gap-2">
+            <%= inline_svg_tag("heroicons/information-circle.svg", class: "w-5 h-5") %>
+            <span>Basic Information</span>
+          </div>
+          <%= inline_svg_tag("heroicons/chevron-down.svg", class: "w-5 h-5 transition-transform heroicons-chevron-down") %>
+        </button>
+        <div class="--content p-3 border-t" hidden>
+          <div class="prose prose-gray max-w-none">
+            <p>This section contains basic information about using the accordion component. The content can be any HTML, including forms, lists, or other components.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="--item border my-1 rounded">
+        <button 
+          class="--header w-full p-2 flex items-center justify-between gap-2" 
+          data-action="click->accordion#toggle"
+          aria-expanded="false">
+          <div class="flex items-center gap-2">
+            <%= inline_svg_tag("heroicons/cog.svg", class: "w-5 h-5") %>
+            <span>Advanced Settings</span>
+          </div>
+          <%= inline_svg_tag("heroicons/chevron-down.svg", class: "w-5 h-5 transition-transform heroicons-chevron-down") %>
+        </button>
+        <div class="--content p-3 border-t" hidden>
+          <div class="prose prose-gray max-w-none">
+            <p>Configure advanced settings and options for your application. This section demonstrates how accordion items can be independently controlled.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="--item border my-1 rounded">
+        <button 
+          class="--header w-full p-2 flex items-center justify-between gap-2" 
+          data-action="click->accordion#toggle"
+          aria-expanded="false">
+          <div class="flex items-center gap-2">
+            <%= inline_svg_tag("heroicons/question-mark-circle.svg", class: "w-5 h-5") %>
+            <span>Help & Support</span>
+          </div>
+          <%= inline_svg_tag("heroicons/chevron-down.svg", class: "w-5 h-5 transition-transform heroicons-chevron-down") %>
+        </button>
+        <div class="--content p-3 border-t" hidden>
+          <div class="prose prose-gray max-w-none">
+            <p>Find help and support resources. The accordion component maintains proper ARIA attributes for accessibility and includes smooth animations.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> 

@@ -1,6 +1,6 @@
 class H1rails::DemosController < ApplicationController
 
-  before_action :renders_in_modal,  only: [:multistep_start, :multistep_step2, :coffee, :has_many_form, :delete_category]
+  before_action :renders_in_modal,  only: [:multistep_start, :multistep_step2, :has_many_form, :delete_category]
   before_action -> { set_modal_size("xs") }, only: [:coffee]
   before_action -> { set_modal_size("lg") }, only: [:has_many_form]
   before_action -> { set_view_transition_style("slide-from-right") }, only: [:multistep_step2]
@@ -19,11 +19,18 @@ class H1rails::DemosController < ApplicationController
   
   def index
   end
+
+  def mobile_app
+  end
   
   def coffee
     sleep(0.5)
+    render layout: false
   end
 
+  def tea 
+    render layout: false
+  end
   def has_many_form
     @user = User.first
     @categories = @user.categories.not_draft
@@ -84,7 +91,7 @@ class H1rails::DemosController < ApplicationController
         flash[:toasts] = [
           { title: "Changes Saved", message: "You saved the changes", type: "success" },
         ]
-        redirect_to demos_path(close_modal:true)
+        response.set_header('HX-Location', demos_path)
       end
     end
   end
@@ -98,7 +105,6 @@ class H1rails::DemosController < ApplicationController
 
   def user_category_params
     params.require(:user).permit(:categories_attributes => [:id, :title, :description])
-
   end
 
   def user_params
