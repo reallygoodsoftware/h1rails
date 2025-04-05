@@ -1,0 +1,85 @@
+---
+title: 'Making It Slick'
+icon: 'dash'
+iconStyle: 'regular'
+---
+
+Server rendered apps don't usually have the same tools as React etc. for making your app feel super smooth, so we need to be a little more intentional to get similar results.
+
+This is a list of assorted things that we do to make our server rendered apps feel as slick to use as those in the javascript ecosystem.
+
+### Make Links & Forms Asynchronous
+
+Submitting a form or clicking on a link shouldn't trigger a full page reload. H1 Rails enables this in a single place using [hx-boost](https://htmx.org/attributes/hx-boost/), which means you can just build normal links and forms, and this will work automatically.
+
+* Read More about [How We Use Htmx.](/h1rails/htmx)
+
+### Use CSS animations on clickable elements
+
+This is a pretty broad directive - generally it's best to consult a designer on this stuff. But clickable elements that don't change when moused over, feel stiff and unresponsive.
+
+### Show loading text and spinners on buttons and forms
+
+HTMX makes it very easy to show an element while a form, button, or link is loading
+
+```erb
+<%= inline_svg_tag("misc/spinner.svg",class:"shown-while-loading") %>
+```
+
+* Read More about [HTMX Loading Patterns](/h1rails/htmx_indicators)
+
+# Make It Fast
+
+It's really important that the app responds quickly. Some things, like the user's connection speed, are out of our control. But we can usually tune the app to respond in a time that feels almost instant on good connections. As a general rule, **pages should load in 300 miliseconds or less** on a good connection.
+
+### **Remove N+1 Queries**
+
+* Set Rails [verbose query logging](https://guides.rubyonrails.org/debugging_rails_applications.html#verbose-query-logs) to `true` - this will now add the exact line of code that called the database, to your logs.
+
+```ruby
+# environments/development.rb
+Rails.application.configure do
+  config.active_record.verbose_query_logs = true
+end
+```
+
+* Add the [Bullet](https://github.com/flyerhzm/bullet) gem
+
+```ruby
+# Gemfile
+gem 'bullet', group: 'development'
+```
+
+```ruby
+# environments/development.rb
+config.after_initialize do
+  Bullet.enable = true
+  Bullet.rails_logger = true
+  Bullet.alert = true # This can be toggled when doing debugging but is probably best left turned off
+end
+```
+
+* Use `.includes` when fetching data in the controller, to avoid triggering an n+1 in your view.
+
+### **Load slow sections asynchronously**
+
+Sometimes there are things that a page has to do, that take time that and are outside of our control. Htmx helps again here, by letting us load the page and then fetch a frame of data asynchronously after it's loaded.
+
+```ruby
+# config/routes.rb
+ get "/my-charts" => "charts#widget", :as => :chart_widget
+```
+
+```erb
+<div hx-get="<%= chart_widget_path %>" hx-trigger="load" hx-target="this">
+  Loading...
+</div>
+```
+
+### **Put your database in the same location as your application**
+
+This is something I regularly see people get tripped up on. If a page has to run 30 sql queries to display it, and it takes 30 miliseconds for that query to travel from where the app is hosted, to the database and back, that page is going to get very slow, very quickly. The same location simply means the same data center. If your app is hosted in Amazon's East Virginia data center, make sure your database is hosted there too.
+
+## A note on Client Side vs Server Side validation
+
+In the spirit of giving users immediate feedback, a logical conclusion would be to apply the same approach to form field validation too (show users validation errors before sending the request to the server). Given that there are dozens of field types and hundreds of potential error states, applying the exact same validations on both the server and client is (in my experience) too complex to warrant the benefit. So to avoid confusion, our recommended approach is to do all validation on the server and have the user wait until the response is returned to see what those errors are.

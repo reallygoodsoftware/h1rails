@@ -1,0 +1,61 @@
+---
+title: "Getting Started"
+---
+
+<Steps>
+  <Step title="Add Base Styles to your project" titleSize="h2">
+    <Tabs>
+      <Tab title="HTML">
+        * Download <a target="_blank" href="https://raw.githubusercontent.com/reallygoodsoftware/base-styles/refs/heads/main/base-styles.css" download="base-styles.css">base-styles.css</a> and <a target="_blank" href="https://raw.githubusercontent.com/reallygoodsoftware/base-styles/refs/heads/main/base-styles.css" download="base-styles-custom.css">base-styles-custom.css</a> and add them to your codebase.
+
+        ```html
+          <link href="/base-styles.css" rel="stylesheet">
+          <link href="/base-styles-custom.css" rel="stylesheet">
+        ```
+      </Tab>
+
+      <Tab title="CDN">
+        * Download <a target="_blank" href="https://raw.githubusercontent.com/reallygoodsoftware/base-styles/refs/heads/main/base-styles.css" download="base-styles-custom.css">base-styles-custom.css</a> and add it to your codebase, then use the cdn url for base-styles.
+
+        ```html
+          <link href="https://cdn.base-styles.com/versions/0.0.2.css" rel="stylesheet">
+          <link href="/base-styles-custom.css" rel="stylesheet">
+        ```
+      </Tab>
+
+      <Tab title="React">
+        Coming Soon
+      </Tab>
+    </Tabs>
+  </Step>
+
+  <Step title="Set Your Defaults" titleSize="h2">
+    ```css base-styles-custom.css
+      :root {
+        --ui-font-family-headers: 'Inter', sans-serif;
+        --ui-font-family: 'Inter', sans-serif;
+        --ui-color-primary: #0070f3;
+        --ui-shared-border-radius: 6px;
+        --ui-shared-border-width: 2px;
+      }
+    ```
+  </Step>
+
+  <Step title="3. Use the classes to compose your UI" titleSize="h2">
+    ```html
+      <button class="ui-button"> My Button </button>
+    ```
+  </Step>
+
+  <Step title="4.(Optional) Add your own variants" titleSize="h2">
+    If we don't have a variant you need, just add your own. See [customization](./customization.md) for more.
+
+    ```css base-styles-custom.css
+    .ui-button {
+      & .--embossed {
+        box-shadow: 0 0 0 2px var(--ui-color-primary);
+      }
+    }
+    ```
+  </Step>
+</Steps>

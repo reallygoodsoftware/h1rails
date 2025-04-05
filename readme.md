@@ -16,10 +16,22 @@ H1 Rails (HTML First Rails) is a boilerplate for building slick, polished web ap
 - **HTMX instead of Hotwire/Turbo**: We also have several best practices docs for how to achieve common UX patterns using HTMX (multi step forms, type to search, etc.)
 
 
-
 ## Documentation & Demos
 
 - Documentation is available at [h1rails.com](https://h1rails.com).
 - Demos are available at `/demos` in the app.
 
 ---
+
+## Usage 
+
+> The preferred way to create a new H1 Rails app is to use the generator. Cloning this repo directly will *work*, but is not as clean as using `rails new`.
+
+**To create a new H1 Rails app**
+```
+rails new APPNAME  -m https://raw.githubusercontent.com/reallygoodsoftware/h1rails/refs/heads/master/generator.rb
+```
+
+## Todo
+
+- Settle on a solution for Modals & toasts and remove the alternatives.

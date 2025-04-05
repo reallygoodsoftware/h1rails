@@ -1,0 +1,75 @@
+
+<script>
+  showFileBrowser = true
+</script>
+
+<script type="module">
+  import { html, render, useState, useEffect } from 'https://esm.sh/htm/preact/standalone';
+  import CodeEditor from '/preact/livecode/CodeMirrorEditor.js';
+  
+  document.addEventListener('DOMContentLoaded', () => {
+    const container = document.getElementById('code-editor');
+    
+    if (container) {
+      render(html`<${CodeEditor} element=${container} />`, container);
+    }
+  });
+</script>
+
+<link rel="stylesheet" href="/base-styles/experimental/codemirror-editor.css" >
+
+<% 
+  views_root = Rails.root.join('app', 'views').to_s
+  
+  # Define a recursive function to build the folder structure
+  def build_folder_structure(path, root_path)
+    relative_path = path.sub("#{root_path}/", '')
+    
+    {
+      path: relative_path,
+      files: Dir.glob(File.join(path, '*')).reject { |p| File.directory?(p) }.map { |p| {path: p.sub("#{root_path}/", '')} },
+      folders: Dir.glob(File.join(path, '*/')).map { |subdir| build_folder_structure(subdir.chomp('/'), root_path) }
+    }
+  end
+  
+  # Build the complete structure
+  @paths = {
+    folders: Dir.glob(File.join(views_root, '*/')).map { |dir| build_folder_structure(dir.chomp('/'), views_root) },
+    files: Dir.glob(File.join(views_root, '*')).reject { |p| File.directory?(p) }.map { |p| {path: p.sub("#{views_root}/", '')} }
+  }
+%>
+
+<div class="absolute left-5 top-5 bottom-5" style="width:300px">
+  <div :class="showFileBrowser ? '--expanded' : 'hidden'" class="z-10 ui-expander shadow-md rounded ">
+    <div>
+      <div style="height: 100vh; overflow-y:scroll">
+        <div class="ui-titlepair">
+          <h3 class="--title">
+            File Browser 
+          </h3>
+          <div>
+            <% @paths[:folders].each do |folder| %>
+              <%= render partial: "livecode/folder", locals: {folder: folder} %> 
+            <% end %>
+          </div>
+        </div>
+      </div>  
+    </div>
+  </div>
+</div>
+
+<div class="absolute right-0 top-0 bottom-0" style="width:700px">
+  <div :class="showFileBrowser ? '--expanded' : 'hidden'" class="z-10 ui-expander shadow-md rounded ">
+    <div>
+      <div class="p-3" style="height: calc(100vh - 20px)">
+        <div id="code-editor" style="height: 100%"></div>
+      </div>  
+    </div>
+  </div>
+</div>
+
+<div class="absolute bottom-0 left-0" >
+  <div class="ui-button m-3" type="button" :click="showFileBrowser=!showFileBrowser" :text="showFileBrowser ? 'Hide Files' : 'Show Files'">
+    Show Files
+  </button>
+</div>

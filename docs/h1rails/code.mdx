@@ -1,0 +1,38 @@
+---
+title: "Files"
+description: "Description of your new file."
+---
+
+H1 Rails is offered as a boilerplate, not a gem. This is so that you have raw access to all of the code, should you want to change it. We've namespaced things to make them easy to locate, modify and remove if you want to.&#x20;
+
+### General Files
+
+* A controller concern at `/app/controllers/concerns/h1rails.rb` - [view source](https://github.com/reallygoodsoftware/h1rails/blob/master/app/controllers/concerns/h1_rails.rb).
+
+  * This is primarily used for setting HTMX response headers needed for modals and other minor things.
+
+* A helper at `/app/helpers/h1_rails.rb` - [view source](https://github.com/reallygoodsoftware/h1rails/blob/master/app/helpers/h1_helper.rb).
+
+  * This contains a dozen or so methods that can be used in views and are described elsewhere in the docs.
+
+### View Files
+
+* `/app/views/layouts/application.html.erb` - [view source](https://github.com/reallygoodsoftware/h1rails/blob/master/app/views/layouts/application.html.erb).
+
+  * This is the only file that's not namespaced - it will replace your existing `application.html.erb` if you have one.&#x20;
+
+* `/app/views/h1rails/partials` - [view files](https://github.com/reallygoodsoftware/h1rails/tree/master/app/views/h1rails/partials).
+
+  * This folder contains a few files that are rendered in various parts of the core layout.&#x20;
+
+### Assets
+
+* The core css is&#x20;
+
+  * `/public/stylesheets/base-styles.css`
+
+  * `/public/stylesheets/base-styles-custom.css`
+
+### Vendor
+
+### Demos

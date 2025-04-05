@@ -34,3 +34,5 @@
 
 .DS_Store
 db/development.sqlite3
+
+/base-styles

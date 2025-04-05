@@ -1,23 +1,31 @@
 <title><%= page_title %></title>
 <%= csrf_meta_tags %>
 <%= csp_meta_tag %>
+
 <!-- Vendor Additions -->
+<%= render "h1rails/vendor/google_fonts" %> 
 <%= render "h1rails/vendor/tailwind_lite" %>
-<%= render "h1rails/vendor/base_styles" %>
-<%= render "h1rails/vendor/better_select" %>
 <%= render "h1rails/vendor/htmx" %>
 <%= render "h1rails/vendor/mini" %>
-<%= render "h1rails/vendor/rhino" %>
-<%= render "h1rails/vendor/highlight" %> 
-<%= render "h1rails/vendor/dropzone" %>  
+<%= render "h1rails/vendor/better_select" %>
+
+<!-- Disabled Vendor Additions -->
+<%- render "h1rails/vendor/highlight" %> 
+<%- render "h1rails/vendor/dropzone" %>  
 <%= render "h1rails/vendor/chartjs" %>  
-<%= render "h1rails/vendor/react" %>
-<%= render "h1rails/vendor/google_fonts" %> 
+<%- render "h1rails/vendor/react" %>
+<%= render "h1rails/vendor/codemirror" %>
+
 <!-- CSS -->
+<%# <link href="/vendor/base-styles/0.0.10.css<%= cache_buster %>" rel="stylesheet"> %>
+<link href="https://cdn.base-styles.com/base-styles.css<%= cache_buster %>" rel="stylesheet">
+<link href="/stylesheets/globals.css<%= cache_buster %>" rel="stylesheet">
 <link href="/stylesheets/styles.css<%= cache_buster %>" rel="stylesheet">
+
 <!-- Javascript -->
 <script src="/js/custom.js<%= cache_buster %>" defer></script>
-<!-- Icons -->
+
+<!-- Favicons -->
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">

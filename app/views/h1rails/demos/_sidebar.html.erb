@@ -1,0 +1,44 @@
+<div data-component="sidebar">
+  <div class="ui-sidebar">
+    <div class="--container">
+      <!-- Header (sticky) -->
+      <div class="--top">
+        
+      </div>
+      
+      <!-- Main content (scrollable) -->
+      <div class="--middle">
+        <div class="--section">
+          <h3 class="--eyebrow">Base Styles</h3>
+          
+          <a class="--menu-item <%= current_page?(demos_path) ? '--active' : '' %>" href="<%= demos_path %>">
+            Assorted
+          </a>
+
+          <a class="--menu-item <%= current_page?(demo_show_md_path("buttons")) ? '--active' : '' %>" href="<%= demo_show_md_path("buttons") %>">
+            Buttons
+          </a>
+        
+        </div>
+        
+        <div class="--section" style="margin-top: 1.5rem;">
+          <h3 class="--eyebrow">Elements</h3>
+          
+          <a class="--menu-item <%= current_page?(demos_path) ? '--active' : '' %>" href="<%= demos_path %>">
+            Assorted
+          </a>
+        </div>
+      </div>
+      
+      <!-- Footer (sticky) -->
+      <div class="--bottom">
+        <a href="#" class="--menu-item">
+          <span class="--icon">
+            <%= inline_svg_tag("/heroicons/logout") %>
+          </span>
+          <span>Logout</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>

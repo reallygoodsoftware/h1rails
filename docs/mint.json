@@ -1,0 +1,114 @@
+{
+    "$schema": "https://mintlify.com/schema.json",
+    "name": "Really Good Software Docs",
+    "logo": {
+        "dark": "/logo/dark.svg",
+        "light": "/logo/light.svg"
+    },
+    "favicon": "/favicon.svg",
+    "colors": {
+        "primary": "#EC4D25",
+        "light": "#07C983",
+        "dark": "#EC4D25",
+        "anchors": {
+            "from": "#0D9373",
+            "to": "#07C983"
+        }
+    },
+    "topbarCtaButton": {
+        "name": "Really Good Software",
+        "url": "https://reallygoodsoftware.net"
+    },
+    "tabs": [
+        {
+            "name": "H1 Rails",
+            "url": "h1rails"
+        },
+        {
+            "name": "Base Styles",
+            "url": "basestyles"
+        },
+        {
+            "name": "Better Select",
+            "url": "betterselect"
+        },
+        {
+            "name": "Tailwind Lite",
+            "url": "tailwindlite"
+        },
+        {
+            "name": "Mini JS",
+            "url": "minijs"
+        }
+    ],
+    "background": {
+        "style": "windows"
+    },
+    "layout": "sidenav",
+    "navigation": [
+        {
+            "group": "Info",
+            "pages": [
+                "h1rails/intro",
+                "h1rails/github",
+                "h1rails/demos"
+            ]
+        },
+        {
+            "group": "Elements",
+            "pages": [
+                "h1rails/forms",
+                "h1rails/icons",
+                "h1rails/modals",
+                "h1rails/toasts"
+            ]
+        },
+        {
+            "group": "Articles",
+            "pages": [
+                "h1rails/slickness",
+                "h1rails/form_patterns",
+                "h1rails/htmx",
+                "h1rails/htmx_indicators",
+                "h1rails/urls"
+            ]
+        },
+        {
+            "group": "About",
+            "pages": [
+                "basestyles/intro",
+                "basestyles/getting-started",
+                "basestyles/customization"
+            ]
+        },
+        {
+            "group": "Examples",
+            "pages": [
+                "basestyles/examples"
+            ]
+        },
+        {
+            "group": "Elements",
+            "pages": [
+                "/basestyles/buttons",
+                "/basestyles/forms",
+                "/basestyles/box",
+                "/basestyles/titlepair",
+                "/basestyles/modal",
+                "/basestyles/toasts",
+                "/basestyles/tooltips",
+                "/basestyles/floating-labels"
+            ]
+        }, 
+        {
+          "group": "About",
+          "pages": [
+              "betterselect/intro"
+          ]
+        }
+    ],
+    "footerSocials": {
+        "x": "https://x.com/rlygoodsoftware",
+        "github": "https://github.com/reallygoodsoftware"
+    }
+}

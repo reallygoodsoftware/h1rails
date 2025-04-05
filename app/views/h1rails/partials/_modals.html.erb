@@ -1,0 +1,12 @@
+
+<script type="module">
+  import { html, render, useState, useEffect } from 'https://esm.sh/htm/preact/standalone';
+  import {Modals} from '/preact/components/Modals.js';
+  // Inilize the modal system once in your application
+  document.addEventListener('DOMContentLoaded', () => {
+    // Render the modal system
+    render(html`<${Modals} />`, document.getElementById('modals'));
+  });
+</script>
+
+<div id="modals"></div>

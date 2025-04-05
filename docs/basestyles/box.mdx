@@ -1,0 +1,81 @@
+Use a box to group together elements.
+
+## Variables
+
+```css
+--ui-box-box-shadow: var(--ui-shared-box-shadow);
+--ui-box-border: none;
+--ui-box-border-radius: var(--ui-shared-border-radius);
+--ui-box-padding: var(--ui-shared-content-padding);
+--ui-box-background: #fff;
+--ui-box-separator-border: 2px solid var(--ui-color-grey-100);
+```
+
+## Basic
+
+```erb
+<div class="ui-box">
+  Content
+</div>
+```
+
+## With Top & Bottom Sections
+
+```erb
+<div class="ui-box">
+  <div class="--top">
+    Content for top section
+  </div>
+  <div>
+    Content Here
+  </div>
+  <div class="--bottom">
+    Content for bottom section
+  </div>
+</div>
+```
+
+## Example: Form using top and bottom sections
+
+The `.--top` and `.--bottom` selectors can be one or two levels below the parent `.ui-box` (but no lower).
+
+```erb
+<div class="ui-box">
+  <form>
+    <div class="--top">
+      Content for top section
+    </div>
+    <div>
+      Inputs here...
+    </div>
+    <div class="--bottom">
+      Content for bottom section
+    </div>
+  </form>
+</div>
+```
+
+## With Titles
+
+Use the title pair class set to get nice titles.
+
+```erb
+<div class="ui-box">
+  <div class="--top">
+    <div class="ui-titlepair">
+      <div class="--title">
+        These Are Title Pairs
+      </div>
+      <div class="--description">
+        Which are very useful for labelling new sections
+      </div>
+    </div>
+  </div>
+  <div>
+    Content Here
+  </div>
+  <div class="--bottom">
+    Content for bottom section
+  </div>
+</div>
+```

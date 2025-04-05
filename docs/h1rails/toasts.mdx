@@ -1,0 +1,20 @@
+---
+title: "Toasts"
+icon: "inbox"
+---
+
+Toasts use Rails\` Flash message functionality to send toasts from the backend to the frontend.
+
+### To trigger a toast
+
+```ruby
+flash.now[:toasts] = [
+  { title: 'Post Created', message: 'Your post has been created.' }
+]
+```
+
+## Info
+
+* Toast styling comes from base-styles.
+
+* The html lives in `/views/shared/_partial_containers.html.erb` and `/views/shared/_toast.html.erb`.

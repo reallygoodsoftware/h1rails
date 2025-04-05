@@ -9,6 +9,7 @@ Rails.application.routes.draw do
 
   draw :h1_demo_routes
   draw :h1_expo_routes 
+  draw :livecode_routes
 
   devise_for :users, controllers: {
     sessions:       'users/sessions',

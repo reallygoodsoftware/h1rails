@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html class="h-full" lang="en">
+  <head>
+    <%= render :partial=> "h1rails/partials/head" %>
+  </head>
+  <body class="ui-body" <%= htmx_body_attributes.html_safe %> >
+    <%= render :partial => "h1rails/partials/modals" %>
+    <%= render partial: "h1rails/partials/toasts" %>
+
+    <link rel="stylesheet" href="https://cdn.base-styles.com/src/sidebar.css<%= cache_buster %>">
+
+    <div id="main-content" class="h-full">
+      <%= render :partial => "h1rails/demos/sidebar" %>
+      <%= yield %>
+    </div>
+
+    <%- render partial: "livecode/dock" if request_is_localhost? %>
+  </body>
+</html>

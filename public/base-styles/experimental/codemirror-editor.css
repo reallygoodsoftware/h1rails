@@ -1,0 +1,160 @@
+.ui-codeeditor {
+  --ui-codeeditor-tab-height: 40px;
+  --ui-codeeditor-tab-bg: #f5f5f5;
+  --ui-codeeditor-tab-active-bg: #ffffff;
+  --ui-codeeditor-tab-border-color: var(--ui-shared-element-border-color);
+  --ui-codeeditor-dirty-indicator-color: var(--ui-shared-color-alpha);
+  --ui-codeeditor-save-btn-bg: var(--ui-shared-color-alpha);
+  --ui-codeeditor-save-btn-hover-bg: var(--ui-shared-color-alpha-darkened-20);
+  --ui-codeeditor-save-btn-text: var(--ui-shared-color-alpha-foreground);
+  --ui-codeeditor-save-success-bg: #4CAF50;
+  
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  border: var(--ui-input-border-width) solid var(--ui-shared-element-border-color);
+  border-radius: var(--ui-shared-element-border-radius);
+  overflow: hidden;
+  font-family: var(--ui-shared-font-family);
+  background: #ffffff;
+  
+  & > .--tabs {
+    display: flex;
+    overflow-x: auto;
+    background: var(--ui-codeeditor-tab-bg);
+    border-bottom: var(--ui-input-border-width) solid var(--ui-codeeditor-tab-border-color);
+    height: var(--ui-codeeditor-tab-height);
+    min-height: var(--ui-codeeditor-tab-height);
+    flex-shrink: 0;
+    z-index: 1;
+    
+    & > .--tab {
+      height: var(--ui-codeeditor-tab-height);
+      padding: 0 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      border-right: 1px solid var(--ui-codeeditor-tab-border-color);
+      cursor: pointer;
+      user-select: none;
+      position: relative;
+      max-width: 200px;
+      
+      & > .--filename {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        font-size: var(--ui-shared-font-size-sm);
+      }
+      
+      & > .--dirty-indicator {
+        color: var(--ui-codeeditor-dirty-indicator-color);
+        font-size: 12px;
+      }
+      
+      & > .--close-btn {
+        background: none;
+        border: none;
+        cursor: pointer;
+        font-size: 18px;
+        line-height: 1;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 18px;
+        height: 18px;
+        border-radius: 50%;
+        
+        &:hover {
+          background-color: rgba(0, 0, 0, 0.1);
+        }
+      }
+      
+      &.--active {
+        background: var(--ui-codeeditor-tab-active-bg);
+        border-bottom: 2px solid var(--ui-shared-color-alpha);
+        font-weight: var(--ui-font-weight-bold);
+      }
+    }
+    
+    & > .--tab-actions {
+      margin-left: auto;
+      display: flex;
+      align-items: center;
+      padding: 0 12px;
+      
+      & > .--save-btn {
+        background-color: var(--ui-codeeditor-save-btn-bg);
+        color: var(--ui-codeeditor-save-btn-text);
+        border: none;
+        border-radius: var(--ui-shared-element-border-radius);
+        padding: 4px 12px;
+        font-size: var(--ui-shared-font-size-sm);
+        cursor: pointer;
+        height: 28px;
+        transition: background-color 0.2s;
+        
+        &:hover:not(:disabled) {
+          background-color: var(--ui-codeeditor-save-btn-hover-bg);
+        }
+        
+        &:disabled {
+          opacity: 0.5;
+          cursor: not-allowed;
+        }
+        
+        &.--saving {
+          opacity: 0.7;
+          cursor: wait;
+        }
+        
+        &.--success {
+          background-color: var(--ui-codeeditor-save-success-bg);
+        }
+      }
+    }
+  }
+  
+  & > .--editor-container {
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+    min-height: 0; /* Critical for nested flex containers */
+    display: flex;
+    flex-direction: column;
+    
+    & > .--loading, & > .--error, & > .--empty-state {
+      padding: var(--ui-shared-content-padding);
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: var(--ui-shared-font-size-base);
+    }
+    
+    & > .--error {
+      color: red;
+    }
+    
+    & > .--editor {
+      flex: 1;
+      overflow: hidden;
+      min-height: 0; /* Critical for nested flex containers */
+      
+      /* These styles will be applied to CodeMirror elements */
+      :global(.cm-editor) {
+        height: 100%;
+      }
+      
+      :global(.cm-scroller) {
+        overflow: auto;
+      }
+      
+      :global(.cm-content) {
+        min-height: 100%;
+      }
+    }
+  }
+}

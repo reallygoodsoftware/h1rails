@@ -1,0 +1,49 @@
+---
+title: 'Working With URLs'
+icon: 'dash'
+iconStyle: 'regular'
+---
+
+A common requirement with an html first app is to retain the url state as a user clicks around. For example, if a page has a set of scopes and a set of filters, when you're building the link to a scope, you'll want to make sure it also includes the currently active filter.
+
+### Generate a link with the current URL parameters
+
+```html
+<a href="<%= current_url_with(scope:'draft') %>">
+  Draft 
+</a>
+<a href="<%= current_url_with(scope:'active') %>">
+  Active 
+</a>
+```
+
+### Merge the current url params with a named path
+
+```html
+<a href="<%= projects_path(current_params_with(scope:'draft')) %>" >
+  Draft Projects 
+</a>
+```
+
+### Likn to a named path with the current url parameters
+
+```html
+<a href="<%= projects_path(request.query_parameters) %>" >
+  Projects 
+</a>
+```
+
+## Source
+
+These methods are a thin layer on top of Rails' own methods - `url_for` and `request.query_parameters`.
+
+```ruby
+# /app/helpers/application_helper
+def current_url_with(params)
+  url_for(request.query_parameters.merge(params))
+end
+
+def current_params_with(params)
+  request.query_parameters.merge(params)
+end
+```

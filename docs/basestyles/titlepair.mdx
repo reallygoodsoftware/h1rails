@@ -1,0 +1,50 @@
+---
+title: "Title Pairs"
+---
+
+Render a heading and a tagline in a clean, consistent manner.
+
+## Basic Usage
+
+```erb
+<div class="ui-titlepair">
+  <div class="--title">
+    These Are Title Pairs
+  </div>
+  <div class="--description">
+    Which are very useful for labelling new sections
+  </div>
+</div>
+```
+
+## Size Modifiers
+
+Use size modifiers to scale up or scale down. The options are `.--2xl`, `.--xl`, `.--lg`, `.--md`, `.--sm`, `.--xs`
+
+```erb
+<div class="ui-titlepair --2xl">
+  <div class="--title">Michael Scott</div>
+  <div class="--description">The best manager at Dunder Mifflin</div>
+</div>
+```
+
+## Variables
+
+```css
+--ui-title-pair-color-title: var(--ui-color-grey-900);
+--ui-title-pair-color-description: var(--ui-color-grey-500);
+--ui-title-pair-font-size-2xl-title: 3rem;
+--ui-title-pair-font-size-2xl-description: 1.7rem;
+--ui-title-pair-font-size-xl-title: 2.6rem;
+--ui-title-pair-font-size-xl-description: 1.6rem;
+--ui-title-pair-font-size-lg-title: 2.3rem; 
+--ui-title-pair-font-size-lg-description: 1.4rem;
+--ui-title-pair-font-size-md-title: 2rem;
+--ui-title-pair-font-size-md-description: 1.2em;
+--ui-title-pair-font-size-title: 1.8rem;
+--ui-title-pair-font-size-description: 1.2rem;
+--ui-title-pair-font-size-sm-title: 1.3rem;
+--ui-title-pair-font-size-sm-description: 1rem;
+--ui-title-pair-font-size-xs-title: 1rem;
+--ui-title-pair-font-size-xs-description: 0.9rem;
+```

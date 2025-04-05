@@ -7,6 +7,7 @@ class H1rails::DemosController < ApplicationController
 
   skip_before_action :verify_authenticity_token, :only => [:delete_category]
 
+  layout "demos"
 
   # fix cors issues
   after_action :set_access_control_headers, only: [:search]

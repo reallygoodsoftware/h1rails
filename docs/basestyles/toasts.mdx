@@ -1,0 +1,64 @@
+---
+title: "Toasts"
+---
+
+Toasts are brief, non-intrusive notifications that appear temporarily on the screen to provide quick feedback or information to the user.
+
+## Basic Usage
+
+```erb
+<div class="ui-toasts" >
+  <div class="--toast" role="alert">
+    <div class="--wrapper" >
+      <div class="--content">
+        <div class="--dismiss" >
+          <svg>
+        </div>
+        <span class="--title">
+        </span> 
+        <span class="--message">
+        </span> 
+      </div>
+    </div>
+  </div>
+</div>
+```
+
+## Animating in and out
+
+To animate a toast in, add the `.--animate-in` class. The best way to do this is to use javascript to wait for a short period and for multiple toasts delay each one slightly.
+
+```
+<div class="ui-toasts" >
+  <div class="--toast --animate-in" role="alert">
+    ...
+  </div>
+</div>
+```
+
+Similarly to animate out add the `.--animate-out` class.
+
+```
+<div class="ui-toasts" >
+  <div class="--toast --animate-out" role="alert">
+    ...
+  </div>
+</div>
+```
+
+## Variables
+
+```css
+  --ui-modal-overlay-color: rgba(0, 0, 0, 0.5);
+  --ui-modal-overlay-opacity: 0.8;
+  --ui-modal-background-color: var(--ui-box-background);
+  --ui-modal-border-radius: var(--ui-shared-border-radius);
+  --ui-modal-box-shadow: var(--ui-shared-box-shadow);
+  --ui-modal-padding: var(--ui-shared-content-padding);
+  --ui-modal-max-width: 600px;
+  --ui-modal-max-width-xs: 400px;
+  --ui-modal-max-width-sm: 500px;
+  --ui-modal-max-width-lg: 700px;
+  --ui-modal-max-width-xl: 800px;
+  --ui-modal-max-width-2xl: 1000px;
+```

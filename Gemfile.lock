@@ -46,7 +46,6 @@ GEM
       erubi (~> 1.4)
       rails-dom-testing (~> 2.0)
       rails-html-sanitizer (~> 1.1, >= 1.2.0)
-    active_material (1.5.2)
     activeadmin (3.2.2)
       arbre (~> 1.2, >= 1.2.1)
       csv
@@ -57,14 +56,6 @@ GEM
       kaminari (>= 1.2.1)
       railties (>= 6.1)
       ransack (>= 4.0)
-    activeadmin_addons (1.10.1)
-      active_material
-      railties
-      redcarpet
-      require_all
-      sassc
-      sassc-rails
-      xdan-datetimepicker-rails (~> 2.5.1)
     activejob (7.0.3.1)
       activesupport (= 7.0.3.1)
       globalid (>= 0.3.6)
@@ -208,7 +199,7 @@ GEM
       digest
       net-protocol
       timeout
-    nio4r (2.5.8)
+    nio4r (2.5.9)
     nokogiri (1.13.8-arm64-darwin)
       racc (~> 1.4)
     nokogiri (1.13.8-x86_64-darwin)
@@ -219,7 +210,6 @@ GEM
     passenger (6.0.18)
       rack
       rake (>= 0.8.1)
-    pg (1.4.3)
     postmark (1.25.0)
       json
     postmark-rails (0.22.1)
@@ -268,7 +258,6 @@ GEM
       activesupport (>= 6.1.5)
       i18n
     redcarpet (3.6.0)
-    require_all (3.0.0)
     responders (3.0.1)
       actionpack (>= 5.0)
       railties (>= 5.0)
@@ -309,19 +298,16 @@ GEM
     websocket-driver (0.7.5)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.5)
-    xdan-datetimepicker-rails (2.5.4)
-      jquery-rails
-      rails (>= 3.2.16)
     zeitwerk (2.6.0)
 
 PLATFORMS
   arm64-darwin-22
+  arm64-darwin-24
   x86_64-darwin-21
   x86_64-linux
 
 DEPENDENCIES
   activeadmin (~> 3.2, >= 3.2.2)
-  activeadmin_addons
   arctic_admin
   aws-sdk-s3
   bootsnap
@@ -336,8 +322,8 @@ DEPENDENCIES
   inherited_resources
   inline_svg
   liquid
+  nio4r (~> 2.5.9)
   passenger
-  pg (~> 1.1)
   postmark-rails
   pry-rails
   puma (~> 5.0)

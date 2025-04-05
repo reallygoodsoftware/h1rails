@@ -46,6 +46,10 @@ module H1Helper
     end
   end
 
+  def request_is_localhost?
+    request.host == "localhost"
+  end
+
   def modal_visible_class
     if @renders_in_modal || params[:modal].present? || content_for?(:modal_content) 
       '--visible'

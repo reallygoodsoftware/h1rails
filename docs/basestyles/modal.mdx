@@ -1,0 +1,78 @@
+# Basic Usage
+
+This is the html needed to render a modal.
+
+```erb
+<div class="ui-modals" role="dialog" aria-modal="true">
+  <div class="--overlay" ></div>
+  <div class="--wrapper-outer" > 
+    <div class="--wrapper-inner">
+      <div class="--dialog">
+        Content Here
+      </div>
+    </div>
+  </div>
+</div>
+```
+
+## Showing and hiding
+
+By default modals are hidden. To reveal a modal simply add `.--visible` to the outer div.
+
+```erb
+<div class="ui-modals --visible" role="dialog" aria-modal="true">
+  <div class="--overlay" ></div>
+  <div class="--wrapper-outer" > 
+    <div class="--wrapper-inner">
+      <div class="--dialog">
+        Content Here
+      </div>
+    </div>
+  </div>
+</div>
+```
+
+## Top and Bottom Sections
+
+Modals can have top and bottom sections
+
+```erb
+<div class="ui-modals" role="dialog" aria-modal="true">
+  <div class="--overlay" ></div>
+  <div class="--wrapper-outer" > 
+    <div class="--wrapper-inner">
+      <div class="--dialog">
+        <div class="--modal-top-section">
+          <div class="flex justify-between w-full">
+            <div class="ui-titlepair">
+              <div class="--title">
+                The History of Coffee
+              </div>
+            </div>
+            <div class="ui-button --rounded --minimal">
+              <%= inline_svg_tag('heroicons/x-mark.svg') %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+```
+
+## Variables
+
+```css
+--ui-modal-overlay-color: rgba(0, 0, 0, 0.5);
+--ui-modal-overlay-opacity: 0.8;
+--ui-modal-background-color: var(--ui-box-background);
+--ui-modal-border-radius: var(--ui-shared-border-radius);
+--ui-modal-box-shadow: var(--ui-shared-box-shadow);
+--ui-modal-padding: var(--ui-shared-content-padding);
+--ui-modal-max-width: 600px;
+--ui-modal-max-width-xs: 400px;
+--ui-modal-max-width-sm: 500px;
+--ui-modal-max-width-lg: 700px;
+--ui-modal-max-width-xl: 800px;
+--ui-modal-max-width-2xl: 1000px;
+```

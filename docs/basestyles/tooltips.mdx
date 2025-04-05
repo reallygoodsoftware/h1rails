@@ -1,0 +1,65 @@
+Tooltips are based on [hint.css](https://kushagra.dev/lab/hint/). Currently they don't support html content.
+
+## Basic Usage
+
+Add a tooltip by setting an `aria-label` on an element.
+
+```erb
+<button class="ui-tooltip --top" aria-label="This is my tooltip">
+  Next
+</button>
+```
+
+## Modifiers
+
+* `.--top`: Show the tooltip above the element
+
+* `.--right`: Show the tooltip to the right of the element
+
+* `.--bottom`: Show the tooltip below the element
+
+* `.--left`: Show the tooltip to the left of the element
+
+* `.--top-left`: Show the tooltip above and to the left of the element
+
+* `.--top-right`: Show the tooltip above and to the right of the element
+
+* `.--bottom-left`: Show the tooltip below and to the left of the element
+
+* `.--bottom-right`: Show the tooltip below and to the right of the element
+
+* `.--small`: Make the tooltip smaller
+
+* `.--medium`: Make the tooltip medium sized
+
+* `.--large`: Make the tooltip larger
+
+* `.--fit`: Make the tooltip fit the content
+
+* `.--error`: Make the tooltip red
+
+* `.--warning`: Make the tooltip yellow
+
+* `.--info`: Make the tooltip blue
+
+* `.--success`: Make the tooltip green
+
+* `.--always`: Show the tooltip always
+
+* `.--no-animate`: Don't animate the tooltip
+
+* `.--bounce`: Make the tooltip bounce
+
+* `.--no-arrow`: Don't show the arrow
+
+# Variables
+
+```css
+--ui-tooltip-background-color: var(--ui-color-grey-900);
+--ui-tooltip-text-color: #fff;
+--ui-tooltip-font-size: 0.85rem;
+--ui-tooltip-line-height: 1rem;
+--ui-tooltip-border-radius: var(--ui-shared-border-radius);
+--ui-tooltip-padding: var(--ui-shared-padding-md);
+--ui-tooltip-box-shadow: var(--ui-shared-box-shadow);
+```

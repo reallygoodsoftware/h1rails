@@ -1,0 +1,41 @@
+---
+title: 'Welcome To Base Styles'
+---
+
+Base Styles is a single-file CSS toolkit designed for 1. Composing clean, consistent user interfaces and 2. Providing a lightweight way to keep CSS organized.
+
+<Card title="Get Started" icon="arrow-right" horizontal={true} href="/basestyles/getting-started">
+  Learn how to use Base Styles in your own project
+</Card>
+
+***
+
+# Principles
+
+<Card title="UI Elements *Plus* Code Organization" icon="line-columns" horizontal={true}>
+  Most CSS libraries give you *either*: 1. A set of patterns for keeping things organized (E.g. [Tailwind](https://tailwindcss.com/)), **or** 2. A set of UI elements (E.g. [Shadcn](https://ui.shadcn.com/)). We wanted something that gave us both.
+</Card>
+
+<Card title="No Build Steps" icon="bolt-slash" horizontal={true}>
+  We no longer need a compile step to build CSS libraries. [CSS variables](https://caniuse.com/css-env-function) brought the ability to define and reuse design tokens, and [CSS Nesting](https://caniuse.com/css-nesting) made building systems in a single file much easier to organize.&#x20;
+</Card>
+
+<Card title="Effortless Consistency" icon="wand-magic-sparkles" horizontal={true}>
+  If you use [Tailwind](https://tailwindcss.com/) without a component library or a design team, your UI will start to accumulate minor visual inconsistencies over time. Tailwind's recommended strategy is to first add CSS classes, then bundle your HTML into components. Ours removes the second step - you just add the classes and you're done. This is one less thing for your team to worry about, and leaves you with a more consistent UI.
+</Card>
+
+<Card title="We Style, You Space" icon="distribute-spacing-horizontal" horizontal={true}>
+  We agree with [**<u>Caleb</u>**](https://x.com/calebporzio/status/1837495368843436266) - "If you bake spacing utilities into your components, you end up constantly wrestling with and overriding them...which begets all sorts of badness." We recommend including [**<u>Tailwind Lite</u>**](https://tailwind-lite.com) and using it for utility classes like `flex flex-col gap-4`.
+</Card>
+
+<Card title="Interoperability" icon="arrow-right-arrow-left" horizontal={true}>
+  Most "components" can be implemented with "add this class to this element on click/hover", which means that for most component libraries, 95% of the work is in the styling and only 5% is in the interactivity. And yet, authors building UI libraries for a specific framework write all of their styling from scratch every time, rather than reusing and sharing a set of styles for, for example, their modal component.
+</Card>
+
+##
+
+<Info>
+  **We would love to see authors build libraries for their specific framework on top of Base Styles. If you are interested in this, please go right ahead!**
+</Info>
+
+##

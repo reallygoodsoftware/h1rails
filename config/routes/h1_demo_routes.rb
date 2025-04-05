@@ -8,6 +8,9 @@ scope "/demos" do
     as: 'stimulus_demo_tab'
 
   get "/"          => "h1rails/demos#index", as: "demos"
+
+
+
   get "/coffee"  => "h1rails/demos#coffee", as: "demo_coffee"
   get "/tea"  => "h1rails/demos#tea", as: "demo_tea"
   match "/multistep"  => "h1rails/demos#multistep_start", 
@@ -34,5 +37,8 @@ scope "/demos" do
 
   get "/:partial_name" => "h1rails/demos#render_partial",
     as: "demo_partial"
+
+  get "/md/:path" => "h1rails/demos#show_md", 
+    as: "demo_show_md"
 
 end

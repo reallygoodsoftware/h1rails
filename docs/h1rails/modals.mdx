@@ -1,0 +1,74 @@
+---
+title: 'Modals'
+icon: 'window-maximize'
+---
+
+* Modals are remote by default. This means you load a modal with a normal link or `<a>` tag, and the content is loaded from a remote url.
+
+## General Use
+
+* Create a new route for your modal content.
+
+```ruby
+get "/account/info"  => "account#info", as: "my_path"
+```
+
+* Then load the modal with a normal link or `<a>` tag.
+
+```erb
+<a href="<%= my_path %>">Open Modal</a>
+```
+
+Or using the `link_to` Rails Helper.
+
+```erb
+<%= link_to 'Open Modal', my_path %>
+```
+
+Finally, add a before\_action to your controller to tell it to render in a modal.
+
+```ruby
+before_action :renders_in_modal, only: :info
+```
+
+## Slow Modals
+
+If your modal loads fast, the above code is all you need. If it's going to take more than half a second to load, it's useful to show the loading skeleton when it's clicked.
+
+```erb
+<a :click="modalOpen=true" href="<%= my_path(modal:true) >" >Show</a>
+```
+
+## Pre Loaded Modals
+
+Sometimes, you may want to load the modal content when the page itself loads. You can do this with content\_for in your view.
+
+```erb
+<% content_for :modal_content do |content| %>
+  Special Offer!
+<% end %>
+```
+
+With the content loaded in, you could now, for example, show a modal popup 2 seconds after the page loads.
+
+```javascript
+setTimeout(() => {
+  MiniJS.window.modalOpen=true
+}, "1000");
+```
+
+## Multi Step Forms and Links Inside Modals
+
+Sometimes you may want to include links or forms in a modal, where subsequent pages/states load into the same modal. All you have to do here is make sure the controller actions being linked to or submitted also have the `renders_in_modal` before\_action.
+
+## Under The Hood
+
+* A hidden modal dialog div is loaded on every page. It's hooked in to Mini Js, so showing it is as easy as setting `modalOpen` to `true`.
+
+* You can do this from the console with `MiniJS.window.modalOpen=true`, or you can use a Mini event on any element, like so.
+
+```
+<button :click="modalOpen=true">Show</button>
+```
+
+That said, the above method is mainly useful for debugging and is not the standard way to show a modal.

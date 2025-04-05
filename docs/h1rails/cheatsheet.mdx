@@ -1,0 +1,80 @@
+# Cheat Sheet
+
+
+
+
+
+### Styling
+
+#### Set the default style variables in `/public/styles/globals.css`
+```
+:root {
+  --ui-font-family-base: 'Inter', sans-serif;
+  --ui-font-family-headers: 'Plus Jakarta Sans', sans-serif;
+  --ui-button-border-width: 2px;
+}
+```
+Read more about [Base Styles]()
+
+#### Use any Tailwind utility class
+
+```
+<div class="flex flex-col items-center p-7 rounded-2xl"></div>
+```
+
+[Explore all Tailwind classes](https://nerdcave.com/tailwind-cheat-sheet)
+
+### Icons
+
+The codebase includes all icons from [heriocons](https://heroicons.com/)
+
+Normal icon
+```
+<%= inline_svg_tag("/icons/star.svg") %>
+```
+Outline icon
+```
+<%= inline_svg_tag("/icons/star-outline.svg") %>
+```
+
+Color Icon
+```
+<%= inline_svg_tag("/icons/star-outline.svg", class: "text-blue-600") %>
+```
+
+
+### Buttons
+
+#### Basic Button
+```
+<button class="ui-button" type="button">My Button</button>
+```
+```
+<a class="ui-button" href="/">My Button</a>
+```
+
+#### Button with an icon
+```
+<a class="ui-button" href="/">
+  Favorite
+  <%= inline_svg_tag("/icons/star.svg") %>
+</a>
+```
+
+## Javascript
+
+#### Add minor frontend interactivity
+
+```
+<div :class="showTitle ? 'block' : 'hidden'">Title Here</div>
+<div :click="showTitle = !showTitle"> Toggle </div>
+```
+Read more about mini-js.
+
+
+# More
+
+### Create a custom theme
+
+- Create a new file in `/public/themes/theme-name` called something like `mytheme.css`
+- Include it in the head of your f

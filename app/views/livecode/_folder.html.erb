@@ -1,0 +1,13 @@
+<div class="text-gray-400">
+  <%= folder[:path] %>
+  <% if folder[:files].any?  %>
+    <div class="p-2">
+      <% folder[:folders].each do |folder| %>
+        <%= render partial: "livecode/folder", locals: {folder: folder} %>
+      <% end %> 
+      <% folder[:files].each do |file| %>
+        <%= render partial: "livecode/file", locals: {file: file} %>
+      <% end %> 
+    </div>
+  <% end %>
+</div>
