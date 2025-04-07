@@ -4,12 +4,25 @@ module H1Rails
   included do
     after_action :htmx_support_modal
 
+    layout :determine_layout
+
     def htmx_support_modal
       if @renders_in_modal 
         response.set_header('HX-Push-Url','false')
         response.set_header('HX-Retarget','#modal-container')
         response.set_header('HX-Reselect','#modal-container')
         response.set_header('HX-Reswap','outerHTML show:no-scroll transition:true')
+      end
+    end
+
+
+    def determine_layout 
+      if @renders_in_modal
+        "modal"
+      elsif @custom_layout
+        @custom_layout
+      else
+        "application"
       end
     end
     

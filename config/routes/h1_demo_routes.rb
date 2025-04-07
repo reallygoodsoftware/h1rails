@@ -9,7 +9,7 @@ scope "/demos" do
 
   get "/"          => "h1rails/demos#index", as: "demos"
 
-
+  get "/base-styles" => "h1rails/demos/base_styles#index", as: "base_styles"
 
   get "/coffee"  => "h1rails/demos#coffee", as: "demo_coffee"
   get "/tea"  => "h1rails/demos#tea", as: "demo_tea"

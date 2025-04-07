@@ -1,10 +1,9 @@
 <div class="ui-box w-full">
   <div class="--top">
-    <div class="ui-titlepair --xl">
-      <div class="--title">
-        Rich Text Editor
-      </div>
-    </div>
+    
+    <h3 class="ui-title --xl">
+      Rich Text Editor
+    </h3>
   </div>
   <%= form_for @user, url: demo_user_form_path(@user), html: { class: "ui-form" } do |f| %>
     <%= f.hidden_field :first_name, 

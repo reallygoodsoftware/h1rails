@@ -77,4 +77,13 @@ module H1Helper
     # disable if user agent is fam-ai-mobile-app
     true if request.user_agent.include?("h1expo")
   end
+
+  def sidebar_shown?
+    # Check the controller & action
+    string = "#{params[:controller]}##{params[:action]}"
+    disabled_on = [
+      "h1rails/demos#multistep_start"
+    ]
+    !disabled_on.include?(string)
+  end
 end

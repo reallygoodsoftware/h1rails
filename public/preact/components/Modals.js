@@ -8,9 +8,12 @@ export function Modal({ modalId, content, size = 'md', isVisible, onClose }) {
   
   // Support HTMX content
   useEffect(() => {
+    console.log("11")
     if (isVisible && contentRef.current) {
+      console.log("13")
       if (window.htmx) {
         window.htmx.process(contentRef.current);
+        console.log("HTMX processed");
       } else {
       }
     }
@@ -22,7 +25,10 @@ export function Modal({ modalId, content, size = 'md', isVisible, onClose }) {
       <div class="--wrapper-outer">
         <div class="--wrapper-inner">
           <div class=${dialogClass}>
-            <div id=${modalId} class="--modal-content" ref=${contentRef} dangerouslySetInnerHTML=${{ __html: content }}></div>
+            <div class="--close-button" onClick=${onClose}>
+              <img src="/icons/heroicons/x-mark.svg" />
+            </div>
+            <div id="modal-container" class="--modal-content" ref=${contentRef} dangerouslySetInnerHTML=${{ __html: content }}></div>
           </div>
         </div>
       </div>

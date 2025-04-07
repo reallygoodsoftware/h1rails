@@ -1,3 +1,12 @@
+<% content_for :sidebar_content do %>
+  <div class="--section" style="margin-top: 1.5rem;">
+    <h3 class="--eyebrow">Elements</h3>
+    <a class="--menu-item <%= current_page?(demos_path) ? '--active' : '' %>" href="<%= demos_path %>">
+      Assorted
+    </a>
+  </div>
+<% end %>
+
 <% @user = User.first %>
 <div class="ui-container --sm">
   <div class="h-full flex flex-col items-center gap-y-8  --sm py-8">
@@ -10,6 +19,7 @@
         <a href="https://docs.h1rails.com/h1rails">Docs</a>.
       </div>
     </div>
+    <%= render partial: "h1rails/demos/buttons" %>
     <%= render partial: "h1rails/demos/modals" %>
     <%= render partial: "h1rails/demos/toasts" %>
     <%= render partial: "h1rails/demos/selects" %>

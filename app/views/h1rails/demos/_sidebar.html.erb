@@ -8,26 +8,7 @@
       
       <!-- Main content (scrollable) -->
       <div class="--middle">
-        <div class="--section">
-          <h3 class="--eyebrow">Base Styles</h3>
-          
-          <a class="--menu-item <%= current_page?(demos_path) ? '--active' : '' %>" href="<%= demos_path %>">
-            Assorted
-          </a>
-
-          <a class="--menu-item <%= current_page?(demo_show_md_path("buttons")) ? '--active' : '' %>" href="<%= demo_show_md_path("buttons") %>">
-            Buttons
-          </a>
-        
-        </div>
-        
-        <div class="--section" style="margin-top: 1.5rem;">
-          <h3 class="--eyebrow">Elements</h3>
-          
-          <a class="--menu-item <%= current_page?(demos_path) ? '--active' : '' %>" href="<%= demos_path %>">
-            Assorted
-          </a>
-        </div>
+        <%= yield :sidebar_content %>
       </div>
       
       <!-- Footer (sticky) -->

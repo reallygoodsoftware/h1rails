@@ -1,0 +1,132 @@
+<% content_for :sidebar_content do %>
+  <div class="--section">
+    <h3 class="--eyebrow">Base Styles</h3>
+    
+    <a class="--menu-item <%= current_page?(demos_path) ? '--active' : '' %>" href="<%= demos_path %>">
+      Assorted
+    </a>
+
+    <a class="--menu-item <%= current_page?(demo_show_md_path("buttons")) ? '--active' : '' %>" href="<%= demo_show_md_path("buttons") %>">
+      Buttons
+    </a>
+  
+  </div>
+<% end %>
+
+<style>
+  pre {
+    line-height: 1.2;        /* Reduce line height */
+    margin: 0;              /* Remove any default margins */
+    padding: 0;             /* Remove any default padding */
+    white-space: pre;  /* Or pre-wrap if you want text to wrap */
+    display: block;
+    margin-top: 10px
+  }
+
+  pre:not(.--expanded) {
+    margin-top: 0px;
+    height: 0px;
+    overflow: hidden;
+  }
+
+  pre code {
+    display: block;         /* Ensure code fills the pre */
+    white-space: pre-wrap; /* Allow text wrapping */
+  }
+
+  .code-sample {
+    position: relative;
+  }
+  .code-toggle {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    height: 25px;
+    border-radius: 12px;
+    font-size: .8rem;
+  }
+  .ui-styled-text > h2 {
+    margin-top: 2rem !important;
+  }
+</style>
+
+
+<div class="flex">
+  
+  <div class="ui-container">
+    <div class="">
+      <div class="grid grid-cols-5 gap-4">
+        <div class="col-span-1 hidden">
+         
+        </div>
+        <div class="col-span-5">
+          <div class="ui-styled-text">
+            <%= @content.html_safe %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  document.querySelectorAll('.code-sample').forEach((el) => {
+    // if element has the .code-sample-inner class, then get the inner content
+    if (el.classList.contains('code-sample-inner')) {
+      code = el.innerHTML;
+    } else {
+      code = el.outerHTML;
+    }
+    code = code.replace(/data-mini\.uuid="[^"]*"/g, ''); // Remove mini js attributes
+    code = code.replace(/:class="[^"]*"/g, ''); // Remove mini js attributes
+    code = code.replace(/:click="[^"]*"/g, ''); // Remove mini js attributes
+    code = code.replace(/:scope="[^"]*"/g, ''); // Remove mini js attributes
+    code = code.replace(/code-sample /g, ''); // Remove the code-sample class
+    code = code.replace(/ code-sample/g, ''); // Remove the code-sample class
+
+    let lines = code.split('\n').filter(line => line.trim());
+    console.log(lines);
+
+    const minIndent = Math.min(
+      ...lines
+        .filter(line => line.trim()) // Skip empty lines
+        .map(line => {
+          const match = line.match(/^[ \t]*/);
+          return match ? match[0].length : 0;
+        })
+    );
+
+    lines = lines.map(line => line.slice(minIndent));
+
+    // Join lines back together
+    code = lines.join('\n');
+
+    const template = `
+      <pre class="language-html ui-expander <%= '--expanded' if params[:show_code] %>" ><code class="language-html"></code></pre>
+    `;
+    const toggleButton = `
+      <button class="ui-button code-toggle">Show Code</button>
+    `
+
+    el.classList.add('relative');
+    
+    el.insertAdjacentHTML('afterend', template);
+    el.insertAdjacentHTML('beforeend', toggleButton);
+    el.nextElementSibling.querySelector('code').innerText = code;
+
+    el.querySelector('.code-toggle').addEventListener('click', () => {
+      el.nextElementSibling.classList.toggle('--expanded');
+      if (el.nextElementSibling.classList.contains('--expanded')) {
+        el.querySelector('.code-toggle').innerText = 'Show Code';
+      } else {
+        el.querySelector('.code-toggle').innerText = 'Hide Code';
+      }
+    });
+  });
+
+  var snippets = document.querySelectorAll('pre code')
+  snippets.forEach(function(snippet) {
+    hljs.highlightBlock(snippet);
+    snippet.parentNode.classList.add('dark:border', 'dark:border-gray-400/50', 'dark:rounded');
+  })
+</script>

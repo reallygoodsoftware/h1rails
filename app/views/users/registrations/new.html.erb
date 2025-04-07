@@ -1,13 +1,13 @@
 <div class="items-center justify-center h-full flex py-12 overflow-x-scroll">
   <div class="m-auto" style="width: 700px;max-width: 500px">
     <div class="ui-box p-6 rounded bg-white">
-      <div class="ui-titlepair --center flex flex-col text-center mb-4 space-y-2">
+      <div class="ui-titlepair --xl --center flex flex-col text-center mb-4 space-y-2">
         <h2 class="--title">
           Create An Account
         </h2>
         <span class="description">
           Or 
-          <a href="<%= new_user_session_path %>">Sign in to your account</a>
+          <a class="ui-link" href="<%= new_user_session_path %>">Sign in to your account</a>
         </span>
       </div>
       <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { class: "ui-form" }) do |f| %>

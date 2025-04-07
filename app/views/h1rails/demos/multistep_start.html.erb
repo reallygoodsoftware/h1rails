@@ -1,15 +1,8 @@
 
 <div class="--modal-top-section">
-  <div class="flex justify-between w-full">
-    <div class="ui-titlepair">
-      <div class="--title">
-        Step One
-      </div>
-    </div>
-    <div class="ui-button --rounded --minimal" :click="modalOpen=false">
-      <%= inline_svg_tag('heroicons/x-mark.svg') %>
-    </div>
-  </div>
+  <h3 class="ui-title --xl">
+    Step One
+  </h3>
 </div>
 
 <%= form_for @user, url: demo_multistep_start_path do |f| %>

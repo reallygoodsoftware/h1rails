@@ -1,12 +1,14 @@
 <div class="ui-box w-full">
   <div class="--top">
-    <div class="ui-titlepair --xl">
-      <div class="--title">
-        Toasts
-      </div>
-    </div>
+    <h3 class="ui-title --xl">
+      Toasts
+    </h3>
   </div>
-  <a class="ui-button --solid --motion-forward" href="<%= demo_toast_path() %>">
+  <a class="ui-button --solid --motion-forward" onclick="window.addToast({
+    title: 'Success!',
+    message: 'Your action was completed successfully',
+    disappearing: true
+    });">
     Trigger a toast
   </a>
   <div class="--bottom flex">

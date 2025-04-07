@@ -1,58 +1,42 @@
 <div class="ui-box w-full">
   <div class="--top">
-    <div class="ui-titlepair --xl">
-      <div class="--title">
-        Modals
-      </div>
-    </div>
-  </div>
-  <div class="hidden">
-    <a class="ui-button" href="<%= demo_coffee_path %>" :click="previewModal()"> Open Modal</a>
-    <a class="ui-button" href="<%= demo_coffee_path %>?modal_size=xs" :click="previewModal()">Open Modal (xs)</a>
-    <a class="ui-button" href="<%= demo_coffee_path %>?modal_size=sm" :click="previewModal()">Open Modal (sm)</a>
-    <a class="ui-button" href="<%= demo_coffee_path %>?modal_size=lg" :click="previewModal()">Open Modal (lg)</a>
+    <h3 class="ui-title --xl">
+      Modals
+    </h3>
   </div>
 
-  <div id="coffee" class="hidden">
-    <div class="ui-titlepair --xl">
-      <div class="--title">
-        About Coffee
-      </div>
-    </div>
-    <button onclick="closeModal('coffee')"
-      class="ui-button" >
-      Close Modal
-    </button>
-    <button onclick="launchModal({
-                  url: '<%= demo_tea_path %>', 
-                  id: 'tea',
-                  size: 'md'})" 
-          class="ui-button --motion-forward mr-4 mb-4">
-      Open Another Modal
-    </button>
-  </div>
-  
   <button onclick="launchModal({
                   selector: '#coffee', 
                   id: 'coffee',
                   size: 'md'})" 
-          class="ui-button --motion-forward mr-4 mb-4">
-    Open Modal 
+          class="ui-button block mr-4 mb-4">
+    Open Modal from content on the page
+    <%= inline_svg_tag("heroicons/arrow-up-right.svg") %>
   </button>
 
+  <br/>
 
   <button onclick="launchModal({
                   url: '<%= demo_coffee_path %>', 
                   id: 'coffee_from_url',
                   size: 'md'})" 
           class="ui-button --motion-forward mr-4 mb-4">
-    URL Content 
+    Open a modal from a URL
+    <%= inline_svg_tag("heroicons/arrow-up-right.svg") %>
   </button>
 
-  <div class="mt-4">
-    <a class="ui-button no-style" href="<%= demo_multistep_start_path %>" :click="previewModal()">Open Form Flow In Modal</a>
-    <a class="ui-button no-style" href="<%= demo_has_many_form_path %>" :click="previewModal()">Open Has Many Form Flow In Modal</a>
-  </div>
+  <br/>
+
+  <button onclick="launchModal({
+                  url: '<%= demo_multistep_start_path %>', 
+                  id: 'multistep_modal',
+                  size: 'md'})" 
+          class="ui-button --motion-forward mr-4 mb-4">
+    Open a modal with a form in it
+    <%= inline_svg_tag("heroicons/arrow-up-right.svg") %>
+  </button>
+
+  
   <div class="--bottom flex">
     <div></div>
     <a target="_blank" href="https://docs.h1rails.com/h1rails/modals" class="ui-button --solid --motion-upward">
@@ -60,4 +44,20 @@
       <%= inline_svg_tag("heroicons/arrow-top-right-on-square.svg") %>
     </a>
   </div>
+</div>
+
+
+<div id="coffee" class="hidden">
+  <div class="--modal-top-section">
+    <div class="ui-title --xl">
+      About Coffee
+    </div>
+  </div>
+  <button onclick="launchModal({
+                url: '<%= demo_tea_path %>', 
+                id: 'tea',
+                size: 'md'})" 
+        class="ui-button --motion-forward mr-4 mb-4">
+    Open a modal inside another modal
+  </button>
 </div>

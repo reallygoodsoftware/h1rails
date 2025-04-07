@@ -9,11 +9,10 @@
 
     <link rel="stylesheet" href="https://cdn.base-styles.com/src/sidebar.css<%= cache_buster %>">
 
-    <div id="main-content" class="h-full">
-      <%= render :partial => "h1rails/demos/sidebar" %>
+    <div id="<%= renders_in_modal? ? "modal-container" : "main-content" %>" class="h-full">
       <%= yield %>
     </div>
-
+    <%= render :partial => "h1rails/demos/sidebar" if sidebar_shown? %>
     <%- render partial: "livecode/dock" if request_is_localhost? %>
   </body>
 </html>

@@ -1,13 +1,10 @@
 class H1rails::DemosController < ApplicationController
 
   before_action :renders_in_modal,  only: [:multistep_start, :multistep_step2, :has_many_form, :delete_category]
-  before_action -> { set_modal_size("xs") }, only: [:coffee]
-  before_action -> { set_modal_size("lg") }, only: [:has_many_form]
-  before_action -> { set_view_transition_style("slide-from-right") }, only: [:multistep_step2]
-
+  
   skip_before_action :verify_authenticity_token, :only => [:delete_category]
 
-  layout "demos"
+  before_action :set_layout_file
 
   # fix cors issues
   after_action :set_access_control_headers, only: [:search]
@@ -27,6 +24,10 @@ class H1rails::DemosController < ApplicationController
   def coffee
     sleep(0.5)
     render layout: false
+  end
+
+  def set_layout_file
+    @custom_layout = "demos"
   end
 
   def tea 
@@ -92,7 +93,7 @@ class H1rails::DemosController < ApplicationController
         flash[:toasts] = [
           { title: "Changes Saved", message: "You saved the changes", type: "success" },
         ]
-        response.set_header('HX-Location', demos_path)
+        @close_modal = true
       end
     end
   end

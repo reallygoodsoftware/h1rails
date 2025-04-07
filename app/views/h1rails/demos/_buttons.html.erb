@@ -1,0 +1,33 @@
+<div class="ui-box w-full">
+  <div class="--top">
+    <div class="ui-title --xl">
+      Buttons
+    </div>
+  </div>
+  <div class="flex gap-x-2">
+    <button class="ui-button">
+      Button
+    </button>
+    <button class="ui-button --solid">
+      Solid Button
+    </button>
+
+    <button class="ui-button">
+      Button With Icon
+      <%= inline_svg_tag "heroicons/star-outline.svg", class: "ui-icon" %>
+    </button>
+
+    <button class="ui-button --minimal">
+      Minimal Button
+      <%= inline_svg_tag "heroicons/arrow-right.svg", class: "ui-icon" %>
+    </button>
+  </div>
+
+  <div class="--bottom flex">
+    <div></div>
+    <a target="_blank" href="https://docs.h1rails.com/basestyles/buttons" class="ui-button --solid --motion-upward">
+      Read The Docs 
+      <%= inline_svg_tag("heroicons/arrow-top-right-on-square.svg") %>
+    </a>
+  </div>
+</div>

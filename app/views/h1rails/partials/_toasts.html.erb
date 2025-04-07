@@ -1,33 +1,13 @@
-<div id="toasts" hx-swap-oob="<%= 'true' if flash[:toasts] %>">
-  
-  <script>
-    toasts = <%= flash[:toasts] ? flash[:toasts].to_json.html_safe : [] %> 
-  </script>
 
-  <div class="ui-toasts" :each="toast, index in toasts" >
-    <div class="--toast" role="alert"
-      :class="el.toastClass"
-      :scope
-      :load="
-        initialdelay = (index + 1) * 200
-        await wait(initialdelay);
-        el.toastClass='--animate-in';
-        if (toast.disappearing) {
-          await wait(2000);
-          el.toastClass='--animate-out'
-        }
-    ">
-      <div class="--wrapper" >
-        <div class="--content">
-          <div class="--dismiss" :click="scope.toastClass='--animate-out';await wait(1000);scope.toastClass='hidden'" >
-            <%= inline_svg_tag("heroicons/x-mark.svg") %>
-          </div>
-          <span class="--title" :text="toast.title">
-          </span> 
-          <span class="--message" :text="toast.message">
-          </span> 
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+<script type="module">
+  import { html, render, useState, useEffect } from 'https://esm.sh/htm/preact/standalone';
+  import {Toasts} from '/preact/components/Toasts.js';
+  // Inilize the modal system once in your application
+  document.addEventListener('DOMContentLoaded', () => {
+    // Render the modal system
+    render(html`<${Toasts} />`, document.getElementById('toasts'));
+    console.log("Reloading");
+  });
+</script>
+
+<div id="toasts"></div>
