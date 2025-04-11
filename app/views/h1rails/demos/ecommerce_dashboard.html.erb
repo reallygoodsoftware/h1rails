@@ -1,0 +1,256 @@
+<div class="ui-container">
+  <div class="ui-box mb-8">
+    <div class="--top">
+      <div class="ui-titlepair --xl">
+        <h3 class="--title">Products Dashboard</h3>
+        <p class="--description">Manage your store inventory, view analytics, and process orders.</p>
+      </div>
+    </div>
+    
+    <div class="px-4 py-6">
+      <!-- Stats Overview Cards -->
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-4 mb-6">
+        <div class="ui-box p-4">
+          <div class="text-sm text-gray-500 mb-1">Total Revenue</div>
+          <div class="text-2xl font-bold">$24,389.45</div>
+          <div class="text-xs text-green-600 mt-2">+12% from last month</div>
+        </div>
+        <div class="ui-box p-4">
+          <div class="text-sm text-gray-500 mb-1">Orders</div>
+          <div class="text-2xl font-bold">237</div>
+          <div class="text-xs text-green-600 mt-2">+5% from last month</div>
+        </div>
+        <div class="ui-box p-4">
+          <div class="text-sm text-gray-500 mb-1">Customers</div>
+          <div class="text-2xl font-bold">1,428</div>
+          <div class="text-xs text-green-600 mt-2">+18% from last month</div>
+        </div>
+        <div class="ui-box p-4">
+          <div class="text-sm text-gray-500 mb-1">Avg. Order Value</div>
+          <div class="text-2xl font-bold">$102.91</div>
+          <div class="text-xs text-green-600 mt-2">+7% from last month</div>
+        </div>
+      </div>
+      
+      <!-- Filters and Actions Section -->
+      <div class="flex flex-col md:flex-row gap-4 mb-6 justify-between">
+        <div class="flex gap-4 flex-col md:flex-row">
+          <!-- Search -->
+          <div>
+            <input type="search" placeholder="Search products..." class="ui-search-input w-full md:w-64" />
+          </div>
+          
+          <!-- Filter Dropdown -->
+          <div class="ui-dropdown" :scope="filterOpen=false">
+            <button class="--trigger ui-button" :click="scope.filterOpen=!scope.filterOpen">
+              Filter by Category
+              <img src="/icons/heroicons/filter.svg" class="ml-2 w-4 h-4" />
+            </button>
+            <div class="--drawer p-1">
+              <a class="ui-button --minimal w-full text-left">All Categories</a>
+              <a class="ui-button --minimal w-full text-left">Electronics</a>
+              <a class="ui-button --minimal w-full text-left">Clothing</a>
+              <a class="ui-button --minimal w-full text-left">Home & Garden</a>
+              <a class="ui-button --minimal w-full text-left">Toys</a>
+            </div>
+          </div>
+          
+          <!-- Status Dropdown -->
+          <div class="ui-dropdown" :scope="statusOpen=false">
+            <button class="--trigger ui-button" :click="scope.statusOpen=!scope.statusOpen">
+              Filter by Status
+              <img src="/icons/heroicons/filter.svg" class="ml-2 w-4 h-4" />
+            </button>
+            <div class="--drawer p-1">
+              <a class="ui-button --minimal w-full text-left">All Statuses</a>
+              <a class="ui-button --minimal w-full text-left">In Stock</a>
+              <a class="ui-button --minimal w-full text-left">Low Stock</a>
+              <a class="ui-button --minimal w-full text-left">Out of Stock</a>
+            </div>
+          </div>
+        </div>
+        
+        <div>
+          <!-- Add Product Button -->
+          <button class="ui-button --solid --motion-forward">
+            Add New Product
+            <img src="/icons/heroicons/plus.svg" class="ml-2 w-4 h-4" />
+          </button>
+        </div>
+      </div>
+      
+      <!-- Products Table -->
+      <div class="overflow-x-auto mb-6">
+        <table class="ui-table w-full">
+          <thead>
+            <tr>
+              <th class="text-left">Product</th>
+              <th class="text-left">SKU</th>
+              <th class="text-left">Category</th>
+              <th class="text-right">Price</th>
+              <th class="text-right">Stock</th>
+              <th class="text-center">Status</th>
+              <th class="text-right">Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="text-left">
+                <div class="flex items-center gap-2">
+                  <div class="w-10 h-10 bg-gray-200 rounded"></div>
+                  <span>Wireless Headphones</span>
+                </div>
+              </td>
+              <td class="text-left">WH-1000XM4</td>
+              <td class="text-left">Electronics</td>
+              <td class="text-right">$349.99</td>
+              <td class="text-right">45</td>
+              <td class="text-center"><div class="ui-chip --sm --green inline-block">In Stock</div></td>
+              <td class="text-right">
+                <div class="flex justify-end">
+                  <button class="ui-button --minimal --rounded p-1">
+                    <img src="/icons/heroicons/pencil.svg" class="w-4 h-4" />
+                  </button>
+                  <button class="ui-button --minimal --rounded p-1">
+                    <img src="/icons/heroicons/eye.svg" class="w-4 h-4" />
+                  </button>
+                  <button class="ui-button --minimal --rounded p-1">
+                    <img src="/icons/heroicons/trash.svg" class="w-4 h-4" />
+                  </button>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td class="text-left">
+                <div class="flex items-center gap-2">
+                  <div class="w-10 h-10 bg-gray-200 rounded"></div>
+                  <span>Smartphone Pro</span>
+                </div>
+              </td>
+              <td class="text-left">SP-12-PRO</td>
+              <td class="text-left">Electronics</td>
+              <td class="text-right">$999.99</td>
+              <td class="text-right">12</td>
+              <td class="text-center"><div class="ui-chip --sm --yellow inline-block">Low Stock</div></td>
+              <td class="text-right">
+                <div class="flex justify-end">
+                  <button class="ui-button --minimal --rounded p-1">
+                    <img src="/icons/heroicons/pencil.svg" class="w-4 h-4" />
+                  </button>
+                  <button class="ui-button --minimal --rounded p-1">
+                    <img src="/icons/heroicons/eye.svg" class="w-4 h-4" />
+                  </button>
+                  <button class="ui-button --minimal --rounded p-1">
+                    <img src="/icons/heroicons/trash.svg" class="w-4 h-4" />
+                  </button>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td class="text-left">
+                <div class="flex items-center gap-2">
+                  <div class="w-10 h-10 bg-gray-200 rounded"></div>
+                  <span>Cotton T-Shirt</span>
+                </div>
+              </td>
+              <td class="text-left">CTS-MEDIUM-BLK</td>
+              <td class="text-left">Clothing</td>
+              <td class="text-right">$24.99</td>
+              <td class="text-right">0</td>
+              <td class="text-center"><div class="ui-chip --sm --red inline-block">Out of Stock</div></td>
+              <td class="text-right">
+                <div class="flex justify-end">
+                  <button class="ui-button --minimal --rounded p-1">
+                    <img src="/icons/heroicons/pencil.svg" class="w-4 h-4" />
+                  </button>
+                  <button class="ui-button --minimal --rounded p-1">
+                    <img src="/icons/heroicons/eye.svg" class="w-4 h-4" />
+                  </button>
+                  <button class="ui-button --minimal --rounded p-1">
+                    <img src="/icons/heroicons/trash.svg" class="w-4 h-4" />
+                  </button>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td class="text-left">
+                <div class="flex items-center gap-2">
+                  <div class="w-10 h-10 bg-gray-200 rounded"></div>
+                  <span>Coffee Maker</span>
+                </div>
+              </td>
+              <td class="text-left">CM-DELUXE</td>
+              <td class="text-left">Home & Garden</td>
+              <td class="text-right">$129.99</td>
+              <td class="text-right">28</td>
+              <td class="text-center"><div class="ui-chip --sm --green inline-block">In Stock</div></td>
+              <td class="text-right">
+                <div class="flex justify-end">
+                  <button class="ui-button --minimal --rounded p-1">
+                    <img src="/icons/heroicons/pencil.svg" class="w-4 h-4" />
+                  </button>
+                  <button class="ui-button --minimal --rounded p-1">
+                    <img src="/icons/heroicons/eye.svg" class="w-4 h-4" />
+                  </button>
+                  <button class="ui-button --minimal --rounded p-1">
+                    <img src="/icons/heroicons/trash.svg" class="w-4 h-4" />
+                  </button>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td class="text-left">
+                <div class="flex items-center gap-2">
+                  <div class="w-10 h-10 bg-gray-200 rounded"></div>
+                  <span>Building Blocks Set</span>
+                </div>
+              </td>
+              <td class="text-left">BB-1000-CLASSIC</td>
+              <td class="text-left">Toys</td>
+              <td class="text-right">$59.99</td>
+              <td class="text-right">86</td>
+              <td class="text-center"><div class="ui-chip --sm --green inline-block">In Stock</div></td>
+              <td class="text-right">
+                <div class="flex justify-end">
+                  <button class="ui-button --minimal --rounded p-1">
+                    <img src="/icons/heroicons/pencil.svg" class="w-4 h-4" />
+                  </button>
+                  <button class="ui-button --minimal --rounded p-1">
+                    <img src="/icons/heroicons/eye.svg" class="w-4 h-4" />
+                  </button>
+                  <button class="ui-button --minimal --rounded p-1">
+                    <img src="/icons/heroicons/trash.svg" class="w-4 h-4" />
+                  </button>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      
+      <!-- Pagination -->
+      <div class="flex justify-between items-center">
+        <div class="text-sm text-gray-500">
+          Showing 1 to 5 of 42 results
+        </div>
+        <div class="ui-button-group">
+          <button>
+            Previous
+          </button>
+          <button class="--active">
+            1
+          </button>
+          <button>
+            2
+          </button>
+          <button>
+            3
+          </button>
+          <button>
+            Next
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
