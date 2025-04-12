@@ -3,58 +3,46 @@ title: "Forms"
 icon: "pager"
 ---
 
-### Rails Form Helpers
+### Styling
 
-Rails Form Helpers are one of the few times we recommend using an abstraction instead of just vanilla html `<form>` elements. This is because they provide substantial utility:
-
-* **Security**: Every form includes and validates a CSRF protection.
-
-* **Validation**: We can show inline errors and top-of-form errors in one line of code.
-
-* **Templating**: We can use the same form template for both edit and update actions.
-
-* **Populating**: We don't need to tell our form about existing record values as it can get these from our model.
-
-* **Nested Forms**: We can easily build has\_many forms without creating a mess of frontend code.
-
-Read More on [Rails Form Helpers](https://guides.rubyonrails.org/form_helpers.html#working-with-basic-forms) on the official Rails Site.
-
-### Form Styling
-
-Form styling is powered by [Base Styles](/basestyles/intro). All we need to do is add a class of `.ui-form` to our form and all our form inputs will be styled for us. We can remove these default styles on a per field basis if we prefer - see instructions below.&#x20;
+Form styling is powered by [Base Styles](/basestyles/intro). All we need to do is add a class of `.ui-form` to our form and all our form inputs will be styled for us. We can remove these default styles on a per field basis if we prefer - see instructions below. 
 
 ### Loading States
 
-* Form loading states are handled by htmx - all we have to do is to is add a loading spinner which is hidden by default. You can read more in our article on [HTMX Indicators](/h1rails/htmx_indicators).
+- Form loading states are handled by htmx - all we have to do is to is add a loading spinner which is hidden by default. You can read more in our article on [HTMX Indicators](/h1rails/htmx_indicators).
 
 # Code Examples
 
 ### A Basic Form
 
 <CodeGroup>
-  ```erb edit.html.erb
-  <%= form_with model: @book, url: book_path, html: {class:"ui-form"} do |f| %>
-    <%= f.text_field :title, placeholder: "Title" %>
-    <%= f.button class: "ui-button --solid" do |button| %>
-      Save  
-      <%= inline_svg_tag("heroicons/check.svg") %>
-    <% end %>
+
+```erb edit.html.erb
+<%= form_with model: @book, url: book_path, html: {class:"ui-form"} do |f| %>
+  <%= f.text_field :title, placeholder: "Title" %>
+  <%= f.button class: "ui-button --solid" do |button| %>
+    Save  
+    <%= inline_svg_tag("heroicons/check.svg") %>
   <% end %>
-  ```
+<% end %>
+```
 
-  ```ruby routes.rb
-  match "/books/:id" => "books#edit", via: [:get,:patch], as: "book"
-  ```
 
-  ```ruby books_controller.rb
-  def edit
-    if request.post?
-      if @book.update(book_params)
-        redirect_to root_path
-      end
+```ruby routes.rb
+match "/books/:id" => "books#edit", via: [:get,:patch], as: "book"
+```
+
+
+```ruby books_controller.rb
+def edit
+  if request.post?
+    if @book.update(book_params)
+      redirect_to root_path
     end
   end
-  ```
+end
+```
+
 </CodeGroup>
 
 ### Loading Spinners
@@ -140,8 +128,20 @@ end
 <% end %>
 ```
 
-* Read [the full article](/h1rails/form_patterns#nested-relationships) which goes into more detail on nested forms.
+- Read [the full article](/h1rails/form_patterns#nested-relationships) which goes into more detail on nested forms.
 
 ### Multi Step Forms
 
-* There are several considerations when building Multi Step Forms, which we covered in our article: [Multi Step & Nested Forms](/h1rails/form_patterns)
+- There are several considerations when building Multi Step Forms, which we covered in our article: [Multi Step & Nested Forms](/h1rails/form_patterns)
+
+### Why not plain HTML?
+
+If you've read [HTML First](https://html-first.com/), you'll know it recommends using as few abstraction layers as possible. Rails Form Helpers are one of the few times we recommend using an abstraction instead of just vanilla html `<form>` elements. This is because they provide substantial utility:
+
+- **Security**: Every form includes and validates a CSRF protection.
+- **Validation**: We can show inline errors and top-of-form errors in one line of code.
+- **Templating**: We can use the same form template for both edit and update actions.
+- **Populating**: We don't need to tell our form about existing record values as it can get these from our model.
+- **Nested Forms**: We can easily build has_many forms without creating a mess of frontend code.
+
+Read More on [Rails Form Helpers](https://guides.rubyonrails.org/form_helpers.html#working-with-basic-forms) on the official Rails Site.
