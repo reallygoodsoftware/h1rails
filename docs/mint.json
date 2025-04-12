@@ -29,10 +29,6 @@
             "url": "basestyles"
         },
         {
-            "name": "Better Select",
-            "url": "betterselect"
-        },
-        {
             "name": "Tailwind Lite",
             "url": "tailwindlite"
         },
@@ -99,12 +95,6 @@
                 "/basestyles/tooltips",
                 "/basestyles/floating-labels"
             ]
-        }, 
-        {
-          "group": "About",
-          "pages": [
-              "betterselect/intro"
-          ]
         }
     ],
     "footerSocials": {
