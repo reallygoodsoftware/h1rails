@@ -4,73 +4,85 @@ sidebarTitle: "About H1 Rails"
 icon: "h1"
 ---
 
-H1 Rails is the quickest way to make beautiful web apps with minimal complexity. It uses Ruby on Rails, but centers on HTML, CSS, and Javascript, with the goal of being extremely approachable to developers who are new to Rails.
+# H1 Rails
+
+H1 Rails (HTML First Rails) is a boilerplate for building slick, polished web apps.
+
+- **Low Floor, High Ceiling**:  Extremely easy for beginners to get started with minimal setup and simple patterns based on the languages you already know (html, css, js).
+- **Batteries Included**: For the most common UI & UX patterns & challenges (modals, tabs, toasts, tooltips etc.).
+- **No Build**: By default, we store CSS and javascript libraries in the `/public` folder. This removes an entire category of debugging & deployment complexity.
+
+**Who It's For**
+
+- **Rails Developers** who want _even more_ simplicity, and/or more batteries included (solutions to common UI & UX challenges).
+- **Non Rails Developers** who want a super simple way to build web apps without getting bogged down in some of the Rails areas with a high learning curve (Hotwire, Stimulus etc).
+
+**Enhancements & Simplifications**
+
+- Out-of-the-box support for common UI patterns like modals, toasts, tooltips, forms and other UI patterns, powered primarily by [Base Styles](https://github.com/reallygoodsoftware/base-styles).
+- ~~Turbo~~ HTMX: We use HTMX instead of Turbo, for several reasons. We've several best practices docs for how to achieve common UX patterns using HTMX (multi step forms, type to search, etc.)
 
 # What's Inside
 
 <Tabs>
   <Tab title="Forms">
-    * Clean, consistent styling for all form input types. [Read More](/h1rails/forms)
-
-    * Support for multi-selects tag select, type to search. [Read More](/h1rails/selects)
-
-    * Code examples for commonly used patterns e.g nested relationships. [Read More](/h1rails/form_patterns)
+    - Clean, consistent styling for all form input types. [Read More](/h1rails/forms)
+    - Support for multi-selects tag select, type to search. [Read More](/h1rails/selects)
+    - Code examples for commonly used patterns e.g nested relationships. [Read More](/h1rails/form_patterns)
   </Tab>
-
   <Tab title="Icons">
-    * Pre loaded icons from [Heroicons](https://heroicons.com) and [Tabler Icons](https://tabler.io/icons), powered by [inline_svg](https://github.com/jamesmartin/inline_svg).
+    - Pre loaded icons from [Heroicons](https://heroicons.com) and [Tabler Icons](https://tabler.io/icons), powered by [inline_svg](https://github.com/jamesmartin/inline_svg).
 
     <CodeGroup>
-      ```erb Simple Icon
-      <%= inline_svg_tag("heroicons/check.svg") %>
-      ```
 
-      ```erb With Color
-      <%= inline_svg_tag("heroicons/check.svg",class:"text-green-200") %>
-      ```
+    ```erb Simple Icon
+    <%= inline_svg_tag("heroicons/check.svg") %>
+    ```
+
+    
+    ```erb With Color
+    <%= inline_svg_tag("heroicons/check.svg",class:"text-green-200") %>
+    ```
+
     </CodeGroup>
+
     [More on Icons →](/h1rails/icons)
   </Tab>
-
   <Tab title="Modals">
-    * Open any route in a modal
+    - Open any route in a modal
+
     ```rb Controller {2}
     class MyController
       before_action :renders_in_modal, only: [:edit]
     end
     ```
-        [More on Modals →](/h1rails/modals)
+
+    [More on Modals →](/h1rails/modals)
   </Tab>
 </Tabs>
 
 ## FAQs
 
 <AccordionGroup>
-  <Accordion title="What's HTML First?" defaultOpen={false}>
+  <Accordion title="What's HTML First?" defaultOpen="false">
     HTML First is a style of writing web software that favours using the native capabilities and languages of the browser and reducing layers of abstraction (languages and toolchains) on top of them. You can read more about it here.
   </Accordion>
-
-  <Accordion title="How does H1 Rails differ from normal Rails?" defaultOpen={false}>
+  <Accordion title="How does H1 Rails differ from normal Rails?" defaultOpen="false">
     In H1 Rails, you don't need to know anything about Turbo Frames, Turbo Streams, Stimulus Controllers, Targets, Actions, Propshaft, or the asset pipeline. You'll need to learn a little bit of Ruby, but we largely treat Rails as an html container.
 
     [Turbo](https://turbo.hotwired.dev/) is disabled by default. Instead the app is [boosted](https://htmx.org/attributes/hx-boost/) by htmx. This means you can just use normal rails `link_to` and `form_for` tags, and the app will handle smooth page transitions.
 
     You can of course turn on Turbo, Stimulus if you would prefer to keep them.
   </Accordion>
-
-  <Accordion title="Why would I use H1 Rails?" defaultOpen={false}>
+  <Accordion title="Why would I use H1 Rails?" defaultOpen="false">
     You might use H1 Rails if...
 
-    * You want a quick, simple boilerplate for building web apps.
-
-    * You’re interested in the html-over-the-wire approach for its conceptual simplicity, but want a quicker way to dive in than learning Turbo and Stimulus.
-
-    * You already know Rails, and have heard about the promise of HTMX and the Hypertext approach.
-
-    * You’ve seen some of the examples of what can be built with it
+    - You want a quick, simple boilerplate for building web apps.
+    - You’re interested in the html-over-the-wire approach for its conceptual simplicity, but want a quicker way to dive in than learning Turbo and Stimulus.
+    - You already know Rails, and have heard about the promise of HTMX and the Hypertext approach.
+    - You’ve seen some of the examples of what can be built with it
   </Accordion>
-
-  <Accordion title="Who is behind H1 Rails?" defaultOpen={false}>
+  <Accordion title="Who is behind H1 Rails?" defaultOpen="false">
     H1 Rails was built by [Really Good Software](https://reallygoodsoftware.net). We're a remote software agency that loves HTML. We work with Startups, Small/Medium Enterprises, Spin Outs, and E-Commerce Businesses. We're the people behind the following websites and libraries.
   </Accordion>
 </AccordionGroup>
