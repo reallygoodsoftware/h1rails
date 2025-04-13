@@ -23,11 +23,6 @@ H1 Rails (HTML First Rails) is a boilerplate for building slick, polished web ap
 # What's Inside
 
 <Tabs>
-  <Tab title="Forms">
-    - Clean, consistent styling for all form input types. [Read More](/h1rails/forms)
-    - Support for multi-selects tag select, type to search. [Read More](/h1rails/selects)
-    - Code examples for commonly used patterns e.g nested relationships. [Read More](/h1rails/form_patterns)
-  </Tab>
   <Tab title="Icons">
     - Pre loaded icons from [Heroicons](https://heroicons.com) and [Tabler Icons](https://tabler.io/icons), powered by [inline_svg](https://github.com/jamesmartin/inline_svg).
 
@@ -46,9 +41,12 @@ H1 Rails (HTML First Rails) is a boilerplate for building slick, polished web ap
 
     [More on Icons →](/h1rails/icons)
   </Tab>
+  <Tab title="Forms">
+    - Clean, consistent styling for all form input types. [Read More](/h1rails/forms)
+    - Support for multi-selects tag select, type to search. [Read More](/h1rails/selects)
+    - Code examples for commonly used patterns e.g nested relationships. [Read More](/h1rails/form_patterns)
+  </Tab>
   <Tab title="Modals">
-    - Open any route in a modal
-
     ```rb Controller {2}
     class MyController
       before_action :renders_in_modal, only: [:edit]
