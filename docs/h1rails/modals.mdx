@@ -1,15 +1,16 @@
 ---
-title: 'Modals'
-icon: 'window-maximize'
+title: "Modals"
+icon: "window-maximize"
 ---
 
 Modals are powered by Base Styles for styling, and [Modals.js](https://github.com/reallygoodsoftware/h1rails/blob/master/public/preact/components/Modals.js) - which manages the html and exposes some javascript helper functions.
 
 You can either load a modal from a url, or from a div (usually hidden) somewhere on the page.
 
-To trigger a modal, simply call the `launchModal()` function from an onclick event or elsewhere. 
+To trigger a modal, simply call the `launchModal()` function from an onclick event or elsewhere.
 
 **Arguments**
+
 - `url` (optional): The page to load your modal content from.
 - `selector` (optional): The id of the div to use for the modal content.
 - `id` (optional): Give your modal an identifier if you need to manually call `closeModal()` later in the cycle.
@@ -18,24 +19,26 @@ To trigger a modal, simply call the `launchModal()` function from an onclick eve
 
 ## Trigger a modal from a url
 
-```
-<button class="ui-button" onclick="
-  launchModal({ url: '/my-url'})">
-</button>
-```
+<Tabs>
+  <Tab title="view.html.erb">
+    ```html
+    <button class="ui-button" onclick="
+      launchModal({ url: '<%= my_path %>'})">
+    </button>
+    ```
+  </Tab>
+  <Tab title="my_controller.rb">
+    ```ruby
+      class MyController 
+        before_action :renders_in_modal, only: [:my_action]
+      end
+    ```
+  </Tab>
+</Tabs>
 
-**Add this to your controller**
+## Trigger a modal from a div on the page
 
-```
-class MyController 
-  before_action :renders_in_modal, only: [:my_action]
-end
-```
-
-
-**Trigger a modal from a div on the page**
-
-```
+```html
 <div id='modal-content' hidden> Content in Here </div>
 <button class="ui-button" onclick="
   launchModal({ selector: '#modal-content'})">
