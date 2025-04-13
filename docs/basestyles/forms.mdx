@@ -5,29 +5,53 @@ icon: "pager"
 
 To add nice styles to a form, simply add the `.ui-form` class. You'll now get nice styling out of the box for Text Fields, Selects, Datepickers, Text areas and more.
 
-```erb
+## Add Styling to a form
+
+```html
 <form class="ui-form">
   ... 
 </form>
 ```
 
-## Removing Styles Individually
+## Removing Styling on Individual Form Elements
 
-To remove default styles from the entire form, add the `.no-style` class to the form or the input
+```html
+<form class="ui-form">
+  <input type="text" class="no-style" />
+</form>
+```
+
+
+## Input Groups
+
+```html
+<div class="ui-input-group">
+  <input id="first_name" type="text" placeholder="First Name">
+  <input id="middle_name" type="text" placeholder="Middle Name">
+  <input id="last_name" type="text" placeholder="Last Name">
+</div>
+```
+
+## Floating Labels
+
+```html
+<div class="ui-floating-input mt-2">
+  <input type="text" id="floating_example" placeholder=" ">
+  <label for="floating_example">First Name</label>
+</div>
+```
 
 ## Variables
 
 ```css
---ui-input-color: var(--ui-color-grey-800);
---ui-form-input-padding-small-screens: 0.5rem 0rem;
---ui-form-input-width: 100%;
---ui-input-border-radius: var(--ui-shared-border-radius);
---ui-input-border-width: var(--ui-shared-border-width);
---ui-input-padding: 0.75rem;
---ui-form-input-border-color: var(--ui-color-grey-200);
---ui-form-input-border-color-focus: var(--ui-color-grey-900);
---ui-form-input-border-color-invalid: rgba(239, 68, 68);
---ui-form-input-height: 3rem;
---ui-form-input-line-height: 1rem;
---ui-form-select-line-height: 1.2rem;
+--ui-input-border-width: 1px;
+--ui-shared-element-border-radius: 10px;
+--ui-shared-element-height-lg: 40px; 
+--ui-shared-element-height: 36px;
+--ui-shared-element-height-sm: 24px;
+--ui-shared-element-padding-lg: 0 16px;
+--ui-shared-element-padding: 0 12px;
+--ui-shared-element-padding-sm: 0 8px;
+--ui-shared-element-border-color: var(--ui-color-gray-300);
+--ui-shared-element-box-shadow: var(--ui-shadow);
 ```
