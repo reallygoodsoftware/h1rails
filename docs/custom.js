@@ -7,7 +7,7 @@ window.addEventListener('message', function(event) {
       iframe.style.height = event.data.height + 'px';
       iframe.style.width = '100%';   
     }
-  } elsif (event.data && event.data.type === 'hideHeader') {
+  } else if (event.data && event.data.type === 'hideHeader') {
       const header = document.getElementById('header');
       if (header) {
         header.style.display = 'none';
