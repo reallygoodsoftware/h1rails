@@ -1,80 +1,25 @@
-# Cheat Sheet
+---
+title: "Cheat Sheet"
+---
+
+**Background**
+
+<Expandable title="Background">
+  - Our philosophy is built around the principles written about at [HTML First](https://html-first.com/).
+  - You have access to use CSS classes from both **Base Styles** & **Tailwind Lite**. 
+    - Base Styles: [Full List of All Classes](https://raw.githubusercontent.com/reallygoodsoftware/base-styles/refs/heads/main/base-styles.css) | [Examples](https://raw.githubusercontent.com/reallygoodsoftware/h1rails/refs/heads/master/app/views/h1rails/demos/base_styles/all.md)
+    - Tailwind Lite: [Full List of All Classes](https://raw.githubusercontent.com/reallygoodsoftware/tailwind-lite/refs/heads/main/src/classes.txt)
+</Expandable>
 
 
+# **Meta Patterns**
 
+- **Always** follow the "Principle of least power". Use the pattern that requires that least code and the least complexity to get the job done. Some examples:
+  - Don't use javascript for interactions that can be achieved with CSS.
+  - Don't use custom-written CSS for styles that can be achieved with Base Styles or Tailwind.  
 
+**Pattern Priorities**
 
-### Styling
-
-#### Set the default style variables in `/public/styles/globals.css`
-```
-:root {
-  --ui-font-family-base: 'Inter', sans-serif;
-  --ui-font-family-headers: 'Plus Jakarta Sans', sans-serif;
-  --ui-button-border-width: 2px;
-}
-```
-Read more about [Base Styles]()
-
-#### Use any Tailwind utility class
-
-```
-<div class="flex flex-col items-center p-7 rounded-2xl"></div>
-```
-
-[Explore all Tailwind classes](https://nerdcave.com/tailwind-cheat-sheet)
-
-### Icons
-
-The codebase includes all icons from [heriocons](https://heroicons.com/)
-
-Normal icon
-```
-<%= inline_svg_tag("/icons/star.svg") %>
-```
-Outline icon
-```
-<%= inline_svg_tag("/icons/star-outline.svg") %>
-```
-
-Color Icon
-```
-<%= inline_svg_tag("/icons/star-outline.svg", class: "text-blue-600") %>
-```
-
-
-### Buttons
-
-#### Basic Button
-```
-<button class="ui-button" type="button">My Button</button>
-```
-```
-<a class="ui-button" href="/">My Button</a>
-```
-
-#### Button with an icon
-```
-<a class="ui-button" href="/">
-  Favorite
-  <%= inline_svg_tag("/icons/star.svg") %>
-</a>
-```
-
-## Javascript
-
-#### Add minor frontend interactivity
-
-```
-<div :class="showTitle ? 'block' : 'hidden'">Title Here</div>
-<div :click="showTitle = !showTitle"> Toggle </div>
-```
-Read more about mini-js.
-
-
-# More
-
-### Create a custom theme
-
-- Create a new file in `/public/themes/theme-name` called something like `mytheme.css`
-- Include it in the head of your f
+1. If you can achieve it by adding an existing class (or classes) from the base-styles library to a new or existing html element.
+2. Add an existing class (or classes) from Tailwind Lite to a new or existing html element. 
+3. Add minor interactivity by toggling classes on click or change, using Mini JS.
