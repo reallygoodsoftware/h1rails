@@ -46,7 +46,6 @@
             "group": "Info",
             "pages": [
                 "h1rails/intro",
-                "h1rails/getting_started",
                 "h1rails/github"
             ]
         },
@@ -62,6 +61,7 @@
         {
             "group": "Articles",
             "pages": [
+                "h1rails/cheatsheet",
                 "h1rails/slickness",
                 "h1rails/form_patterns",
                 "h1rails/htmx",
