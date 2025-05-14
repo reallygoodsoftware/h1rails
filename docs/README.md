@@ -1,6 +1,6 @@
-# Welcome
+---
+icon: h
+---
 
-Welcome to the Really Good Software docs.
-
-
+# H1 Rails
 

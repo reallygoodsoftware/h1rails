@@ -2,15 +2,24 @@
 title: Working With HTMX
 iconStyle: regular
 icon: dash
+layout:
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: true
 ---
 
 # Working With HTMX
 
 * HTMX is a lightweight extension that makes links and forms feel more smooth, by sending requests asynchronously.
 * The library is very extensive - we only use a small subset of its functionality.
-* You can tell htmx to do things either by adding attributes to your html elements, or by sending headers in html responses.
-
-\
+* You can tell htmx to do things either by adding attributes to your html elements, or by sending headers in html responses.\
 
 
 ## How We Use htmx
@@ -28,6 +37,12 @@ icon: dash
   </div>
 </body>
 ```
+
+### We default to whole page replacement
+
+While it’s technically possible to only respond with the small piece of the page we want to replace, in most cases it’s just as quick, and more readable from a code perspective, to have the server respond with the whole page, and then to have htmx extract just the part you want.
+
+### What's _Not_ Replaced
 
 You'll notice from the above snippet that anything in the `shared/_partial_containers.html.erb` is **not** replaced by default when a new page is loaded (because it's outside the `#main-content` div). This partial is where we render modals, toasts and side sliding content, so not having it get updated when a new page loads makes the app feel more native. (See below for more info on overriding this).
 
