@@ -1,5 +1,7 @@
 # Using Lottie
 
+## Code
+
 ```html
 <div data-bodymovin-path="assets/lottie/b.json" 
      data-bodymovin-loop="true" 
@@ -33,3 +35,6 @@
 </script>
 ```
 
+## Demo
+
+{% embed url="https://codepen.io/tonye145/project/live/ZPRaqO" %}

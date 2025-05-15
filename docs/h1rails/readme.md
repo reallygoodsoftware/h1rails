@@ -27,7 +27,7 @@ Welcome to the Really Good Software docs.
 
 #### General
 
-We use [hx-boost](https://htmx.org/attributes/hx-boost/) on our body, which means that every link and every form is submitted without triggering a page reload. Instead, the content is fetched in the background and inserted into the `#main-content` div. You can see this by opening up your network tab in dev tools and clicking on a link. Our approach is outlined fully in [htmx.md](../patterns/htmx.md "mention")
+We use [hx-boost](https://htmx.org/attributes/hx-boost/) on our body, which means that every link and every form is submitted without triggering a page reload. Instead, the content is fetched in the background and inserted into the `#main-content` div. You can see this by opening up your network tab in dev tools and clicking on a link. Our approach is outlined fully in [htmx.md](articles/htmx.md "mention")
 
 This means that, as much as possible, we should build our apps using simple forms and links. For apps with a lot of state, this can mean passing the state through in the URL.
 

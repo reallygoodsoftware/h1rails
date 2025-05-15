@@ -1,6 +1,4 @@
 ---
-title: Working With HTMX
-iconStyle: regular
 icon: dash
 layout:
   title:
