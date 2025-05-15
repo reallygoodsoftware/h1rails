@@ -11,3 +11,8 @@
     * [Forms With Auto Saving](h1rails/articles/forms-with-auto-saving.md)
     * [File Uploads With Dropzone](h1rails/articles/file-uploads-with-dropzone.md)
 * [Select.js](select.js.md)
+* [Page 1](page-1.md)
+
+## Patterns
+
+* [Using Pgsync](patterns/using-pgsync.md)
