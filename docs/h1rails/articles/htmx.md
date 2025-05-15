@@ -1,5 +1,5 @@
 ---
-icon: dash
+icon: circle-small
 layout:
   title:
     visible: true

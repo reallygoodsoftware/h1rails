@@ -1,5 +1,5 @@
 ---
-icon: dash
+icon: circle-small
 ---
 
 # File Uploads With Dropzone

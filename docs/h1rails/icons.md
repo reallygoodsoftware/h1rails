@@ -28,6 +28,6 @@ Most commonly used to change the size or color.
 <%= inline_svg_tag("/heroicons/icon-chevron-right.svg", class: "w-5 text-indigo-500") %>
 ```
 
-#### FAQ
+#### Why not \<img> tags?
 
-Normal image tags don't allow us to specify a class that gets add to the svg element itself. Instead, they render an \`\` that points to the svg, which is different to rendering the svg directly.
+Normal image tags don't allow us to specify a class that gets add to the svg element itself. Instead, they render an element that points to the svg, which is different to rendering the svg directly.

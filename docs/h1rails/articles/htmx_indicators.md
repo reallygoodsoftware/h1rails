@@ -1,5 +1,5 @@
 ---
-icon: dash
+icon: circle-small
 ---
 
 # HTMX Loading Patterns

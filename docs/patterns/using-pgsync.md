@@ -1,5 +1,5 @@
 ---
-icon: train-tunnel
+icon: circle-small
 ---
 
 # Using Pgsync

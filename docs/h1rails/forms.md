@@ -4,17 +4,14 @@ icon: wpforms
 
 # Forms
 
-#### Styling
+## Approach
 
-Form styling is powered by Base Styles. All we need to do is add a class of `.ui-form` to our form and all our form inputs will be styled for us. We can remove these default styles on a per field basis if we prefer - see instructions below.
-
-#### Loading States
-
-* Form loading states are handled by htmx - all we have to do is to is add a loading spinner which is hidden by default. You can read more in our article on HTMX Indicators.
+* **Styling** is powered by Base Styles. All we need to do is add a class of `.ui-form` to our form and all our form inputs will be styled for us. We can remove these default styles on a per field basis if we prefer - see instructions below.
+* **Loading States** are handled by htmx - all we have to do is to is add a loading spinner which is hidden by default. This pattern is described [**here**](articles/htmx_indicators.md).
 
 ## Code Examples
 
-#### A Basic Form
+### A Basic Form
 
 ```erb
 <%= form_with model: @book, url: book_path, html: {class:"ui-form"} do |f| %>
@@ -26,12 +23,13 @@ Form styling is powered by Base Styles. All we need to do is add a class of `.ui
 <% end %>
 ```
 
-```ruby
-match "/books/:id" => "books#edit", via: [:get,:patch], as: "book"
-```
+<pre class="language-ruby"><code class="lang-ruby"><strong># config/routes/rb
+</strong><strong>match "/books/:id" => "books#edit", via: [:get,:patch], as: "book"
+</strong></code></pre>
 
 ```ruby
 def edit
+  @book = get_book 
   if request.post?
     if @book.update(book_params)
       redirect_to root_path
@@ -40,7 +38,7 @@ def edit
 end
 ```
 
-#### Loading Spinners
+### Loading Spinners
 
 Add an element with the `.shown-while-loading` class - it will be automatically shown when the form is submitted.
 
@@ -55,7 +53,7 @@ Add an element with the `.shown-while-loading` class - it will be automatically 
 <% end %>
 ```
 
-#### Floating Field Labels
+### Floating Field Labels
 
 Wrap an input and label in a div with base styles' `.ui-floating-input` class
 
@@ -72,7 +70,7 @@ Wrap an input and label in a div with base styles' `.ui-floating-input` class
 <% end %>
 ```
 
-#### Show Errors
+### Show Errors
 
 Use the `shared/form_errors` partial to display the errors for the form.
 
@@ -91,7 +89,7 @@ Use the `shared/form_errors` partial to display the errors for the form.
 <% end %>
 ```
 
-#### Forms with Has Many relationships
+### Forms with Has Many relationships
 
 Sometimes we want to build experiences where users can create or edit a list of options in a single form. Rails form helpers can handle this with `accepts_nested_attributes_for` and `fields_for`.
 
@@ -109,15 +107,21 @@ end
 <% end %>
 ```
 
-* Read the full article which goes into more detail on nested forms.
+* Read the [full article](../patterns/multi-step-and-nested-forms.md) which goes into more detail on nested forms.
 
-#### Multi Step Forms
+### Multi Step Forms
 
-* There are several considerations when building Multi Step Forms, which we covered in our article: Multi Step & Nested Forms
+This is covered in detail here:
 
-#### Why not plain HTML?
+{% content-ref url="../patterns/multi-step-and-nested-forms.md" %}
+[multi-step-and-nested-forms.md](../patterns/multi-step-and-nested-forms.md)
+{% endcontent-ref %}
 
-If you've read [HTML First](https://html-first.com/), you'll know it recommends using as few abstraction layers as possible. Rails Form Helpers are one of the few times we recommend using an abstraction instead of just vanilla html `<form>` elements. This is because they provide substantial utility:
+
+
+**Why not plain HTML?**
+
+If you've read [HTML First](https://html-first.com/), you'll know it recommends using as few abstraction layers as possible. Rails Form Helpers are one of the few times we recommend using an abstraction instead of just vanilla html `<form>` elements. This is because the utility they provide outweighs the drawbacks of the obfuscation they introduce.
 
 * **Security**: Every form includes and validates a CSRF protection.
 * **Validation**: We can show inline errors and top-of-form errors in one line of code.

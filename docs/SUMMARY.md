@@ -14,8 +14,6 @@
 * [Using Pgsync](patterns/using-pgsync.md)
 * [HTMX Loading Patterns](h1rails/articles/htmx_indicators.md)
 * [Working With HTMX](h1rails/articles/htmx.md)
+* [Using Lottie](patterns/using-lottie.md)
 * [Forms With Auto Saving](h1rails/articles/forms-with-auto-saving.md)
-
-***
-
-* [Using Lottie](using-lottie.md)
+* [Multi Step & Nested Forms](patterns/multi-step-and-nested-forms.md)

@@ -1,3 +1,7 @@
+---
+icon: circle-small
+---
+
 # Using Lottie
 
 ## Code
