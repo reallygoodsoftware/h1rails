@@ -12,7 +12,7 @@ We're currently using [Dropzone](https://www.dropzone.dev/) for file uploads. Yo
 
 * In `/shared/partials/_head.html.erb`
 
-```
+```html
 <script src="/vendor/dropzone/5.9.3.min.js" ></script>
 <link href="/vendor/dropzone/5.9.3.min.css" rel="stylesheet" media="screen" />
 ```
@@ -24,7 +24,7 @@ We want to be able to easily add dropzones to different pages, and have them jus
 * Turn off Dropzone's auto discover feature
 * Manually tell Dropzone to be discovered when a new page is loaded, either directly or asynchronously.
 
-```
+```javascript
 // public/custom.js
 Dropzone.autoDiscover = false;
 
@@ -35,7 +35,7 @@ function reinitializeJs() {
 
 * Make sure the function that discovers dropzones is triggered after an htmx request
 
-```
+```javascript
 document.addEventListener("htmx:afterSettle", function(event) {
   reinitializeJs();
 });
@@ -48,7 +48,7 @@ document.addEventListener("htmx:afterSettle", function(event) {
 
 First, create a div inside of our form with a class of `.dropdown` and give it an id.
 
-```
+```html
 <form>
   <div id="submissionPhotosDropzone" class="dropzone"></div>
 </form>
@@ -56,7 +56,7 @@ First, create a div inside of our form with a class of `.dropdown` and give it a
 
 Then, add some javascript to tell dropzone what url to use for this dropzone. Notice that the object after `options.` corresponds to the id of the input. This is how Dropzone identifies the dropzone you're configuring.
 
-```
+```html
 <form>
   <div id="submissionPhotosDropzone" class="dropzone"></div>
 </form>
@@ -69,7 +69,7 @@ Then, add some javascript to tell dropzone what url to use for this dropzone. No
 
 #### Add a controller action to handle the form
 
-```
+```ruby
 class OrderController < ApplicationController
 
   def upload_file
