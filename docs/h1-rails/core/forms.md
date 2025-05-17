@@ -23,9 +23,13 @@ icon: wpforms
 <% end %>
 ```
 
-<pre class="language-ruby"><code class="lang-ruby"><strong># config/routes/rb
-</strong><strong>match "/books/:id" => "books#edit", via: [:get,:patch], as: "book"
-</strong></code></pre>
+{% code title="config/routes.rb" %}
+```ruby
+Rails.application.routes.draw do
+  match  "/books/:id" => "books#edit", via: [:get,:patch], as: "book"
+end
+```
+{% endcode %}
 
 ```ruby
 def edit
