@@ -1,8 +1,10 @@
 # Table of contents
 
+* [Really Good Software Docs](README.md)
+
 ## H1 Rails
 
-* [Core](README.md)
+* [Core](<README (1).md>)
   * [Forms](h1-rails/core/forms.md)
   * [Icons](h1-rails/core/icons.md)
   * [Modals](h1-rails/core/modals.md)
@@ -17,11 +19,18 @@
   * [Forms With Auto Saving](h1-rails/articles/forms-with-auto-saving.md)
   * [Multi Step & Nested Forms](h1-rails/articles/multi-step-and-nested-forms.md)
 
-## Base Styles
-
-* [Do I need JS for that?](base-styles/do-i-need-js-for-that.md)
-
 ## HTML First
 
 * [Articles](html-first/articles/README.md)
   * ["Platform Parity"](html-first/articles/platform-parity.md)
+
+## Base Styles
+
+* [👋 Intro](base-styles/intro.md)
+* [🏁 Getting Started](base-styles/getting-started.md)
+
+***
+
+* [🎨 CSS Variables](css-variables.md)
+* [Components](components/README.md)
+  * [Buttons](components/buttons.md)
