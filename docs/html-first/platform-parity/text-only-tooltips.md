@@ -73,14 +73,16 @@ This list assumes using a library like [hint.css](https://github.com/chinchang/h
 
 ## HTML Only Tooltips
 
+**TODO**: Expand here on `<dialog>` , `popover='hint'`, anchor positioning, and how to combine all three to get good platform tooltips.
 
+### **Resources**
 
 * [Popover Research Explainer](https://open-ui.org/components/popover.research.explainer/)
 * [Anchor Tool](https://anchor-tool.com/)
 
-**Resources**
 
-**TODO**: Expand here on `<dialog>` , `popover='hint'`, anchor positioning, and how to combine all three to get good platform tooltips.
+
+
 
 ## &#x20;
 

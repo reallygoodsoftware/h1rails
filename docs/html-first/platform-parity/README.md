@@ -19,7 +19,7 @@ I don't believe there is an objective way to measure when a pattern becomes as-g
 Some of the things I think should be taken into consideration when evaluating Platform Parity:
 
 * **Maintainability**: Is the vanilla solution as easy to maintain as it's library-driven equivalent.
-* **Footgun Safety**: If we want to make changes, or handle scenarios where performance is important, is it possible to do this
+* **Footgun Safety**: If we want to make changes, or handle scenarios where performance is important, is it possible to do this.
 * **Accessibility**: Does the vanilla solution offer all of the same accessibility affordances as it's library-driven equivalent.
 * **Aesthetics**: Does the vanilla solution look and feel as good as it's library-backed counterpart.
 
@@ -27,7 +27,7 @@ Some of the things I think should be taken into consideration when evaluating Pl
 
 ## UI
 
-<table><thead><tr><th width="193.50390625">Pattern</th><th width="166.30859375">Parity Grade</th><th>Note</th></tr></thead><tbody><tr><td><strong>Text only tooltips</strong></td><td>A-</td><td>Since 2005 there has been reliable, stylable, largely accessible way to implement plain text tooltips using CSS. A newer, cleaner method will be possible soon using html only. Read more: <a data-mention href="text-only-tooltips.md">text-only-tooltips.md</a></td></tr></tbody></table>
+<table><thead><tr><th width="193.50390625">Pattern</th><th width="166.30859375">Parity Grade</th><th>Note</th></tr></thead><tbody><tr><td><strong>Text only tooltips</strong></td><td>A-</td><td>Since 2005 there has been reliable, stylable, largely accessible way to implement plain text tooltips using CSS. A newer, cleaner method will be possible soon using html only. Read more: <a data-mention href="text-only-tooltips.md">text-only-tooltips.md</a></td></tr><tr><td><strong>Vector Icons</strong></td><td>B-</td><td>We've been able to </td></tr></tbody></table>
 
 
 
