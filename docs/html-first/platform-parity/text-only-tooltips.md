@@ -9,11 +9,11 @@ icon: lightbulb-on
 * The [CSS only method](text-only-tooltips.md#css-only-method) using `::after` has been possible since 2005. It works well for most cases, but isn't as clean as a html-only method and has a few minor accessibility issues.
 * The HTML method is currently being rolled out and should reach parity in the next few years.
 
-<details>
 
-<summary>CSS Only Method</summary>
 
-The CSS Only method uses the `attr` method, along with `::after`, to let you show a styled tooltip on hover or focus of an element. A good implementation of this is [hint.css](https://github.com/chinchang/hint.css/blob/master/hint.base.css). The snippet below shows the core methods used.
+## CSS Only Method
+
+The CSS Only method uses  `attr` along with `::after`, to let you show a styled tooltip on hover or focus of an element. A good implementation of this is [hint.css](https://github.com/chinchang/hint.css/blob/master/hint.base.css). The snippet below shows the core methods used.
 
 ```css
 [aria-label] {
@@ -69,20 +69,18 @@ This list assumes using a library like [hint.css](https://github.com/chinchang/h
 * ❌ **Potential viewport overflow** making content unreadable
 * ❌ **No programmatic API** for assistive tech integration
 
-</details>
 
-<details>
 
-<summary>HTML Method</summary>
+## HTML Only Tooltips
 
-**TODO**: Expand here on `<dialog>` , `popover='hint'`, anchor positioning, and how to combine all three to get good platform tooltips.
 
-**Resources**
 
 * [Popover Research Explainer](https://open-ui.org/components/popover.research.explainer/)
 * [Anchor Tool](https://anchor-tool.com/)
 
-</details>
+**Resources**
+
+**TODO**: Expand here on `<dialog>` , `popover='hint'`, anchor positioning, and how to combine all three to get good platform tooltips.
 
 ## &#x20;
 

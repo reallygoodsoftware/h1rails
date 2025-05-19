@@ -21,9 +21,9 @@
 
 ## HTML First
 
-* [Articles](html-first/articles/README.md)
-  * [Platform Parity](html-first/articles/platform-parity/README.md)
-    * [Text Only Tooltips](html-first/articles/platform-parity/text-only-tooltips.md)
+* [Articles](html-first/articles.md)
+* [Platform Parity](html-first/platform-parity/README.md)
+  * [Text Only Tooltips](html-first/platform-parity/text-only-tooltips.md)
 
 ## Base Styles
 
