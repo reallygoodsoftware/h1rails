@@ -2,6 +2,18 @@
 
 * [Really Good Software Docs](README.md)
 
+## HTML First
+
+* [Articles](html-first/articles/README.md)
+  * [Platform Wish List](html-first/articles/platform-wish-list.md)
+  * [A Missing Pattern: Update Element Attribute On Interaction](html-first/articles/a-missing-pattern-update-element-attribute-on-interaction.md)
+  * [Preact Standalone: React's Templating Power with none of the Overhead](html-first/articles/preact-standalone-reacts-templating-power-with-none-of-the-overhead.md)
+  * [CSS Form Control Styling](html-first/articles/css-form-control-styling.md)
+  * [Comparing JSX to Web Components for some common patterns](html-first/articles/comparing-jsx-to-web-components-for-some-common-patterns.md)
+* [Platform Parity](html-first/platform-parity/README.md)
+  * [Text Only Tooltips](html-first/platform-parity/text-only-tooltips.md)
+  * [Icons](html-first/platform-parity/icons.md)
+
 ## H1 Rails
 
 * [Core](<README (1).md>)
@@ -18,18 +30,6 @@
   * [Using Lottie](h1-rails/articles/using-lottie.md)
   * [Forms With Auto Saving](h1-rails/articles/forms-with-auto-saving.md)
   * [Multi Step & Nested Forms](h1-rails/articles/multi-step-and-nested-forms.md)
-
-## HTML First
-
-* [Articles](html-first/articles/README.md)
-  * [Platform Wish List](html-first/articles/platform-wish-list.md)
-  * [A Missing Pattern: Update Element Attribute On Interaction](html-first/articles/a-missing-pattern-update-element-attribute-on-interaction.md)
-  * [Preact Standalone: React's Templating Power with none of the Overhead](html-first/articles/preact-standalone-reacts-templating-power-with-none-of-the-overhead.md)
-  * [CSS Form Control Styling](html-first/articles/css-form-control-styling.md)
-  * [Comparing JSX to Web Components for some common patterns](html-first/articles/comparing-jsx-to-web-components-for-some-common-patterns.md)
-* [Platform Parity](html-first/platform-parity/README.md)
-  * [Text Only Tooltips](html-first/platform-parity/text-only-tooltips.md)
-  * [Icons](html-first/platform-parity/icons.md)
 
 ## Base Styles
 
