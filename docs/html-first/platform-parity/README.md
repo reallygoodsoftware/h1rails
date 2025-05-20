@@ -19,7 +19,7 @@ Historically, we've had to rely on external libraries, preprocessing, and transp
 
 For example, in the early days of the web, there was no way to create rounded border radii or box shadows natively—until CSS3 introduced these features in the spec.&#x20;
 
-When a native implementation reaches a point where it's at least as good as using an external library, we say that pattern has achieved "Platform Parity." This represents the moment when developers can confidently use the built-in solution without sacrificing on any of the following.
+When a native implementation reaches a point where it's at least as good as using an external library, we say that pattern has achieved "Platform Parity." This represents the moment when developers can confidently use the built-in solution without sacrificing _either_ DX or UX.
 
 ## Platform Parity is Subjective
 
