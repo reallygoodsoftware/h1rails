@@ -17,6 +17,7 @@
   * [Icons](html-first/platform-parity/icons.md)
   * [Accordion](html-first/platform-parity/accordion.md)
   * [Text Only Tooltips](html-first/platform-parity/text-only-tooltips.md)
+  * [Modals](html-first/platform-parity/modals.md)
 
 ## H1 Rails
 
