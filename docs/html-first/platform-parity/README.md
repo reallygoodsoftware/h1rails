@@ -27,7 +27,7 @@ Some of the things I think should be taken into consideration when evaluating Pl
 
 ## UI
 
-<table><thead><tr><th width="193.50390625">Pattern</th><th width="166.30859375">Parity Grade</th><th>Note</th></tr></thead><tbody><tr><td><strong>Text only tooltips</strong></td><td>A-</td><td>Since 2005 there has been reliable, stylable, largely accessible way to implement plain text tooltips using CSS. A newer, cleaner method will be possible soon using html only. Read more: <a data-mention href="text-only-tooltips.md">text-only-tooltips.md</a></td></tr><tr><td><strong>Vector Icons</strong></td><td>B-</td><td>We've been able to </td></tr></tbody></table>
+<table><thead><tr><th width="193.50390625">Pattern</th><th width="155.75">Parity Grade</th><th>Note</th></tr></thead><tbody><tr><td><a data-mention href="flash-of-white.md">flash-of-white.md</a></td><td>C-</td><td>Since 2019, Chrome users have a feature called <a href="https://developer.chrome.com/blog/paint-holding">Paint Holding</a>, which waits for 500ms before changing a page. But this is not officially part of the platform, so doing this well still requires libraries like htmx or turbo. View Transitions </td></tr><tr><td><a data-mention href="text-only-tooltips.md">text-only-tooltips.md</a></td><td>A-</td><td>Since 2005 there has been reliable, stylable, largely accessible way to implement plain text tooltips using CSS. A newer, cleaner method will be possible soon using html only. Read more: <a data-mention href="text-only-tooltips.md">text-only-tooltips.md</a></td></tr><tr><td><a data-mention href="icons.md">icons.md</a></td><td>B-</td><td>We've been able to do svg icons with good coverage since 2017 or so. However it's still not possible to easily change an icon's color in a reusable way (as you'd expect from an image tag).</td></tr></tbody></table>
 
 
 
@@ -37,7 +37,6 @@ Some of the things I think should be taken into consideration when evaluating Pl
 | ------------- | ---- |
 | Border Radius |      |
 | Variables     |      |
-|               |      |
 
 
 

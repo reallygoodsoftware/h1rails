@@ -6,13 +6,16 @@
 
 * [Articles](html-first/articles/README.md)
   * [Platform Wish List](html-first/articles/platform-wish-list.md)
-  * [A Missing Pattern: Update Element Attribute On Interaction](html-first/articles/a-missing-pattern-update-element-attribute-on-interaction.md)
-  * [Preact Standalone: React's Templating Power with none of the Overhead](html-first/articles/preact-standalone-reacts-templating-power-with-none-of-the-overhead.md)
+  * [DUSS: Dom Updates Based on Simple State](html-first/articles/duss-dom-updates-based-on-simple-state.md)
+  * [Preact Standalone](html-first/articles/preact-standalone.md)
   * [CSS Form Control Styling](html-first/articles/css-form-control-styling.md)
-  * [Comparing JSX to Web Components for some common patterns](html-first/articles/comparing-jsx-to-web-components-for-some-common-patterns.md)
+  * [JSX vs Web Components](html-first/articles/jsx-vs-web-components.md)
+  * [Using View Transitions to address "Flash of White"](html-first/articles/using-view-transitions-to-address-flash-of-white.md)
 * [Platform Parity](html-first/platform-parity/README.md)
-  * [Text Only Tooltips](html-first/platform-parity/text-only-tooltips.md)
+  * [Flash Of White](html-first/platform-parity/flash-of-white.md)
   * [Icons](html-first/platform-parity/icons.md)
+  * [Accordion](html-first/platform-parity/accordion.md)
+  * [Text Only Tooltips](html-first/platform-parity/text-only-tooltips.md)
 
 ## H1 Rails
 
