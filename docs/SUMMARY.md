@@ -11,6 +11,7 @@
   * [CSS Form Control Styling](html-first/articles/css-form-control-styling.md)
   * [JSX vs Web Components](html-first/articles/jsx-vs-web-components.md)
   * [Using View Transitions to address "Flash of White"](html-first/articles/using-view-transitions-to-address-flash-of-white.md)
+  * [Grading Approaches](html-first/articles/grading-approaches.md)
 * [Platform Parity](html-first/platform-parity/README.md)
   * [Flash Of White](html-first/platform-parity/flash-of-white.md)
   * [Icons](html-first/platform-parity/icons.md)
