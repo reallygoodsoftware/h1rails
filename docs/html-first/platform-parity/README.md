@@ -23,16 +23,20 @@ When a native implementation reaches a point where it's at least as good as usin
 
 ## Platform Parity is Subjective
 
-I don't believe there is an objective way to measure when a pattern becomes as-good-as-with-libraries. Everyone will have slightly different definitions about what constitutes "good enough". I do think the term is still useful to facilitate discussion and debate.
+I don't believe there is an objective way to measure when a pattern becomes as-good-as-with-libraries. Everyone will have slightly different definitions about what constitutes "good enough". I am proposing the term as a way to facilitate discussion and debate.
 
 
 
-Some of the things I think should be taken into consideration when evaluating Platform Parity:
+Some of the things I think matter when evaluating Platform Parity:
 
 * **Maintainability**: Is the vanilla solution as easy to maintain as it's library-driven equivalent.
 * **Footgun Safety**: If we want to make changes, or handle scenarios where performance is important, is it possible to do this.
 * **Accessibility**: Does the vanilla solution offer all of the same accessibility affordances as it's library-driven equivalent.
 * **Aesthetics**: Does the vanilla solution look and feel as good as it's library-backed counterpart.
+
+
+
+For example, it is possible _today_ to implement Modals using the `<dialog>` element. However, on the dx side, it requires a reasonable amount of boilerplate & can't be done with just html attributes, and on the _**UX**_ side, it
 
 
 
