@@ -35,6 +35,7 @@
   * [Using Lottie](h1-rails/articles/using-lottie.md)
   * [Forms With Auto Saving](h1-rails/articles/forms-with-auto-saving.md)
   * [Multi Step & Nested Forms](h1-rails/articles/multi-step-and-nested-forms.md)
+  * [Setting Up R2](h1-rails/articles/setting-up-r2.md)
 
 ## H1 Expo
 
