@@ -53,4 +53,4 @@
 
 ## RGS Articles
 
-* [Doing Async Comms Well](rgs-articles/doing-async-comms-well.md)
+* [What Good Async Communication Looks Like](rgs-articles/what-good-async-communication-looks-like.md)
