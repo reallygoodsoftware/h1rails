@@ -1,3 +1,7 @@
+---
+icon: circle-small
+---
+
 # Setting Up R2
 
 The default H1 Rails codebase uses Cloudflare's R2 for storing files and attachments (with Active Storage). R2 is completely s3-compatible, meaning it follows all the Amazon s3 conventions. But Cloudflare has the advantage of having a much less complicated UI.

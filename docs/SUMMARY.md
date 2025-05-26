@@ -13,7 +13,7 @@
   * [Using View Transitions to address "Flash of White"](html-first/articles/using-view-transitions-to-address-flash-of-white.md)
   * [HTML First Grading Heuristics](html-first/articles/html-first-grading-heuristics.md)
 * [Platform Parity](html-first/platform-parity/README.md)
-  * [Flash Of White](html-first/platform-parity/flash-of-white.md)
+  * [Snappy Page Transitions](html-first/platform-parity/snappy-page-transitions.md)
   * [Icons](html-first/platform-parity/icons.md)
   * [Accordion](html-first/platform-parity/accordion.md)
   * [Text Only Tooltips](html-first/platform-parity/text-only-tooltips.md)
