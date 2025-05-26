@@ -18,6 +18,17 @@ In 2025, there is still no robust platform native solution to this issue and wor
 
 
 
+## Periods
+
+### 2025
+
+* **HTML**: Yes
+* **CSS**: Yes
+* **JS**: No
+* **Build Step**: No
+
+
+
 
 
 ## Transition States

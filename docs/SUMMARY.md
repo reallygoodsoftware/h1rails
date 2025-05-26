@@ -36,6 +36,10 @@
   * [Forms With Auto Saving](h1-rails/articles/forms-with-auto-saving.md)
   * [Multi Step & Nested Forms](h1-rails/articles/multi-step-and-nested-forms.md)
 
+## H1 Expo
+
+* [Google Sign in with Expo](h1-expo/google-sign-in-with-expo.md)
+
 ## Base Styles
 
 * [👋 Intro](base-styles/intro.md)
@@ -49,4 +53,4 @@
 
 ## RGS Articles
 
-* [Being good at comms](rgs-articles/being-good-at-comms.md)
+* [Doing Async Comms Well](rgs-articles/doing-async-comms-well.md)
