@@ -4,6 +4,12 @@ icon: bolt-lightning
 
 # Snappy Page Transitions
 
+Broadly speaking there are three things that are present in SPAs, but not in Vanilla Web Apps, that lead to the latter feeling clunky and the former feeling smooth, when users click on a link or submit a form.&#x20;
+
+1. **Flash Of White**: Vanilla users see a temporary blank white screen while the request loads.
+2. **Delayed Feedback**: Vanilla users don't see any immediate indication that their click was received, or form submission was sent, until the new page loads in.&#x20;
+3. **No Partial Page Replacement**: In non-SPAs, the entire page is deleted, then replaced, which has various UX implications including causing the user to lose their scroll position.&#x20;
+
 ## Flash of White
 
 "Flash Of White" refers to the momentary state that appears in a browser when a user clicks on a link or submits a form, on a web page or web app that doesn't use a frontend library. This particular behavior (or the lack thereof) has become synonymous with a web app feeling slow or unpolished.&#x20;
@@ -12,7 +18,7 @@ In 2019, Chrome added a feature called "Paint Holding" which addresses this prov
 
 <div data-full-width="true"><figure><img src="../../.gitbook/assets/CleanShot 2025-05-20 at 11.15.45.gif" alt=""><figcaption></figcaption></figure></div>
 
-## Instant Feedback
+## Delayed Feedback
 
 
 
@@ -37,8 +43,3 @@ In 2019, Chrome added a feature called "Paint Holding" which addresses this prov
 * **JS**: No
 * **Build Step**: No
 
-
-
-
-
-## Transition States

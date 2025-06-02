@@ -10,14 +10,12 @@
   * [Preact Standalone](html-first/articles/preact-standalone.md)
   * [CSS Form Control Styling](html-first/articles/css-form-control-styling.md)
   * [JSX vs Web Components](html-first/articles/jsx-vs-web-components.md)
-  * [Using View Transitions to address "Flash of White"](html-first/articles/using-view-transitions-to-address-flash-of-white.md)
-  * [HTML First Grading Heuristics](html-first/articles/html-first-grading-heuristics.md)
-* [Platform Parity](html-first/platform-parity/README.md)
-  * [Snappy Page Transitions](html-first/platform-parity/snappy-page-transitions.md)
-  * [Icons](html-first/platform-parity/icons.md)
-  * [Accordion](html-first/platform-parity/accordion.md)
-  * [Text Only Tooltips](html-first/platform-parity/text-only-tooltips.md)
-  * [Modals](html-first/platform-parity/modals.md)
+* [Platform <> SPA Parity](html-first/platform-less-than-greater-than-spa-parity/README.md)
+  * [Snappy Page Transitions](html-first/platform-less-than-greater-than-spa-parity/snappy-page-transitions.md)
+  * [Icons](html-first/platform-less-than-greater-than-spa-parity/icons.md)
+  * [Accordion](html-first/platform-less-than-greater-than-spa-parity/accordion.md)
+  * [Text Only Tooltips](html-first/platform-less-than-greater-than-spa-parity/text-only-tooltips.md)
+  * [Modals](html-first/platform-less-than-greater-than-spa-parity/modals.md)
 
 ## H1 Rails
 
