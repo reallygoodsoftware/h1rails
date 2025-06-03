@@ -35,9 +35,10 @@
   * [Multi Step & Nested Forms](h1-rails/articles/multi-step-and-nested-forms.md)
   * [Setting Up R2](h1-rails/articles/setting-up-r2.md)
 
-## H1 Expo
+## Our Mobile Playbook
 
-* [Google Sign in with Expo](h1-expo/google-sign-in-with-expo.md)
+* [The Hybrid Approach](our-mobile-playbook/the-hybrid-approach.md)
+* [Google Sign in with Expo](our-mobile-playbook/google-sign-in-with-expo.md)
 
 ## Base Styles
 
