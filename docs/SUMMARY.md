@@ -38,6 +38,8 @@
 ## Our Mobile Playbook
 
 * [The Hybrid Approach](our-mobile-playbook/the-hybrid-approach.md)
+* [Authentication](our-mobile-playbook/authentication.md)
+* [Push Notifications](our-mobile-playbook/push-notifications.md)
 * [Google Sign in with Expo](our-mobile-playbook/google-sign-in-with-expo.md)
 
 ## Base Styles

@@ -1,5 +1,5 @@
 ---
-icon: g
+icon: circle-small
 ---
 
 # Google Sign in with Expo
