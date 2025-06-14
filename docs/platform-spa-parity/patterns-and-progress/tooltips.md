@@ -2,16 +2,16 @@
 icon: lightbulb-on
 ---
 
-# Text Only Tooltips
+# Tooltips
 
-**TLDR**
+## Text Only Tooltips
 
-* The [CSS only method](text-only-tooltips.md#css-only-method) using `::after` has been possible since 2005. It works well for most cases, but isn't as clean as a html-only method and has a few minor accessibility issues.
+* The [CSS only method](tooltips.md#css-only-method) using `::after` has been possible since 2005. It works well for most cases, but isn't as clean as a html-only method and has a few minor accessibility issues.
 * The HTML method is currently being rolled out and should reach parity in the next few years.
 
 
 
-## CSS Only Method
+### CSS Only Method
 
 The CSS Only method uses  `attr` along with `::after`, to let you show a styled tooltip on hover or focus of an element. A good implementation of this is [hint.css](https://github.com/chinchang/hint.css/blob/master/hint.base.css). The snippet below shows the core methods used.
 
@@ -71,7 +71,7 @@ This list assumes using a library like [hint.css](https://github.com/chinchang/h
 
 
 
-## HTML Only Tooltips
+## HTML Tooltips
 
 **TODO**: Expand here on `<dialog>` , `popover='hint'`, anchor positioning, and how to combine all three to get good platform tooltips.
 

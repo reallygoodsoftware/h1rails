@@ -1,8 +1,9 @@
 ---
+hidden: true
 icon: circle-small
 ---
 
-# Comparing JSX to Web Components for some common patterns
+# JSX vs Web Components
 
 {% hint style="info" %}
 Placeholder: To fill in later

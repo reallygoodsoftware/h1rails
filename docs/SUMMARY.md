@@ -5,18 +5,22 @@
 ## HTML First
 
 * [Articles](html-first/articles/README.md)
-  * [Platform Wish List](html-first/articles/platform-wish-list.md)
-  * [DUSS: Dom Updates Based on Simple State](html-first/articles/duss-dom-updates-based-on-simple-state.md)
-  * [Preact Standalone](html-first/articles/preact-standalone.md)
-  * [CSS Form Control Styling](html-first/articles/css-form-control-styling.md)
-  * [JSX vs Web Components](html-first/articles/jsx-vs-web-components.md)
   * [JSX Without React](html-first/articles/jsx-without-react.md)
-* [Platform <> SPA Parity](html-first/platform-less-than-greater-than-spa-parity/README.md)
-  * [Snappy Page Transitions](html-first/platform-less-than-greater-than-spa-parity/snappy-page-transitions.md)
-  * [Icons](html-first/platform-less-than-greater-than-spa-parity/icons.md)
-  * [Accordion](html-first/platform-less-than-greater-than-spa-parity/accordion.md)
-  * [Text Only Tooltips](html-first/platform-less-than-greater-than-spa-parity/text-only-tooltips.md)
-  * [Modals](html-first/platform-less-than-greater-than-spa-parity/modals.md)
+  * [JSX vs Web Components](html-first/articles/jsx-vs-web-components.md)
+
+## Platform (SPA) Parity
+
+* [Articles](platform-spa-parity/articles/README.md)
+  * [What is Platform <> SPA Parity?](platform-spa-parity/articles/what-is-platform-less-than-greater-than-spa-parity.md)
+  * [My Platform Wish List](platform-spa-parity/articles/my-platform-wish-list.md)
+  * [A Missing Pattern: Dom Updates Based on Simple State](platform-spa-parity/articles/a-missing-pattern-dom-updates-based-on-simple-state.md)
+  * [CSS Form Control Styling](platform-spa-parity/articles/css-form-control-styling.md)
+* [Patterns & Progress](platform-spa-parity/patterns-and-progress/README.md)
+  * [Snappy Page Transitions](platform-spa-parity/patterns-and-progress/snappy-page-transitions.md)
+  * [Icons](platform-spa-parity/patterns-and-progress/icons.md)
+  * [Accordion](platform-spa-parity/patterns-and-progress/accordion.md)
+  * [Tooltips](platform-spa-parity/patterns-and-progress/tooltips.md)
+  * [Modals](platform-spa-parity/patterns-and-progress/modals.md)
 
 ## H1 Rails
 
