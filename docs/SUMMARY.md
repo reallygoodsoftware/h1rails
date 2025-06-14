@@ -5,19 +5,22 @@
 ## HTML First
 
 * [Articles](html-first/articles/README.md)
-  * [Platform Wish List](html-first/articles/platform-wish-list.md)
-  * [DUSS: Dom Updates Based on Simple State](html-first/articles/duss-dom-updates-based-on-simple-state.md)
-  * [Preact Standalone](html-first/articles/preact-standalone.md)
-  * [CSS Form Control Styling](html-first/articles/css-form-control-styling.md)
+  * [JSX Without React](html-first/articles/jsx-without-react.md)
   * [JSX vs Web Components](html-first/articles/jsx-vs-web-components.md)
-  * [Using View Transitions to address "Flash of White"](html-first/articles/using-view-transitions-to-address-flash-of-white.md)
-  * [HTML First Grading Heuristics](html-first/articles/html-first-grading-heuristics.md)
-* [Platform Parity](html-first/platform-parity/README.md)
-  * [Flash Of White](html-first/platform-parity/flash-of-white.md)
-  * [Icons](html-first/platform-parity/icons.md)
-  * [Accordion](html-first/platform-parity/accordion.md)
-  * [Text Only Tooltips](html-first/platform-parity/text-only-tooltips.md)
-  * [Modals](html-first/platform-parity/modals.md)
+
+## Platform (SPA) Parity
+
+* [Articles](platform-spa-parity/articles/README.md)
+  * [What is Platform <> SPA Parity?](platform-spa-parity/articles/what-is-platform-less-than-greater-than-spa-parity.md)
+  * [My Platform Wish List](platform-spa-parity/articles/my-platform-wish-list.md)
+  * [A Missing Pattern: Dom Updates Based on Simple State](platform-spa-parity/articles/a-missing-pattern-dom-updates-based-on-simple-state.md)
+  * [CSS Form Control Styling](platform-spa-parity/articles/css-form-control-styling.md)
+* [Patterns & Progress](platform-spa-parity/patterns-and-progress/README.md)
+  * [Snappy Page Transitions](platform-spa-parity/patterns-and-progress/snappy-page-transitions.md)
+  * [Icons](platform-spa-parity/patterns-and-progress/icons.md)
+  * [Accordion](platform-spa-parity/patterns-and-progress/accordion.md)
+  * [Tooltips](platform-spa-parity/patterns-and-progress/tooltips.md)
+  * [Modals](platform-spa-parity/patterns-and-progress/modals.md)
 
 ## H1 Rails
 
@@ -35,6 +38,14 @@
   * [Using Lottie](h1-rails/articles/using-lottie.md)
   * [Forms With Auto Saving](h1-rails/articles/forms-with-auto-saving.md)
   * [Multi Step & Nested Forms](h1-rails/articles/multi-step-and-nested-forms.md)
+  * [Setting Up R2](h1-rails/articles/setting-up-r2.md)
+
+## Our Mobile Playbook
+
+* [The Hybrid Approach](our-mobile-playbook/the-hybrid-approach.md)
+* [Authentication](our-mobile-playbook/authentication.md)
+* [Push Notifications](our-mobile-playbook/push-notifications.md)
+* [Google Sign in with Expo](our-mobile-playbook/google-sign-in-with-expo.md)
 
 ## Base Styles
 
@@ -46,7 +57,9 @@
 * [🎨 CSS Variables](css-variables.md)
 * [Components](components/README.md)
   * [Buttons](components/buttons.md)
+* [JS Components](js-components/README.md)
+  * [Modals.js](js-components/modals.js.md)
 
 ## RGS Articles
 
-* [Being good at comms](rgs-articles/being-good-at-comms.md)
+* [What Good Async Communication Looks Like](rgs-articles/what-good-async-communication-looks-like.md)

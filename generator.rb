@@ -118,8 +118,7 @@ FILES_TO_COPY.each do |file|
   source_path = File.join(temp_dir, file)
   if File.file?(source_path)
     puts "Copying file: #{file}"
-    FileUtils.mkdir_p(File.dirname(file)) # Create directory structure if needed
-    FileUtils.cp(source_path, file)
+    copy_file source_path, file 
   else
     puts "File not found in repo: #{file}"
   end
