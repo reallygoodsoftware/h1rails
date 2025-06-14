@@ -1,21 +1,45 @@
 import { html, render, useState, useEffect, useRef } from 'https://esm.sh/htm/preact/standalone';
 
+// Function to execute scripts in loaded content
+const executeScripts = (container) => {
+  if (!container) return;
+  
+  const scripts = container.querySelectorAll('script');
+  scripts.forEach(script => {
+    const newScript = document.createElement('script');
+    
+    // Copy attributes
+    Array.from(script.attributes).forEach(attr => {
+      newScript.setAttribute(attr.name, attr.value);
+    });
+    
+    if (script.src) {
+      // External script
+      newScript.src = script.src;
+    } else {
+      // Inline script
+      newScript.textContent = script.textContent;
+    }
+    
+    // Replace the old script with the new one
+    script.parentNode.replaceChild(newScript, script);
+  });
+};
+
 // Define the Modal component
 export function Modal({ modalId, content, size = 'md', isVisible, onClose }) {
   const contentRef = useRef(null);
   const modalClass = `ui-modal ${isVisible ? '--visible' : ''}`;
   const dialogClass = `--dialog --${size}`;
   
-  // Support HTMX content
+  // Support HTMX content and execute scripts
   useEffect(() => {
-    console.log("11")
     if (isVisible && contentRef.current) {
-      console.log("13")
       if (window.htmx) {
-        window.htmx.process(contentRef.current);
-        console.log("HTMX processed");
-      } else {
+        window.htmx.process(contentRef.current); 
       }
+      // Execute any scripts in the loaded content
+      executeScripts(contentRef.current);
     }
   }, [isVisible, content]);
   
@@ -40,12 +64,24 @@ export function Modals() {
   const [modals, setModals] = useState([]);
   let modalIdCounter = 0;
   
-  // Function to load content from a URL
-  const loadUrlContent = async (url) => {
+  // Function to load content from a URL, with optional selector
+  const loadUrlContent = async (url, remoteSelector) => {
     try {
       const response = await fetch(url);
       if (!response.ok) throw new Error('Failed to fetch content');
-      return await response.text();
+      const text = await response.text();
+      if (remoteSelector) {
+        // Parse the HTML and extract the first element matching the selector
+        const parser = new DOMParser();
+        const doc = parser.parseFromString(text, 'text/html');
+        const el = doc.querySelector(remoteSelector);
+        if (el) {
+          return el.outerHTML;
+        } else {
+          return `<p>Element not found for selector: ${remoteSelector}</p>`;
+        }
+      }
+      return text;
     } catch (error) {
       console.error('Error loading content:', error);
       return `<p>Error loading content from ${url}</p>`;
@@ -91,6 +127,7 @@ export function Modals() {
       const { 
         url, 
         selector,
+        remoteSelector,
         content: initialContent = '',
         size = 'md'
       } = options;
@@ -136,7 +173,7 @@ export function Modals() {
       // If URL was specified, fetch the content and update
       if (url) {
         try {
-          const loadedContent = await loadUrlContent(url);
+          const loadedContent = await loadUrlContent(url, remoteSelector);
           setModals(prev => 
             prev.map(modal => 
               modal.modalId === modalId ? {...modal, content: loadedContent} : modal
@@ -155,8 +192,6 @@ export function Modals() {
     window.closeModal = (modalId) => {
       closeModal(modalId);
     };
-    
-    console.log("Enhanced modal system initialized");
     
     // Cleanup
     return () => {
