@@ -10,6 +10,7 @@
   * [Preact Standalone](html-first/articles/preact-standalone.md)
   * [CSS Form Control Styling](html-first/articles/css-form-control-styling.md)
   * [JSX vs Web Components](html-first/articles/jsx-vs-web-components.md)
+  * [JSX Without React](html-first/articles/jsx-without-react.md)
 * [Platform <> SPA Parity](html-first/platform-less-than-greater-than-spa-parity/README.md)
   * [Snappy Page Transitions](html-first/platform-less-than-greater-than-spa-parity/snappy-page-transitions.md)
   * [Icons](html-first/platform-less-than-greater-than-spa-parity/icons.md)
@@ -52,6 +53,8 @@
 * [🎨 CSS Variables](css-variables.md)
 * [Components](components/README.md)
   * [Buttons](components/buttons.md)
+* [JS Components](js-components/README.md)
+  * [Modals.js](js-components/modals.js.md)
 
 ## RGS Articles
 
