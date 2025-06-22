@@ -18,11 +18,16 @@
 
 <style>
   .code-demo-wrapper {
-    position: relative;
   }
   .element-demo {
     border: 1px solid #efefef;
     border-radius: 8px;
+    position: relative;
+  }
+  .element-demo code {
+    max-height: 300px;
+    overflow-y: scroll;
+    overflow-y: scroll;
   }
   .element-demo .--frame {
     min-height: 100px;
@@ -33,7 +38,15 @@
   .element-demo code {
     background-color: var(--color-gamma) !important;
     border-radius: 0 0 8px 8px !important;
-    font-size: 13px !important;
+    color: #fff;
+  }
+  .code-toggle {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+  }
+  .element-demo .--expanded  code {
+    padding: 20px;
   }
 </style>
 
@@ -42,7 +55,7 @@
 <script type="module">
     // Import necessary modules and components
   import { html, render } from 'https://esm.sh/htm/preact/standalone';
-  import CodeDemo from '/preact/components/CodeDemo.js';
+  import CodeDemo from '/preact/components/CodeDemo.js<%= cache_buster %>';
 
   // Initialize once the DOM is fully loaded
   document.addEventListener('page:init', () => {

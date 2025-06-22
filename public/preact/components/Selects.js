@@ -1,5 +1,46 @@
 import { html, render, useState, useRef, useEffect, useMemo, useCallback } from 'https://esm.sh/htm/preact/standalone';
 
+// Documentation
+{/* <div class="ui-combobox">
+  <div data-component="select" 
+    data-select-name="fruits"
+    data-select-type="multiple"
+    data-select-allow-create="true"
+    data-select-default-values="orange,apple"
+    data-select-options='[
+        {
+          "label": "Citrus Fruits",
+          "options": [
+            {"value": "orange", "label": "Orange"},
+            {"value": "lemon", "label": "Lemon"},
+            {"value": "lime", "label": "Lime"},
+            {"value": "grapefruit", "label": "Grapefruit"}
+          ]
+        },
+        {
+          "label": "Berries",
+          "options": [
+            {"value": "strawberry", "label": "Strawberry"},
+            {"value": "blueberry", "label": "Blueberry"},
+            {"value": "raspberry", "label": "Raspberry"},
+            {"value": "blackberry", "label": "Blackberry"}
+          ]
+        },
+        {
+          "label": "Tropical Fruits",
+          "options": [
+            {"value": "banana", "label": "Banana"},
+            {"value": "mango", "label": "Mango"},
+            {"value": "pineapple", "label": "Pineapple"},
+            {"value": "coconut", "label": "Coconut"}
+          ]
+        },
+        {"value": "apple", "label": "Apple"},
+        {"value": "pear", "label": "Pear"}
+    ]'>
+  </div>
+</div> */}
+
 export default function Combobox(props) {
   const element = props.element;
   
