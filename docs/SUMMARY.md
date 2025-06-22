@@ -2,26 +2,6 @@
 
 * [Really Good Software Docs](README.md)
 
-## HTML First
-
-* [Articles](html-first/articles/README.md)
-  * [JSX Without React](html-first/articles/jsx-without-react.md)
-  * [JSX vs Web Components](html-first/articles/jsx-vs-web-components.md)
-
-## Platform (SPA) Parity
-
-* [Articles](platform-spa-parity/articles/README.md)
-  * [What is Platform <> SPA Parity?](platform-spa-parity/articles/what-is-platform-less-than-greater-than-spa-parity.md)
-  * [My Platform Wish List](platform-spa-parity/articles/my-platform-wish-list.md)
-  * [A Missing Pattern: Dom Updates Based on Simple State](platform-spa-parity/articles/a-missing-pattern-dom-updates-based-on-simple-state.md)
-  * [CSS Form Control Styling](platform-spa-parity/articles/css-form-control-styling.md)
-* [Patterns & Progress](platform-spa-parity/patterns-and-progress/README.md)
-  * [Snappy Page Transitions](platform-spa-parity/patterns-and-progress/snappy-page-transitions.md)
-  * [Icons](platform-spa-parity/patterns-and-progress/icons.md)
-  * [Accordion](platform-spa-parity/patterns-and-progress/accordion.md)
-  * [Tooltips](platform-spa-parity/patterns-and-progress/tooltips.md)
-  * [Modals](platform-spa-parity/patterns-and-progress/modals.md)
-
 ## H1 Rails
 
 * [Core](<README (1).md>)
@@ -41,6 +21,11 @@
   * [Setting Up R2](h1-rails/articles/setting-up-r2.md)
   * [TipTap Editor](h1-rails/articles/tiptap-editor.md)
 
+## Base Styles
+
+* [👋 Intro](base-styles/intro.md)
+* [🏁 Getting Started](base-styles/getting-started.md)
+
 ## Our Mobile Playbook
 
 * [The Hybrid Approach](our-mobile-playbook/the-hybrid-approach.md)
@@ -48,10 +33,25 @@
 * [Push Notifications](our-mobile-playbook/push-notifications.md)
 * [Google Sign in with Expo](our-mobile-playbook/google-sign-in-with-expo.md)
 
-## Base Styles
+## HTML First
 
-* [👋 Intro](base-styles/intro.md)
-* [🏁 Getting Started](base-styles/getting-started.md)
+* [Articles](html-first/articles/README.md)
+  * [JSX Without React](html-first/articles/jsx-without-react.md)
+  * [JSX vs Web Components](html-first/articles/jsx-vs-web-components.md)
+
+## Platform (SPA) Parity
+
+* [Articles](platform-spa-parity/articles/README.md)
+  * [What is Platform <> SPA Parity?](platform-spa-parity/articles/what-is-platform-less-than-greater-than-spa-parity.md)
+  * [My Platform Wish List](platform-spa-parity/articles/my-platform-wish-list.md)
+  * [A Missing Pattern: Dom Updates Based on Simple State](platform-spa-parity/articles/a-missing-pattern-dom-updates-based-on-simple-state.md)
+  * [CSS Form Control Styling](platform-spa-parity/articles/css-form-control-styling.md)
+* [Patterns & Progress](platform-spa-parity/patterns-and-progress/README.md)
+  * [Snappy Page Transitions](platform-spa-parity/patterns-and-progress/snappy-page-transitions.md)
+  * [Icons](platform-spa-parity/patterns-and-progress/icons.md)
+  * [Accordion](platform-spa-parity/patterns-and-progress/accordion.md)
+  * [Tooltips](platform-spa-parity/patterns-and-progress/tooltips.md)
+  * [Modals](platform-spa-parity/patterns-and-progress/modals.md)
 
 ***
 
