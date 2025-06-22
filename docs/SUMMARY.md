@@ -39,6 +39,7 @@
   * [Forms With Auto Saving](h1-rails/articles/forms-with-auto-saving.md)
   * [Multi Step & Nested Forms](h1-rails/articles/multi-step-and-nested-forms.md)
   * [Setting Up R2](h1-rails/articles/setting-up-r2.md)
+  * [TipTap Editor](h1-rails/articles/tiptap-editor.md)
 
 ## Our Mobile Playbook
 
