@@ -36,3 +36,6 @@
 db/development.sqlite3
 
 /base-styles
+
+*.pid 
+*.pid.lock
