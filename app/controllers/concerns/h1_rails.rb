@@ -51,6 +51,10 @@ module H1Rails
       @use_bare_layout = true
     end
 
+    def allow_iframe
+      response.headers.delete('X-Frame-Options')
+    end
+
     def authenticate_user!
 
       # Clear any session based auth if there's an auth header present

@@ -1,3 +1,15 @@
+
+<!-- Modern HTML with no build step -->
+<script type="module">
+  import React from 'https://esm.sh/react';
+  import { createRoot } from 'https://esm.sh/react-dom/client';
+
+  // Usage
+  const root = createRoot(document.getElementById('root'));
+  root.render(React.createElement('h1', null, 'Hello World'));
+
+</script>
+
 <% content_for :sidebar_content do %>
   <div class="--section" style="margin-top: 1.5rem;">
     <h3 class="--eyebrow">Elements</h3>
@@ -27,5 +39,9 @@
     <%= render partial: "h1rails/demos/charts" %>
     <%= render partial: "h1rails/demos/forms" %>
     <%= render partial: "h1rails/demos/rhino" %>
+
+
+    <div id="root"></div>
+    
   </div>
 </div>

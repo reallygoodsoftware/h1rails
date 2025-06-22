@@ -1,16 +1,7 @@
+const triggerInit = () => {
+  document.dispatchEvent(new CustomEvent('page:init'));
+};
 
-Dropzone.autoDiscover = false;
-
-function reinitializeJs() { 
-  Dropzone.discover();
-  
-}
-
-document.addEventListener("DOMContentLoaded", function(event){
-  reinitializeJs();
-});
-
-// add an event listener for the htmx afterRequest event
-document.addEventListener("htmx:afterSettle", function(event) {
-  reinitializeJs();
-});
+// Listen for both events in one place
+document.addEventListener("DOMContentLoaded", triggerInit);
+document.addEventListener("htmx:afterRequest", triggerInit);

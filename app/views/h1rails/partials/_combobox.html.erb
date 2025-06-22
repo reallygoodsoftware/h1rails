@@ -1,0 +1,11 @@
+
+<script type="module">
+  import { html, render, useState, useEffect } from 'https://esm.sh/htm/preact/standalone';
+  import Select from '/preact/components/Selects.js';
+  // Inilize the modal system once in your application
+  document.querySelectorAll('[data-component="select"]').forEach(element => {
+    render(html`<${Select} element=${element} />`, element);
+  });
+</script>
+
+<div id="selects"></div>

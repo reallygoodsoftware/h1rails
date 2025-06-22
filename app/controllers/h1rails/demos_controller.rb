@@ -6,6 +6,8 @@ class H1rails::DemosController < ApplicationController
 
   before_action :set_layout_file
 
+  before_action :allow_iframe
+
   # fix cors issues
   after_action :set_access_control_headers, only: [:search]
 
@@ -17,6 +19,7 @@ class H1rails::DemosController < ApplicationController
   
   def index
   end
+
 
   def mobile_app
   end

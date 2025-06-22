@@ -2,17 +2,101 @@
 <html class="h-full" lang="en">
   <head>
     <%= render :partial=> "h1rails/partials/head" %>
+
+    <%= render :partial=> "h1rails/partials/codedemo" %>
+
+    
+    <script>
+      function sendHeightToParent() {
+        const height = document.documentElement.scrollHeight || document.body.scrollHeight;
+        window.parent.postMessage({
+          type: 'resize',
+          height: height
+        }, '*');
+      }
+      window.addEventListener('load', function() {
+        // Wait a bit to ensure all resources are rendered
+        setTimeout(sendHeightToParent, 100);
+        window.parent.postMessage({
+          type: 'hideHeader'
+        })
+      });
+    </script>
+
+    
   </head>
   <body class="ui-body" <%= htmx_body_attributes.html_safe %> >
-    <%= render :partial => "h1rails/partials/modals" %>
+    <%= render partial: "h1rails/partials/modals" %>
     <%= render partial: "h1rails/partials/toasts" %>
-
+    <%= render partial: "h1rails/partials/combobox" %>
+    <%= render "h1rails/vendor/highlight" %> 
     <link rel="stylesheet" href="https://cdn.base-styles.com/src/sidebar.css<%= cache_buster %>">
-
     <div id="<%= renders_in_modal? ? "modal-container" : "main-content" %>" class="h-full">
       <%= yield %>
     </div>
     <%= render :partial => "h1rails/demos/sidebar" if sidebar_shown? %>
     <%- render partial: "livecode/dock" if request_is_localhost? %>
+
+    <script>
+      document.querySelectorAll('.code-sample').forEach((el) => {
+        // if element has the .code-sample-inner class, then get the inner content
+        if (el.classList.contains('code-sample-inner')) {
+          code = el.innerHTML;
+        } else {
+          code = el.outerHTML;
+        }
+        code = code.replace(/data-mini\.uuid="[^"]*"/g, ''); // Remove mini js attributes
+        code = code.replace(/:class="[^"]*"/g, ''); // Remove mini js attributes
+        code = code.replace(/:click="[^"]*"/g, ''); // Remove mini js attributes
+        code = code.replace(/:scope="[^"]*"/g, ''); // Remove mini js attributes
+        code = code.replace(/code-sample /g, ''); // Remove the code-sample class
+        code = code.replace(/ code-sample/g, ''); // Remove the code-sample class
+
+        let lines = code.split('\n').filter(line => line.trim());
+        console.log(lines);
+
+        const minIndent = Math.min(
+          ...lines
+            .filter(line => line.trim()) // Skip empty lines
+            .map(line => {
+              const match = line.match(/^[ \t]*/);
+              return match ? match[0].length : 0;
+            })
+        );
+
+        lines = lines.map(line => line.slice(minIndent));
+
+        // Join lines back together
+        code = lines.join('\n');
+
+        const template = `
+          <pre class="language-html ui-expander <%= '--expanded' if params[:show_code] %>" ><code class="language-html"></code></pre>
+        `;
+        const toggleButton = `
+          <button class="ui-button code-toggle">Show Code</button>
+        `
+
+        el.classList.add('relative');
+        
+        el.insertAdjacentHTML('afterend', template);
+        el.insertAdjacentHTML('beforeend', toggleButton);
+        el.nextElementSibling.querySelector('code').innerText = code;
+
+        el.querySelector('.code-toggle').addEventListener('click', () => {
+          el.nextElementSibling.classList.toggle('--expanded');
+          if (el.nextElementSibling.classList.contains('--expanded')) {
+            el.querySelector('.code-toggle').innerText = 'Show Code';
+          } else {
+            el.querySelector('.code-toggle').innerText = 'Hide Code';
+          }
+        });
+      });
+
+      var snippets = document.querySelectorAll('pre code')
+      snippets.forEach(function(snippet) {
+        hljs.highlightBlock(snippet);
+        snippet.parentNode.classList.add('dark:border', 'dark:border-gray-400/50', 'dark:rounded');
+      })
+    </script>
   </body>
 </html>

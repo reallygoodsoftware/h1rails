@@ -1,0 +1,64 @@
+<link rel="stylesheet" href="https://mini-js.com/vendor/highlight/tomorrow-night-blue.css?stamp=2025-06-22T04:24:18-07:00">
+
+<style>
+
+:root {
+  --color-alpha: rgba(26, 31, 42,100);  /* Black */
+  --color-beta: #5046e5 ; /* Purple */
+
+  /* These are for code highlighting and come from Tailwind */
+  --color-gamma: #1e293b; /* Dark Navy Purple */
+  --color-gamma-text: #fff; 
+  --color-zeta: #cbd5e1; /* Light Gray */
+  --color-delta: #f471b5; /* Pink */
+  --color-epsilon: #7dd3fc; /* Baby Blue */
+
+}
+</style>
+
+<style>
+  .code-demo-wrapper {
+    position: relative;
+  }
+  .element-demo {
+    border: 1px solid #efefef;
+    border-radius: 8px;
+  }
+  .element-demo .--frame {
+    min-height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .element-demo code {
+    background-color: var(--color-gamma) !important;
+    border-radius: 0 0 8px 8px !important;
+    font-size: 13px !important;
+  }
+</style>
+
+
+
+<script type="module">
+    // Import necessary modules and components
+  import { html, render } from 'https://esm.sh/htm/preact/standalone';
+  import CodeDemo from '/preact/components/CodeDemo.js';
+
+  // Initialize once the DOM is fully loaded
+  document.addEventListener('page:init', () => {
+    // Find all elements with the classes 'element-demo element-demo-inner'
+    const demoElements = document.querySelectorAll('.element-demo .--frame');
+
+    // Render the CodeDemo component into each element
+    demoElements.forEach(element => {
+      // get the parent
+      const parent = element.parentElement;
+
+      // render the code demo after the frame 
+      const codeDemo = document.createElement('div'); 
+
+      render(html`<${CodeDemo} element=${parent} />`, codeDemo);
+      parent.appendChild(codeDemo);
+    });
+  });
+</script>
