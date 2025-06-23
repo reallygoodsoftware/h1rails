@@ -32,8 +32,7 @@
 * [Authentication](our-mobile-playbook/authentication.md)
 * [Push Notifications](our-mobile-playbook/push-notifications.md)
 * [Google Sign in with Expo](our-mobile-playbook/google-sign-in-with-expo.md)
-* [Analytics](our-mobile-playbook/analytics/README.md)
-  * [How getUniqueId works](our-mobile-playbook/analytics/how-getuniqueid-works.md)
+* [Analytics](our-mobile-playbook/analytics.md)
 
 ## HTML First
 
