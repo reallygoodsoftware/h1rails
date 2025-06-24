@@ -21,6 +21,7 @@
   * [Setting Up R2](h1-rails/articles/setting-up-r2.md)
   * [TipTap Editor](h1-rails/articles/tiptap-editor.md)
   * [How to create a Pull Request Preview comparing commits (not branches)](h1-rails/articles/how-to-create-a-pull-request-preview-comparing-commits-not-branches.md)
+  * [Code Review Guidelines](h1-rails/articles/code-review-guidelines.md)
 
 ## Base Styles
 
