@@ -4,7 +4,7 @@ icon: circle-small
 
 # File Uploads With Dropzone
 
-## File uploads with Dropzone
+
 
 We're currently using [Dropzone](https://www.dropzone.dev/) for file uploads. You should read [their documentation](https://docs.dropzone.dev/getting-started/setup/declarative) for more information.
 
@@ -44,7 +44,7 @@ document.addEventListener("htmx:afterSettle", function(event) {
 #### Setup
 
 * Dropzone's default mode of operation is to upload files _independently_ of the current form. I.e. the moment a user adds an image, the upload starts, as opposed to images being uploaded alongside the other information in the form. This means we'll need to set up a separate endpoint that's used only for the file upload.
-* This is obviously imcompatible with cases where the form object hasn't yet been added to the database, but because our approach as per [Multi Step Form Flows](https://hypergist.io/tony/docs?file=server_for_state.md) is to persist the form object first, this should work fine.
+* This is obviously incompatible with cases where the form object hasn't yet been added to the database, but because our approach as per [Multi Step Form Flows](https://hypergist.io/tony/docs?file=server_for_state.md) is to persist the form object first, this should work fine.
 
 First, create a div inside of our form with a class of `.dropdown` and give it an id.
 
