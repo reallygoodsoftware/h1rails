@@ -12,7 +12,9 @@ Sometimes though, we are committing to the same branch and want to just show the
 
 To let us do this, **Github has a hidden way to let us compare&#x20;**_**commits**_**&#x20;in it's web based diff viewer.**&#x20;
 
+***
 
+## Steps
 
 1. Push your changes to the branch (usually `dev`) as normal
 2. Go to the Commits section in Github&#x20;
@@ -29,11 +31,11 @@ To let us do this, **Github has a hidden way to let us compare&#x20;**_**commits
 https://github.com/{username}/{repository}/compare/{commit_hash}...{commit_hash}
 ```
 
+***
 
+## **Example**
 
-### **Example**
-
-Let's use an example from our open source H1 Rails codebase
+Let's use an example from our open source [H1 Rails](https://github.com/reallygoodsoftware/h1rails) codebase
 
 * **First commit hash**: eda93a0bde19f5fc72b94715d7a036284b8a1e60
 * **Second commit hash**: e7e46ff4a67d73d3ce8c03d2428861b6b71888cc
