@@ -20,6 +20,7 @@
   * [Multi Step & Nested Forms](h1-rails/articles/multi-step-and-nested-forms.md)
   * [Setting Up R2](h1-rails/articles/setting-up-r2.md)
   * [TipTap Editor](h1-rails/articles/tiptap-editor.md)
+  * [How to create a Pull Request Preview comparing commits (not branches)](h1-rails/articles/how-to-create-a-pull-request-preview-comparing-commits-not-branches.md)
 
 ## Base Styles
 
