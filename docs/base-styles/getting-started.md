@@ -1,4 +1,8 @@
-# 🏁 Getting Started
+---
+icon: flag-checkered
+---
+
+# Getting Started
 
 {% stepper %}
 {% step %}

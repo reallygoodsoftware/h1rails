@@ -1,4 +1,8 @@
-# 👋 Intro
+---
+icon: hand-wave
+---
+
+# Intro
 
 Base Styles is a single-file CSS toolkit designed for:
 

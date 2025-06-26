@@ -25,8 +25,8 @@
 
 ## Base Styles
 
-* [👋 Intro](base-styles/intro.md)
-* [🏁 Getting Started](base-styles/getting-started.md)
+* [Intro](base-styles/intro.md)
+* [Getting Started](base-styles/getting-started.md)
 * [JS Components](base-styles/js-components/README.md)
   * [Modals.js](base-styles/js-components/modals.js.md)
 
