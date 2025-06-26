@@ -11,7 +11,7 @@ H1 Rails uses Modals.js by Base Styles to power modals. For more info, read the 
 ```html
 <button onclick="launchModal({
   selector: '#myhiddenmodal'
-})></button>
+})"></button>
 
 <div class="hidden" id="myhiddenmodal">
   Content Here
