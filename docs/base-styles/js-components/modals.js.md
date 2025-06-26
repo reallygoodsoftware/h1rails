@@ -6,7 +6,9 @@ icon: rectangle-history
 
 A lightweight modal system that supports dynamic content loading and multiple content sources.
 
-### Features
+<details>
+
+<summary>Features</summary>
 
 * **Multiple Content Sources**: Load content from URLs, DOM selectors, or inline HTML
 * **Script Execution**: Automatically executes scripts in loaded content
@@ -16,23 +18,25 @@ A lightweight modal system that supports dynamic content loading and multiple co
 * **Auto-initialization**: Automatically sets up when the module loads
 * **HTMX Integration**: Automatic HTMX processing of loaded content
 
-### Installation
+</details>
 
-The modal system auto-initializes when the module is loaded. Simply include the script in your HTML:
+## Setup
 
-{% tabs %}
-{% tab title="Stable Version" %}
+1. If you haven't already, add [Base Styles CSS ](../getting-started.md)to your codebase.
+2. Add the file from our cdn or from your codebase.
+
+**From CDN**
+
 ```html
 <script src="https://cdn.base-styles.com/components/modals-0.0.1.js" type="module" ></script>
 ```
-{% endtab %}
 
-{% tab title="Edge" %}
-```
-<script src="https://cdn.base-styles.com/components/modals-0.0.1.js" type="module" ></script>
-```
-{% endtab %}
-{% endtabs %}
+**From your codebase**
+
+* Download the relevant file from the list [here](https://github.com/reallygoodsoftware/base-styles/tree/main/components).
+* Load it using a script tag (don't forget to include `type='module'` like the example above).
+
+***
 
 ## Usage
 
@@ -54,19 +58,31 @@ Modals.js exposes a global `launchModal` function that you can use anywhere in y
 
 ```html
 <button onclick="launchModal({
-  url: '/api/modal-content'})">
+  url: '/modal-content'})">
 </button>
 ```
 
 #### 4. Modal with Specific Content from URL
 
-```javascript
-// Load a page but only show a specific element
-launchModal({
+```html
+<button onclick="launchModal({
   url: '/full-page',
   remoteSelector: '.modal-content',
   size: 'md'
-});
+})"></button>
+```
+
+**5. Close a modal**&#x20;
+
+```html
+<button onclick="launchModal({
+  id: 'account-modal'
+  url: '/account'
+})"></button>
+
+<script>
+  closeModal('account-modal');
+</script>
 ```
 
 ### Modal Sizes
@@ -179,7 +195,9 @@ The system includes robust error handling:
 * Scripts are executed only when needed
 * Smooth animations with CSS transitions
 
-### Troubleshooting
+
+
+## Troubleshooting
 
 #### Modal Not Appearing
 
