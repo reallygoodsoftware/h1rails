@@ -69,19 +69,6 @@ launchModal({
 });
 ```
 
-#### 5. Modal with Custom ID
-
-```javascript
-// Launch modal with custom ID for later reference
-const modalId = await launchModal({
-  id: 'my-custom-modal',
-  content: '<p>Custom modal content</p>'
-});
-
-// Later, close it programmatically
-closeModal(modalId);
-```
-
 ### Modal Sizes
 
 The system supports three modal sizes:
