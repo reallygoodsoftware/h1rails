@@ -27,8 +27,11 @@
 
 * [Intro](base-styles/intro.md)
 * [Getting Started](base-styles/getting-started.md)
+* [Components](base-styles/components/README.md)
+  * [Buttons](base-styles/components/buttons.md)
 * [JS Components](base-styles/js-components/README.md)
   * [Modals.js](base-styles/js-components/modals.js.md)
+* [🎨 CSS Variables](base-styles/css-variables.md)
 
 ## Our Mobile Playbook
 
@@ -57,15 +60,3 @@
   * [Accordion](platform-spa-parity/patterns-and-progress/accordion.md)
   * [Tooltips](platform-spa-parity/patterns-and-progress/tooltips.md)
   * [Modals](platform-spa-parity/patterns-and-progress/modals.md)
-
-***
-
-* [🎨 CSS Variables](css-variables.md)
-* [Components](components/README.md)
-  * [Buttons](components/buttons.md)
-* [JS Components](js-components/README.md)
-  * [Modals.js](js-components/modals.js.md)
-
-## RGS Articles
-
-* [What Good Async Communication Looks Like](rgs-articles/what-good-async-communication-looks-like.md)

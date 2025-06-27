@@ -4,7 +4,7 @@ icon: browsers
 
 # Modals
 
-H1 Rails uses Modals.js by Base Styles to power modals. For more info, read the [Modals.js docs](../../js-components/modals.js.md).
+H1 Rails uses Modals.js by Base Styles to power modals. For more info, read the [Modals.js docs](broken-reference).
 
 #### 1. With Pre Loaded Content
 
