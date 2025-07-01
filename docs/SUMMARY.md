@@ -60,3 +60,7 @@
   * [Accordion](platform-spa-parity/patterns-and-progress/accordion.md)
   * [Tooltips](platform-spa-parity/patterns-and-progress/tooltips.md)
   * [Modals](platform-spa-parity/patterns-and-progress/modals.md)
+
+## Our Handbook
+
+* [Day To Day Client Communications](our-handbook/day-to-day-client-communications.md)
