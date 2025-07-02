@@ -4,11 +4,13 @@ icon: bolt-lightning
 
 # Snappy Page Transitions
 
-Broadly speaking there are three things that are present in SPAs, but not in Vanilla Web Apps, that lead to the latter feeling clunky and the former feeling smooth, when users click on a link or submit a form.&#x20;
+Broadly speaking there are three things that are present in SPAs, but not in Vanilla Web Apps, that lead to the latter feeling clunky and the former feeling smooth - when users click on a link or submit a form.&#x20;
 
 1. **Flash Of White**: Vanilla users see a temporary blank white screen while the request loads.
-2. **Delayed Feedback**: Vanilla users don't see any immediate indication that their click was received, or form submission was sent, until the new page loads in.&#x20;
-3. **No Partial Page Replacement**: In non-SPAs, the entire page is deleted, then replaced, which has various UX implications including causing the user to lose their scroll position.&#x20;
+2. **No Partial Page Replacement**: For vanilla users the entire page is deleted, then replaced, which has various UX implications including causing the user to lose their scroll position.&#x20;
+3. **Delayed Feedback**: Vanilla users don't see any immediate indication that their click was received, or form submission was sent, until the new page loads in.&#x20;
+   1. On the clicked element
+   2. On the target area
 
 ## Flash of White
 

@@ -54,6 +54,7 @@
   * [My Platform Wish List](platform-spa-parity/articles/my-platform-wish-list.md)
   * [A Missing Pattern: Dom Updates Based on Simple State](platform-spa-parity/articles/a-missing-pattern-dom-updates-based-on-simple-state.md)
   * [CSS Form Control Styling](platform-spa-parity/articles/css-form-control-styling.md)
+  * [\[WIP\] Idea: The State Element](platform-spa-parity/articles/wip-idea-the-state-element.md)
 * [Patterns & Progress](platform-spa-parity/patterns-and-progress/README.md)
   * [Snappy Page Transitions](platform-spa-parity/patterns-and-progress/snappy-page-transitions.md)
   * [Icons](platform-spa-parity/patterns-and-progress/icons.md)
