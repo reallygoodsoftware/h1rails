@@ -13,6 +13,10 @@ When I click a navigation link in an SPA, usually two things happen
 
 
 
+## Current State
+
+There's currently no platform native way to achieve this without additional javascript.&#x20;
+
 ## Proposal
 
 {% hint style="info" %}
