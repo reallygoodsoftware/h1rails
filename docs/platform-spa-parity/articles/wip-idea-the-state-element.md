@@ -8,9 +8,9 @@ icon: circle-small
 These are assorted notes and are very early stage - leaving them here so I don't lose track of them&#x20;
 {% endhint %}
 
+**Core Idea One**: HTML's simplicity is it's greatest asset. Simple concepts and ideas are limited in their power, but HTML is barely scratching the surface in terms of the power it _**can**_ grant.&#x20;
 
-
-**The core idea**: We regularly need to apply minor state changes to frontend elements, but we also need to be able to scope that state to a particular group.
+**Core Idea Two**: We regularly need to apply minor state changes to frontend elements, but we also need to be able to scope that state to a particular set of dom elements.
 
 ### Simple Usage
 

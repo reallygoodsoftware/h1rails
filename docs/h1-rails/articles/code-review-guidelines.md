@@ -1,3 +1,7 @@
+---
+icon: circle-small
+---
+
 # Code Review Guidelines
 
 ### Cases to look out for

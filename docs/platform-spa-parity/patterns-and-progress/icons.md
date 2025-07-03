@@ -8,9 +8,3 @@ icon: icons
 This is a placeholder
 {% endhint %}
 
-
-
-## Notes
-
-* Can't yet pas
-
