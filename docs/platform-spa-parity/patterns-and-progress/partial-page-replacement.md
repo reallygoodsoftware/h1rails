@@ -4,11 +4,13 @@ icon: chart-simple-horizontal
 
 # Partial Page Replacement
 
-This was originally covered in [.](./ "mention") but I'm going to move it into it's own page. This is a placeholder for now.&#x20;
+<table data-header-hidden><thead><tr><th width="147.0625"></th><th></th></tr></thead><tbody><tr><td><strong>Current Rating</strong></td><td><strong>B</strong> . Requires using a third party library like htmx</td></tr><tr><td><strong>Status</strong></td><td>Multiple Proposals Open. <a href="https://alexanderpetros.com/triptych/">Triptych</a> is a set of 3 that address the same idea.</td></tr></tbody></table>
+
+TODO: Transfer notes in here & clean up
 
 
 
-## Flash of White
+**A Note on Flash of White**
 
 "Flash Of White" refers to the momentary state that appears in a browser when a user clicks on a link or submits a form, on a web page or web app that doesn't use a frontend library. This particular behavior (or the lack thereof) has become synonymous with a web app feeling slow or unpolished.&#x20;
 
@@ -20,7 +22,7 @@ The main solution right now is to use a library like htmx&#x20;
 
 <summary>Example</summary>
 
-<div data-full-width="true"><figure><img src="../../../.gitbook/assets/CleanShot 2025-05-20 at 11.15.45.gif" alt=""><figcaption></figcaption></figure></div>
+<div data-full-width="true"><figure><img src="../../.gitbook/assets/CleanShot 2025-05-20 at 11.15.45.gif" alt=""><figcaption></figcaption></figure></div>
 
 
 

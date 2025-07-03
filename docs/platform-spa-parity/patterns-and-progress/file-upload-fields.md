@@ -1,3 +1,7 @@
+---
+icon: arrow-up-to-bracket
+---
+
 # File Upload Fields
 
 {% hint style="info" %}
