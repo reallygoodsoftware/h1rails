@@ -1,12 +1,14 @@
 ---
-icon: lightbulb-on
+icon: lightbulb
 ---
 
-# Tooltips
+# Plain Text Tooltips
 
-## Text Only Tooltips
+<table data-header-hidden><thead><tr><th width="147.0625"></th><th></th></tr></thead><tbody><tr><td><strong>Current Rating</strong></td><td><strong>B</strong> . Possible to do but current method feels hacky, doesn't support viewport overflowing or keyboard dismissal.</td></tr><tr><td><strong>Status</strong></td><td>Proposals written &#x26; new features on their way which will address this.</td></tr></tbody></table>
 
-* The [CSS only method](tooltips.md#css-only-method) using `::after` has been possible since 2005. It works well for most cases, but isn't as clean as a html-only method and has a few minor accessibility issues.
+## TLDR
+
+* The [CSS only method](plain-text-tooltips.md#css-only-method) using `::after` has been possible since 2005. It works well for most cases, but isn't as clean as a html-only method and has a few minor accessibility issues.
 * The HTML method is currently being rolled out and should reach parity in the next few years.
 
 
@@ -70,10 +72,6 @@ This list assumes using a library like [hint.css](https://github.com/chinchang/h
 * ❌ **No programmatic API** for assistive tech integration
 
 
-
-## HTML Tooltips
-
-**TODO**: Expand here on `<dialog>` , `popover='hint'`, anchor positioning, and how to combine all three to get good platform tooltips.
 
 ### **Resources**
 

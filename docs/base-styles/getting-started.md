@@ -1,4 +1,8 @@
-# 🏁 Getting Started
+---
+icon: flag-checkered
+---
+
+# Getting Started
 
 {% stepper %}
 {% step %}
@@ -47,6 +51,6 @@ body {
 {% step %}
 ## Build UI to your heart's content
 
-* See the full list of components you can use at [components](../components/ "mention")
+* See the full list of components you can use at [components](components/ "mention")
 {% endstep %}
 {% endstepper %}
