@@ -1,0 +1,20 @@
+<% content_for :sidebar_content do %>
+  <div class="--section" style="margin-top: 1.5rem;">
+    <h3 class="--eyebrow">Elements</h3>
+    <a class="--menu-item <%= current_page?(demos_path) ? '--active' : '' %>" href="<%= demos_path %>">
+      Assorted
+    </a>
+  </div>
+  <div class="--section">
+    <h3 class="--eyebrow">Base Styles</h3>
+    <a class="--menu-item <%= current_page?(base_styles_demo_file_path("basestyles.md")) ? '--active' : '' %>" href="<%= base_styles_demo_file_path("basestyles.md") %>">
+      Assorted
+    </a>
+    <a class="--menu-item <%= current_page?(base_styles_demo_file_path("buttons.md")) ? '--active' : '' %>" href="<%= base_styles_demo_file_path("buttons.md") %>">
+      Buttons
+    </a>
+    <a class="--menu-item <%= current_page?(base_styles_demo_file_path("forms.md")) ? '--active' : '' %>" href="<%= base_styles_demo_file_path("forms.md") %>">
+      Forms
+    </a>
+  </div>
+<% end %>

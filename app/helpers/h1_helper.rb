@@ -70,7 +70,7 @@ module H1Helper
     disable = request.headers["Disable-Body-Htmx"]
     return "" if from_h1_expo?
     return "" if disable == "true"
-    return "hx-boost='true' hx-target='#main-content' hx-select='#main-content'".html_safe
+    return "hx-boost='true' hx-target='#main-content' hx-select='#main-content' hx-swap='innerHTML show:no-scroll'".html_safe
   end
 
   def from_h1_expo?

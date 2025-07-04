@@ -11,12 +11,7 @@
 </script>
 
 <% content_for :sidebar_content do %>
-  <div class="--section" style="margin-top: 1.5rem;">
-    <h3 class="--eyebrow">Elements</h3>
-    <a class="--menu-item <%= current_page?(demos_path) ? '--active' : '' %>" href="<%= demos_path %>">
-      Assorted
-    </a>
-  </div>
+  <%= render partial: "h1rails/demos/sidebar_content" %>
 <% end %>
 
 <% @user = User.first %>
@@ -40,8 +35,5 @@
     <%= render partial: "h1rails/demos/forms" %>
     <%= render partial: "h1rails/demos/rhino" %>
 
-
-    <div id="root"></div>
-    
   </div>
 </div>
