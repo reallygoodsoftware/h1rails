@@ -2,7 +2,7 @@
 icon: circle-small
 ---
 
-# Intro: The Platform & a Stylesheet
+# Intro: The Platform And a Stylesheet
 
 > Platform <> SPA Parity refers to the point at which _**The Platform**_ catches up with _**Javascript Frameworks**_, such that the **User Experience** and the **Developer Experience** are at least on par with each other for building straightforward web applications.
 
@@ -10,7 +10,7 @@ icon: circle-small
 
 * **"The Platform"**: The range of things that can be performed natively with html, css and javascript.
 * **Javascript Frameworks**: In this case we're referring to Reactive Frameworks like Vue and React, and Meta Frameworks like Next.js.
-* **SPA (Single Page Application)**: A web appplication that loads only a single web document, and then updates the body content of that single document via JavaScript APIs.
+* **SPA (Single Page Application)**: A web application that loads only a single web document, and then updates the body content of that single document via JavaScript APIs.
 
 ### Background
 

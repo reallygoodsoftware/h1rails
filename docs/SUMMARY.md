@@ -50,7 +50,7 @@
 ## Platform Parity <a href="#pp" id="pp"></a>
 
 * [Articles](pp/articles/README.md)
-  * [Intro: The Platform & a Stylesheet](pp/articles/intro-the-platform-and-a-stylesheet.md)
+  * [Intro: The Platform And a Stylesheet](platform-spa-parity/articles/intro-the-platform-and-a-stylesheet.md)
   * [Overview](pp/articles/overview.md)
   * [How Far We've Come](pp/articles/how-far-weve-come.md)
   * [CSS Form Control Styling](pp/articles/css-form-control-styling.md)
