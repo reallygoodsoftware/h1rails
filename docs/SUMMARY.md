@@ -49,13 +49,9 @@
 
 ## Platform Parity <a href="#pp" id="pp"></a>
 
-* [Articles](pp/articles/README.md)
-  * [Intro: The Platform And a Stylesheet](platform-spa-parity/articles/intro-the-platform-and-a-stylesheet.md)
-  * [Overview](pp/articles/overview.md)
-  * [How Far We've Come](pp/articles/how-far-weve-come.md)
-  * [CSS Form Control Styling](pp/articles/css-form-control-styling.md)
-  * [A Missing Pattern: Dynamic Attributes](pp/articles/a-missing-pattern-dynamic-attributes.md)
-  * [\[WIP\] Idea: The State Element](pp/articles/wip-idea-the-state-element.md)
+* [Intro: The Platform And a Stylesheet](pp/intro-the-platform-and-a-stylesheet.md)
+* [Overview](pp/overview.md)
+* [How Far We've Come](pp/how-far-weve-come.md)
 * [Patterns & Progress](pp/patterns-and-progress/README.md)
   * [Snappy Page Transitions](pp/patterns-and-progress/snappy-page-transitions.md)
   * [Partial Page Replacement](pp/patterns-and-progress/partial-page-replacement.md)
@@ -70,6 +66,10 @@
   * [Multiple Selects](pp/patterns-and-progress/multiple-selects.md)
   * [Data Lists](pp/patterns-and-progress/data-lists.md)
   * [File Upload Fields](pp/patterns-and-progress/file-upload-fields.md)
+* [Articles](pp/articles/README.md)
+  * [CSS Form Control Styling](pp/articles/css-form-control-styling.md)
+  * [A Missing Pattern: Dynamic Attributes](pp/articles/a-missing-pattern-dynamic-attributes.md)
+  * [\[WIP\] Idea: The State Element](pp/articles/wip-idea-the-state-element.md)
 
 ## Our Handbook
 
