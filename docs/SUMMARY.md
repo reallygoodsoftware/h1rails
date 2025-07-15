@@ -46,6 +46,7 @@
 * [Articles](html-first/articles/README.md)
   * [JSX Without React](html-first/articles/jsx-without-react.md)
   * [JSX vs Web Components](html-first/articles/jsx-vs-web-components.md)
+  * [The Three Patterns](html-first/articles/the-three-patterns.md)
 
 ## Platform Parity <a href="#pp" id="pp"></a>
 
