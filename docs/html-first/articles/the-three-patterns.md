@@ -4,7 +4,9 @@ description: Managing State in HTML First Apps.
 
 # The Three Patterns
 
-A common response when suggesting building web apps without Big JS™️ is that users expect rich, interactive interfaces that don't need to wait on a network request. This is a fair criticism. There isn't nearly as much material online explaining how to do what you can in React, with plain html.&#x20;
+There's a common misconception that you can't build slick, polished apps without Big JS - that if you want to build rich interactive experiences, you must use a javascript meta framework.&#x20;
+
+This was true for a while, but has become less and less so over the years. These days
 
 ### All you need
 
@@ -45,7 +47,27 @@ If you can do this in less than 200 miliseconds, your UI will feel as fast as&#x
 
 ### 2. Shallow Frontend State
 
-There are multiple options for this
+{% tabs %}
+{% tab title="Mini Js" %}
+```html
+<state>
+  <
+</state>
+```
+{% endtab %}
+
+{% tab title="Alpine" %}
+
+{% endtab %}
+
+{% tab title="Hyperscript" %}
+
+{% endtab %}
+{% endtabs %}
+
+
+
+
 
 
 
