@@ -1,5 +1,5 @@
 ---
-icon: books
+icon: circle-small
 ---
 
 # Articles

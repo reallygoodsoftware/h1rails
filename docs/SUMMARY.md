@@ -22,6 +22,7 @@
   * [TipTap Editor](h1-rails/articles/tiptap-editor.md)
   * [How to create a Pull Request Preview comparing commits (not branches)](h1-rails/articles/how-to-create-a-pull-request-preview-comparing-commits-not-branches.md)
   * [Code Review Guidelines](h1-rails/articles/code-review-guidelines.md)
+  * [Wiring Up Stripe](h1-rails/articles/wiring-up-stripe.md)
 
 ## Base Styles
 
@@ -40,36 +41,39 @@
 * [Push Notifications](our-mobile-playbook/push-notifications.md)
 * [Google Sign in with Expo](our-mobile-playbook/google-sign-in-with-expo.md)
 * [Analytics](our-mobile-playbook/analytics.md)
+* [Articles](our-mobile-playbook/articles/README.md)
+  * [Architecture, Lifecycle, Cheat Sheet](our-mobile-playbook/articles/architecture-lifecycle-cheat-sheet.md)
 
 ## HTML First
 
 * [Articles](html-first/articles/README.md)
   * [JSX Without React](html-first/articles/jsx-without-react.md)
   * [JSX vs Web Components](html-first/articles/jsx-vs-web-components.md)
+  * [The Three Patterns](html-first/articles/the-three-patterns.md)
 
-## Platform (SPA) Parity
+## Platform Parity <a href="#pp" id="pp"></a>
 
-* [Articles](platform-spa-parity/articles/README.md)
-  * [Intro: The Platform & a Stylesheet](platform-spa-parity/articles/intro-the-platform-and-a-stylesheet.md)
-  * [Overview](platform-spa-parity/articles/overview.md)
-  * [How Far We've Come](platform-spa-parity/articles/how-far-weve-come.md)
-  * [CSS Form Control Styling](platform-spa-parity/articles/css-form-control-styling.md)
-  * [A Missing Pattern: Dynamic Attributes](platform-spa-parity/articles/a-missing-pattern-dynamic-attributes.md)
-  * [\[WIP\] Idea: The State Element](platform-spa-parity/articles/wip-idea-the-state-element.md)
-* [Patterns & Progress](platform-spa-parity/patterns-and-progress/README.md)
-  * [Snappy Page Transitions](platform-spa-parity/patterns-and-progress/snappy-page-transitions.md)
-  * [Partial Page Replacement](platform-spa-parity/patterns-and-progress/partial-page-replacement.md)
-  * [Immediate Navigation Feedback](platform-spa-parity/patterns-and-progress/immediate-navigation-feedback.md)
-  * [Icons](platform-spa-parity/patterns-and-progress/icons.md)
-  * [Plain Text Tooltips](platform-spa-parity/patterns-and-progress/plain-text-tooltips.md)
-  * [HTML Tooltips](platform-spa-parity/patterns-and-progress/html-tooltips.md)
-  * [Accordions](platform-spa-parity/patterns-and-progress/accordions.md)
-  * [Tabs](platform-spa-parity/patterns-and-progress/tabs.md)
-  * [Modals](platform-spa-parity/patterns-and-progress/modals.md)
-  * [Single Selects](platform-spa-parity/patterns-and-progress/single-selects.md)
-  * [Multiple Selects](platform-spa-parity/patterns-and-progress/multiple-selects.md)
-  * [Data Lists](platform-spa-parity/patterns-and-progress/data-lists.md)
-  * [File Upload Fields](platform-spa-parity/patterns-and-progress/file-upload-fields.md)
+* [Intro: The Platform And a Stylesheet](pp/intro-the-platform-and-a-stylesheet.md)
+* [Overview](pp/overview.md)
+* [How Far We've Come](pp/how-far-weve-come.md)
+* [Patterns & Progress](pp/patterns-and-progress/README.md)
+  * [Snappy Page Transitions](pp/patterns-and-progress/snappy-page-transitions.md)
+  * [Partial Page Replacement](pp/patterns-and-progress/partial-page-replacement.md)
+  * [Immediate Navigation Feedback](pp/patterns-and-progress/immediate-navigation-feedback.md)
+  * [Icons](pp/patterns-and-progress/icons.md)
+  * [Plain Text Tooltips](pp/patterns-and-progress/plain-text-tooltips.md)
+  * [HTML Tooltips](pp/patterns-and-progress/html-tooltips.md)
+  * [Accordions](pp/patterns-and-progress/accordions.md)
+  * [Tabs](pp/patterns-and-progress/tabs.md)
+  * [Modals](pp/patterns-and-progress/modals.md)
+  * [Single Selects](pp/patterns-and-progress/single-selects.md)
+  * [Multiple Selects](pp/patterns-and-progress/multiple-selects.md)
+  * [Data Lists](pp/patterns-and-progress/data-lists.md)
+  * [File Upload Fields](pp/patterns-and-progress/file-upload-fields.md)
+* [Articles](pp/articles/README.md)
+  * [CSS Form Control Styling](pp/articles/css-form-control-styling.md)
+  * [A Missing Pattern: Dynamic Attributes](pp/articles/a-missing-pattern-dynamic-attributes.md)
+  * [\[WIP\] Idea: The State Element](pp/articles/wip-idea-the-state-element.md)
 
 ## Our Handbook
 
