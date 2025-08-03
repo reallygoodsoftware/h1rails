@@ -3,6 +3,8 @@
   <head>
     <%= render :partial=> "h1rails/partials/head" %>
     <%= render :partial=> "h1rails/partials/codedemo" %>
+
+    <script type="module" src="https://cdn.base-styles.com/state-js/state.js"></script>
   
     <script>
       function sendHeightToParent() {
@@ -21,7 +23,8 @@
       });
     </script>
   </head>
-  <body class="ui-body ui-sidebar-body" <%= htmx_body_attributes.html_safe %> >
+  <body class="ui-body ui-sidedbar-body" <%= htmx_body_attributes.html_safe %> >
+
     <%= render partial: "h1rails/partials/modals" %>
     <%= render partial: "h1rails/partials/toasts" %>
     <%= render partial: "h1rails/partials/combobox" %>
@@ -31,5 +34,6 @@
     </div>
     <%= render :partial => "h1rails/demos/sidebar" if sidebar_shown? %>
     <%- render partial: "livecode/dock" if request_is_localhost? %>    
+
   </body>
 </html>
