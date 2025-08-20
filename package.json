@@ -1,5 +1,12 @@
 {
   "devDependencies": {
-    "tailwindcss": "^3.3.3"
+    "tailwindcss": "^3.4.13"
+  },
+  "dependencies": {
+    "@activeadmin/activeadmin": "^4.0.0-beta16"
+  },
+
+  "scripts": {
+    "build:activeadmin": "./node_modules/.bin/tailwindcss -c ./tailwind-active_admin.config.js -i ./app/assets/stylesheets/active_admin.css -o ./public/stylesheets/active_admin.css --minify"
   }
 }

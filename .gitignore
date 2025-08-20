@@ -39,3 +39,5 @@ db/development.sqlite3
 
 *.pid 
 *.pid.lock
+
+.pgsync.yml

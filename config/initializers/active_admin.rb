@@ -7,9 +7,9 @@ ActiveAdmin.setup do |config|
   # config.head = ''.html_safe
   # config.footer = 'my custom footer text'
 
-  meta_tags_options = { viewport: 'width=device-width, initial-scale=1' }
-  config.meta_tags = meta_tags_options
-  config.meta_tags_for_logged_out_pages = meta_tags_options
+  # meta_tags_options = { viewport: 'width=device-width, initial-scale=1' }
+  # config.meta_tags = meta_tags_options
+  # config.meta_tags_for_logged_out_pages = meta_tags_options
 
   config.authentication_method = :authenticate_admin_user!
   config.current_user_method = :current_admin_user
@@ -23,9 +23,9 @@ ActiveAdmin.setup do |config|
   config.site_title = "Admin Portal"
   config.root_to = 'users#index'
 
-  config.register_stylesheet '/stylesheets/styles.css'
-  config.register_stylesheet 'https://cdn.hypergist.io/tony/styled-active-admin/latest.css'
-  config.register_stylesheet '/vendor/tailwind-lite/1.0.2.css'
+  # config.register_stylesheet '/stylesheets/styles.css'
+  # config.register_stylesheet 'https://cdn.hypergist.io/tony/styled-active-admin/latest.css'
+  # config.register_stylesheet '/vendor/tailwind-lite/1.0.2.css'
 
   config.namespace :admin do |admin|
     admin.download_links = false
@@ -36,12 +36,12 @@ ActiveAdmin.setup do |config|
 
 end
 
-module AdminPageLayoutOverride
-  def build_page(*args)
-    within super do
-      render "active_admin/common/top_bar"
-    end
-  end
-end
+# module AdminPageLayoutOverride
+#   def build_page(*args)
+#     within super do
+#       render "active_admin/common/top_bar"
+#     end
+#   end
+# end
 
-ActiveAdmin::Views::Pages::Base.send :prepend, AdminPageLayoutOverride
+# ActiveAdmin::Views::Pages::Base.send :prepend, AdminPageLayoutOverride

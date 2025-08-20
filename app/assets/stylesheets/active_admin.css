@@ -1,0 +1,6 @@
+/* Active Admin's got SASS! */
+@layer active_admin {
+  @tailwind base;
+  @tailwind components;
+  @tailwind utilities;
+}
