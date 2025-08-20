@@ -108,11 +108,24 @@ The fix for this ended up being pretty straightforward: We just wrap the normal 
 
 
 
+In addition to this, we also need to specify the order of the layers to be applied. We can do this in our head before importing any other files.
+
+```html
+<!-- Place this in the page *before* importing any other CSS libraries -->
+<style>
+  @layer base, active_admin, components, utilities;
+</style>
+```
+
+
+
+
+
 ## Circumventing The Asset Pipeline
 
 We prefer to avoid build steps where possible, so we can replace the asset pipeline helper with a direct import.
 
-**Replace this line...**
+**Replace this line in `_html_head.html.erb` ...**
 
 ```erb
 <%= stylesheet_link_tag "active_admin" %>
