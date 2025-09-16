@@ -1,10 +1,8 @@
 # Table of contents
 
-* [Really Good Software Docs](README.md)
-
 ## H1 Rails
 
-* [Start Here](h1-rails/how-we-write-code.md)
+* [Start Here](README.md)
 * [Forms](h1-rails/forms.md)
 * [Icons](h1-rails/icons.md)
 * [Modals](h1-rails/modals.md)
