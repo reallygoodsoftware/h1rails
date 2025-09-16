@@ -1,6 +1,0 @@
----
-icon: rectangle-wide
----
-
-# Buttons
-

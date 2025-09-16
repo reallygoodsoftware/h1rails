@@ -10,6 +10,8 @@
   * [Modals](h1-rails/core/modals.md)
   * [Toasts](h1-rails/core/toasts.md)
 * [Articles](h1-rails/articles/README.md)
+  * [The Three Patterns](h1-rails/articles/the-three-patterns.md)
+  * [JSX Without React](h1-rails/articles/jsx-without-react.md)
   * [How We Write Code](h1-rails/articles/how-we-write-code.md)
   * [File Uploads With Dropzone](h1-rails/articles/file-uploads-with-dropzone.md)
   * [Using Pgsync](h1-rails/articles/using-pgsync.md)
@@ -25,15 +27,10 @@
   * [Wiring Up Stripe](h1-rails/articles/wiring-up-stripe.md)
   * [Active Admin 4 Notes](h1-rails/articles/active-admin-4-notes.md)
 
-## Base Styles
+## External Docs
 
-* [Intro](base-styles/intro.md)
-* [Getting Started](base-styles/getting-started.md)
-* [Components](base-styles/components/README.md)
-  * [Buttons](base-styles/components/buttons.md)
-* [JS Components](base-styles/js-components/README.md)
-  * [Modals.js](base-styles/js-components/modals.js.md)
-* [🎨 CSS Variables](base-styles/css-variables.md)
+* [Base Styles](https://base-styles.com/)
+* [Mini JS](https://mini-js.com/)
 
 ## Our Mobile Playbook
 
@@ -44,13 +41,6 @@
 * [Analytics](our-mobile-playbook/analytics.md)
 * [Articles](our-mobile-playbook/articles/README.md)
   * [Architecture, Lifecycle, Cheat Sheet](our-mobile-playbook/articles/architecture-lifecycle-cheat-sheet.md)
-
-## HTML First
-
-* [Articles](html-first/articles/README.md)
-  * [JSX Without React](html-first/articles/jsx-without-react.md)
-  * [JSX vs Web Components](html-first/articles/jsx-vs-web-components.md)
-  * [The Three Patterns](html-first/articles/the-three-patterns.md)
 
 ## Platform Parity <a href="#pp" id="pp"></a>
 

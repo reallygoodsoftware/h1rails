@@ -1,5 +1,6 @@
 ---
 description: Managing State in HTML First Apps.
+icon: circle-small
 ---
 
 # The Three Patterns
@@ -38,10 +39,7 @@ This is the first port of call for anything that should be persisted, even in a 
 * Hit the server with a link or a form, and create or update a record
 * Respond with the updated html
 
-If you can do this in less than 200 miliseconds, your UI will feel as fast as&#x20;
-
-```ruby
-```
+If you can do this in less than 200 milliseconds, and you have good immediate loading indicators, your app will often feel faster than a good react app.
 
 
 
@@ -51,7 +49,6 @@ If you can do this in less than 200 miliseconds, your UI will feel as fast as&#x
 {% tab title="Mini Js" %}
 ```html
 <state>
-  <
 </state>
 ```
 {% endtab %}
@@ -64,10 +61,6 @@ If you can do this in less than 200 miliseconds, your UI will feel as fast as&#x
 
 {% endtab %}
 {% endtabs %}
-
-
-
-
 
 
 

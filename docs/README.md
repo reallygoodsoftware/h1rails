@@ -13,7 +13,7 @@ icon: flag-checkered
 * [Html-first.com](https://html-first.com/) is our manifesto on not over-complicating things.&#x20;
 * [H1 Rails](<README (1).md>) is our Ruby on Rails boilerplate codebase (which also includes some of our other libraries).
 * Mini JS is our lightweight library for making your html responsive to simple user interactions.
-* [Base Styles](base-styles/intro.md) is our lightweight CSS library for keeping your UI simple yet beautiful.
+* [Base Styles](broken-reference) is our lightweight CSS library for keeping your UI simple yet beautiful.
 * [Tailwind Lite](https://tailwind-lite.com/) is a no-build version of Tailwind.
 
 
