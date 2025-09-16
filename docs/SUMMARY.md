@@ -10,7 +10,7 @@
   * [Modals](h1-rails/core/modals.md)
   * [Toasts](h1-rails/core/toasts.md)
 * [Articles](h1-rails/articles/README.md)
-  * [How We Write Code](h1-rails/articles/readme.md)
+  * [How We Write Code](h1-rails/articles/how-we-write-code.md)
   * [File Uploads With Dropzone](h1-rails/articles/file-uploads-with-dropzone.md)
   * [Using Pgsync](h1-rails/articles/using-pgsync.md)
   * [HTMX Loading Patterns](h1-rails/articles/htmx_indicators.md)
