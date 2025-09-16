@@ -2,10 +2,10 @@
 icon: circle-small
 ---
 
-# How We Write Code
+# Start Here
 
 {% hint style="info" %}
-This is a document originally intended for internal use, which outlines all the patterns we use internally at Really Good Software.
+The intended audience of this document is 1) LLMs and agents working on H1 Rails codebases, 2) The Really Good Software Team, 3) The General Public
 {% endhint %}
 
 ### Pre Reading
@@ -23,7 +23,7 @@ This is a document originally intended for internal use, which outlines all the 
 
 **General**
 
-We use [hx-boost](https://htmx.org/attributes/hx-boost/) on our body, which means that every link and every form is submitted without triggering a page reload. Instead, the content is fetched in the background and inserted into the `#main-content` div. You can see this by opening up your network tab in dev tools and clicking on a link. Our approach is outlined fully in [htmx.md](htmx.md "mention")
+We use [hx-boost](https://htmx.org/attributes/hx-boost/) on our body, which means that every link and every form is submitted without triggering a page reload. Instead, the content is fetched in the background and inserted into the `#main-content` div. You can see this by opening up your network tab in dev tools and clicking on a link. Our approach is outlined fully in [htmx.md](articles/htmx.md "mention")
 
 This means that, as much as possible, we should build our apps using simple forms and links. For apps with a lot of state, this can mean passing the state through in the URL.
 
@@ -40,7 +40,7 @@ A very common pattern is bringing a user through a series of steps. The go-to he
 Another common UX is having forms that allow you to add new rows of items. This can get tricky but we’ve created a pattern that works well. There’s a brief explanation of using `accepts_nested_attributes_for` along with `fields_for` in [this tutorial](https://docs.h1rails.com/h1rails/form_patterns#nested-relationships), and you can also look at the demo and code with the following links.
 
 * [Demo](https://demo.h1rails.com/demos/has_many_form)
-* [Code](../../../app/views/h1rails/demos/has_many_form.html.erb)
+* [Code](../../app/views/h1rails/demos/has_many_form.html.erb)
 
 </details>
 
@@ -91,7 +91,7 @@ When your select only has a few options and doesn’t require searching or selec
 
 If we need to have searchable options, multiple options, or loading data in remotely, we can use the Select.js preact component.
 
-* Read More: [broken-reference](broken-reference/ "mention")
+* Read More: [broken-reference](articles/broken-reference/ "mention")
 
 **File Uploads**
 
@@ -157,7 +157,7 @@ Forms work out of the box, but for links you have to tell htmx which element to 
 
 **Modals**
 
-Modal styling is powered by Base Styles, and functionality is powered by H1 Rails. Implementing a modal is one line of code in the controller. Documentation [here](../core/modals.md).
+Modal styling is powered by Base Styles, and functionality is powered by H1 Rails. Implementing a modal is one line of code in the controller. Documentation [here](modals.md).
 
 **Toasts**
 

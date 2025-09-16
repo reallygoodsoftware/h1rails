@@ -4,15 +4,14 @@
 
 ## H1 Rails
 
-* [Core](<README (1).md>)
-  * [Forms](h1-rails/core/forms.md)
-  * [Icons](h1-rails/core/icons.md)
-  * [Modals](h1-rails/core/modals.md)
-  * [Toasts](h1-rails/core/toasts.md)
+* [Start Here](h1-rails/how-we-write-code.md)
+* [Forms](h1-rails/forms.md)
+* [Icons](h1-rails/icons.md)
+* [Modals](h1-rails/modals.md)
+* [Toasts](h1-rails/toasts.md)
 * [Articles](h1-rails/articles/README.md)
   * [The Three Patterns](h1-rails/articles/the-three-patterns.md)
   * [JSX Without React](h1-rails/articles/jsx-without-react.md)
-  * [How We Write Code](h1-rails/articles/how-we-write-code.md)
   * [File Uploads With Dropzone](h1-rails/articles/file-uploads-with-dropzone.md)
   * [Using Pgsync](h1-rails/articles/using-pgsync.md)
   * [HTMX Loading Patterns](h1-rails/articles/htmx_indicators.md)

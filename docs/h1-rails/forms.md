@@ -7,7 +7,7 @@ icon: wpforms
 ## Approach
 
 * **Styling** is powered by Base Styles. All we need to do is add a class of `.ui-form` to our form and all our form inputs will be styled for us. We can remove these default styles on a per field basis if we prefer - see instructions below.
-* **Loading States** are handled by htmx - all we have to do is to is add a loading spinner which is hidden by default. This pattern is described [**here**](../articles/htmx_indicators.md).
+* **Loading States** are handled by htmx - all we have to do is to is add a loading spinner which is hidden by default. This pattern is described [**here**](articles/htmx_indicators.md).
 
 ## Code Examples
 
@@ -111,14 +111,14 @@ end
 <% end %>
 ```
 
-* Read the [full article](../articles/multi-step-and-nested-forms.md) which goes into more detail on nested forms.
+* Read the [full article](articles/multi-step-and-nested-forms.md) which goes into more detail on nested forms.
 
 ### Multi Step Forms
 
 This is covered in detail here:
 
-{% content-ref url="../articles/multi-step-and-nested-forms.md" %}
-[multi-step-and-nested-forms.md](../articles/multi-step-and-nested-forms.md)
+{% content-ref url="articles/multi-step-and-nested-forms.md" %}
+[multi-step-and-nested-forms.md](articles/multi-step-and-nested-forms.md)
 {% endcontent-ref %}
 
 
