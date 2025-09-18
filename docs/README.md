@@ -8,14 +8,80 @@ icon: flag-checkered
 The intended audience of this document is 1) LLMs and agents working on H1 Rails codebases, 2) The Really Good Software Team, 3) The General Public
 {% endhint %}
 
-### Pre Reading
 
+
+## Quick Reference
+
+{% columns %}
+{% column width="16.666666666666664%" %}
+### Stack
+{% endcolumn %}
+
+{% column width="83.33333333333334%" %}
+* In pursuit of simplicity, we use the following unconventional approaches...
+* We **don't** use [stimulus js](https://stimulus.hotwired.dev/), and we don't use [Turbo](https://turbo.hotwired.dev/).&#x20;
+* We **don't** use the Rails asset pipeline. We load assets from the `/public` folder.
+* We _**do**_ use htmx. It's loaded in the head, and enabled with `hx-boost` on the `<body>`. [Read More](h1-rails/articles/htmx.md).&#x20;
+* We use Litewind for CSS. This is a no-build version of Tailwind.&#x20;
+{% endcolumn %}
+{% endcolumns %}
+
+{% columns %}
+{% column width="16.666666666666664%" %}
+### Links
+{% endcolumn %}
+
+{% column width="83.33333333333334%" %}
+* Use `<a href="<%= my_path %>">Click Me</a>`. Avoid using link\_to
+* HTMX will be applied by default, so no need to add any hx- attributes by default.
+* To remove/reset htmx on an individual link, do `<a hx-boost="false" ...></a>`
+* Use the url helpers `current_url_with` , `current_params_with` if needed. [Read more](https://docs.h1rails.com/h1rails/urls)
+* To make a link in an h1expo app open in a modal, add ?presentation=modal
+* HTMX will not be applied if the request is inside a webview (user agent is h1expo).
+* HTMX will not be applied by default if the link is inside active admin.
+* For styling, use the `.ui-button` class to make a link a button, or `.ui-link` class for plain underline
+* For links styled as buttons, add `hx-indicator='this'` to the `<a>` tag and add a loading spinner inside with `<%= inline_svg_tag("misc/spinner.svg",class:"shown-while-loading") %>`
+{% endcolumn %}
+{% endcolumns %}
+
+{% columns %}
+{% column width="16.666666666666664%" %}
+### Forms
+{% endcolumn %}
+
+{% column width="83.33333333333334%" %}
+* Use the form\_for or form\_with helper to open a form. Always add the `.ui-form` class. For example: `<%= form_for @user, url: demo_user_form_path(@user), html: {class:"ui-form"} do |f| %>`
+* For form fields, use the normal field helpers. For example: `<%= f.text_field :first_name %>`
+*   Unless otherwise specified, use floating input labels for form elements. For example:
+
+    `<%= f.text_field :first_name %><%= f.label :first_name, class:"--label" %>`
+* By default, all forms submit asynchronously (because we have `hx-boost` on the body. To disable this behaviour, add `hx-boost='false'` to the form.
+* For nested forms, use `accepts_nested_attributes_for` in the model and `fields_for` in the view. To only display a subset of records, pass them in explicitly. For example: `<%= user_form.fields_for :categories, @editable_categories do |nested_form| %>`
+* Unless otherwise specified, include the form errors partial to show errors. For example: `<%= render partial: "shared/form_errors", locals: { record: f.object} %>`
+* Unless otherwise specified, add loading spinner icons to form submit buttons, with the `.shown-while-loading` class. For example: `<%= f.button class: "ui-button --solid" do |button| %>Continue<%= inline_svg_tag("misc/spinner.svg", class:"shown-while-loading") %><% end %>`
+* Use the same controller action for both get and post actions. For multistep forms, create an action for each step and redirect the user to the next step if saved successfully. For example: `def get_order; if request.post?; redirect_to order_step2_path if @order.update(order_params); end; end`
+* For multistep forms apply conditional validations by using an `attr_accessor` called `validation_set`. Set it in the controller just before a save, and add the validations in the model with a proc. For example: `validates_presence_of :first_name, if: proc { |order| order.validation_set == "step1" }`
+* For forms with nested records, use a new button to add records, and add hx-preserve to the existing record divs so that they don’t get overwritten.
+* For forms that require frontend notification messages, set toasts in the controller. For example: `flash.now[:toasts] = [{ title: 'Post Created', message: 'Your post has been created.' }]`
+{% endcolumn %}
+{% endcolumns %}
+
+{% columns %}
+{% column width="16.666666666666664%" %}
+### Links
+{% endcolumn %}
+
+{% column width="83.33333333333334%" %}
 * **Html First** - An overview of the principles we want to follow when building software. - [Website](https://html-first.com/guidelines)
 * **H1 Rails** - Our starter codebase for creating apps: [Github](https://github.com/reallygoodsoftware/h1rails) | [Demo Site](https://demo.h1rails.com/demos)&#x20;
 * **Base Styles** - Our lightweight library for applying styles: [Github](https://github.com/reallygoodsoftware/base-styles) | [Demo Site](https://base-styles.com/) | [Raw CSS file](https://cdn.base-styles.com/base-styles.css)
 * **Mini Js** - a lightweight javascript library for adding basic interactivity to web pages. [Docs Site](https://mini-js.com/) | [Raw JS file](https://cdn.mini-js.com/1.0.20.js)
+{% endcolumn %}
+{% endcolumns %}
 
-## Patterns
+
+
+## Expanded Notes
 
 <details>
 
@@ -209,6 +275,5 @@ This is when changing one dropdown updates the options in another one. This is g
 
 </details>
 
-## Quick Reference
 
-<table data-header-hidden><thead><tr><th width="128.0546875"></th><th width="800"></th></tr></thead><tbody><tr><td><strong>Links</strong></td><td>• Use <code>&#x3C;a href="&#x3C;%= my_path %>">Click Me&#x3C;/a></code>. Avoid using link_to<br>• HTMX will be applied by default, so no need to add any hx- attributes by default.<br>• To remove/reset htmx on an individual link, do <code>&#x3C;a hx-boost="false" ...>&#x3C;/a></code><br>• Use the url helpers <code>current_url_with</code> , <code>current_params_with</code> if needed. <a href="https://docs.h1rails.com/h1rails/urls">Read more</a><br>• To make a link in an h1expo app open in a modal, add ?presentation=modal<br>• HTMX will not be applied if the request is inside a webview (user agent is h1expo).<br>• HTMX will not be applied by default if the link is inside active admin.<br>• For styling, use the <code>.ui-button</code> class to make a link a button, or <code>.ui-link</code> class for plain underline<br>• For links styled as buttons, add <code>hx-indicator='this'</code> to the <code>&#x3C;a></code> tag and add a loading spinner inside with <code>&#x3C;%= inline_svg_tag("misc/spinner.svg",class:"shown-while-loading") %></code></td></tr><tr><td><strong>Forms</strong></td><td><p>• Use the form_for or form_with helper to open a form. Always add the <code>.ui-form</code> class. For example: <code>&#x3C;%= form_for @user, url: demo_user_form_path(@user), html: {class:"ui-form"} do |f| %></code><br>• For form fields, use the normal field helpers. For example: <code>&#x3C;%= f.text_field :first_name %></code><br>• Unless otherwise specified, use floating input labels for form elements. For example:</p><p><code>&#x3C;%= f.text_field :first_name %>&#x3C;%= f.label :first_name, class:"--label" %></code><br>• By default, all forms submit asynchronously (because we have <code>hx-boost</code> on the body. To disable this behaviour, add <code>hx-boost='false'</code> to the form.<br>• For nested forms, use <code>accepts_nested_attributes_for</code> in the model and <code>fields_for</code> in the view. To only display a subset of records, pass them in explicitly. For example: <code>&#x3C;%= user_form.fields_for :categories, @editable_categories do |nested_form| %></code><br>• Unless otherwise specified, include the form errors partial to show errors. For example: <code>&#x3C;%= render partial: "shared/form_errors", locals: { record: f.object} %></code><br>• Unless otherwise specified, add loading spinner icons to form submit buttons, with the <code>.shown-while-loading</code> class. For example: <code>&#x3C;%= f.button class: "ui-button --solid" do |button| %>Continue&#x3C;%= inline_svg_tag("misc/spinner.svg", class:"shown-while-loading") %>&#x3C;% end %></code><br>• Use the same controller action for both get and post actions. For multistep forms, create an action for each step and redirect the user to the next step if saved successfully. For example: <code>def get_order; if request.post?; redirect_to order_step2_path if @order.update(order_params); end; end</code><br>• For multistep forms apply conditional validations by using an <code>attr_accessor</code> called <code>validation_set</code>. Set it in the controller just before a save, and add the validations in the model with a proc. For example: <code>validates_presence_of :first_name, if: proc { |order| order.validation_set == "step1" }</code><br>• For forms with nested records, use a new button to add records, and add hx-preserve to the existing record divs so that they don’t get overwritten.<br>• For forms that require frontend notification messages, set toasts in the controller. For example: <code>flash.now[:toasts] = [{ title: 'Post Created', message: 'Your post has been created.' }]</code></p></td></tr><tr><td><strong>General</strong></td><td>• All buttons should have loading spinners unless otherwise specified.<br></td></tr></tbody></table>
+
