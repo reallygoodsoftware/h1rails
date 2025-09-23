@@ -19,9 +19,8 @@ icon: circle-small
 * Potential N+1 queries
   * This requires looking at the corresponding view for the controller, checking if any relationships are accessed in the view, and if they are, adding .includes to the controller.
 * Code in the wrong place
-  * Controllers should only handle auth, business logic & fetching data - nothing related to the view.
-  * Helpers should handle business logic that's shared across views.&#x20;
+  * Controllers should handle primarily auth, business logic, fetching & validating data, triggering events, and (sometimes) deciding what view partial to render.
+  * Helpers should handle logic that needs to be used in more than one view.&#x20;
   * Utilities (`/utils` folder) should handle functions that need to be accessible from more than one of controllers, models, views.
-  * Basically no services or service objects. Long controller methods are fine and it's seldom to find cases where  models/utilities won't do the job.&#x20;
 * Insufficient comments on long methods with multiple or unclear conditionals
   * We should use code comments liberally to explain code that’s not immediately obvio
